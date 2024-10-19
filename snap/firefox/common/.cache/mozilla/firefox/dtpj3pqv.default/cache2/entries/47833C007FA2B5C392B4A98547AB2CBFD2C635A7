@@ -1,0 +1,385 @@
+WEBVTT
+
+00:00.000 --> 00:06.920
+Salut à tous, c'est Florian du site ITConnect,
+bienvenue dans cette nouvelle vidéo dédiée �
+
+00:06.920 --> 00:12.239
+l'apprentissage du scripting Bash sous Linux.
+Dans cette vidéo, nous allons nous intéresser
+
+00:12.239 --> 00:17.360
+tout particulièrement aux boucles while. Ces
+boucles while vont nous permettre d'exécuter
+
+00:17.360 --> 00:23.040
+une action tant qu'une condition est vraie.
+On va pouvoir répéter une action pendant
+
+00:23.879 --> 00:28.559
+un temps défini et on va voir tout ça dans cette
+vidéo. Déjà, on va étudier la syntaxe des boucles
+
+00:28.639 --> 00:33.759
+while et puis après, on va voir comment l'utiliser
+au travers de différents exemples. N'hésitez pas
+
+00:33.759 --> 00:38.040
+à regarder les précédentes vidéos de cette série
+si vous souhaitez apprendre le scripting Bash et
+
+00:38.040 --> 00:41.840
+que vous partez vraiment de zéro. Avant de passer
+à la suite, pensez à vous abonner à la chaîne
+
+00:41.840 --> 00:51.880
+YouTube ITConnect. Voici à l'écran la syntaxe de
+base d'une boucle while. On va retrouver le mot
+
+00:52.040 --> 00:58.799
+clé while et entrecrocher, on va avoir la condition
+que l'on veut évaluer. Tout le temps que cette
+
+00:58.799 --> 01:04.639
+condition est vraie, on va exécuter le code
+qui est présent entre les mots clés do et done
+
+01:04.639 --> 01:10.440
+tout à la fin. Au niveau de la syntaxe, c'est un
+mélange entre les boucles for et les structures
+
+01:10.440 --> 01:15.599
+conditionnelles if. Avec les structures
+conditionnelles, on met if et entrecroche la
+
+01:15.599 --> 01:21.400
+condition. Ensuite, on a le then et le else qui
+peuvent venir après, puis on a le fi aussi à la
+
+01:21.400 --> 01:27.680
+fin. Avec les boucles for, on a la condition
+et ensuite on a do et done. On a un mélange
+
+01:27.680 --> 01:33.400
+puisqu'on va avoir while et la condition entrecrochées
+comme avec le if et ensuite le do et le done comme
+
+01:33.400 --> 01:39.720
+avec le for, pour faire la comparaison et être au
+clair sur les différentes syntaxes. Si on veut
+
+01:39.720 --> 01:46.519
+traduire ça littéralement, on pourrait dire
+que tant que la condition est vraie, on fait ceci
+
+01:46.519 --> 01:52.279
+et puis ça répète. On va itérer sur la boucle
+jusqu'à ce que cette condition soit fausse
+
+01:52.279 --> 01:56.440
+Maintenant, on va voir comment utiliser la boucle
+while au travers de différents exemples. Voici un
+
+01:56.440 --> 02:01.279
+premier exemple qui est affiché à l'écran.
+Ici, la variable nombre est égale à 1. En fait
+
+02:01.279 --> 02:10.039
+tant que la variable nombre, sa valeur est plus
+ou moins égale à 5, on va écrire un message
+
+02:10.039 --> 02:15.360
+nombre de points, et on va afficher ce fameux
+nombre. On va appeler la variable et on va
+
+02:15.360 --> 02:23.559
+incrémenter de 1 la variable nombre via la ligne
+qui est ici. En principe, on va avoir dans la
+
+02:23.559 --> 02:30.600
+console un nombre 1, 2, 3, 4, 5. Une fois que le
+nombre sera égal à 6, on va sortir de la boucle
+
+02:30.759 --> 02:37.320
+On pourrait même mettre ici une petite
+ligne boucle terminée. On va enregistrer ça
+
+02:37.320 --> 02:44.000
+on va le lancer, on va exécuter, et on voit
+bien qu'on a les nombres 1, 2, 3, 4, 5. Ensuite
+
+02:44.000 --> 02:49.199
+on a la condition qui n'est plus vraie puisque
+dollarNum est égal à 6, donc il n'est pas plus
+
+02:49.199 --> 02:54.080
+petit ou égal à 5. À partir de là, on sort de
+la boucle et j'ai bien mon message boucle terminée
+
+02:54.080 --> 02:58.880
+qui s'est affiché. Voilà pour ce premier exemple
+sur les boucles while. On va basculer sur un
+
+02:58.880 --> 03:05.639
+second exemple où je vous montre qu'on peut
+avoir dans le while deux conditions. Comme on a
+
+03:05.639 --> 03:10.199
+possibilité d'avoir deux conditions avec un if,
+par exemple dans une structure conditionnelle
+
+03:10.880 --> 03:18.279
+on va pouvoir évaluer deux conditions. Chaque
+condition entre crochets, le et ici permet de
+
+03:18.279 --> 03:24.399
+dire qu'il faut que cette condition soit vraie et
+celle-ci. Les deux conditions doivent être vraies
+
+03:24.399 --> 03:30.520
+pour qu'on continue à itérer sur cette boucle. On
+pourrait remplacer le et ici par le ou, comme on
+
+03:30.520 --> 03:37.479
+l'avait déjà vu, avec deux barres verticales, le
+fameux caractère du pipeline. Ici, on va rester
+
+03:37.479 --> 03:43.080
+sur le et, donc là j'ai deux variables, un nombre
+1, un nombre 2. Pour que la boucle continue
+
+03:43.080 --> 03:47.800
+on va dire qu'il faut que la première valeur soit
+plus petite ou égal à 10 et la deuxième plus
+
+03:47.800 --> 03:55.039
+petite ou égal à 5. En principe, on ne devrait
+jamais aller au-delà de 5 au niveau du texte qui
+
+03:55.039 --> 04:00.240
+sera renvoyé dans la console. D'ailleurs, on va
+pouvoir le vérifier très facilement puisqu'on
+
+04:00.240 --> 04:07.240
+va exécuter le script. J'ai bien un nombre 1, 2, 3,
+4, 5 à chaque fois et ensuite ça s'arrête à 5
+
+04:07.240 --> 04:14.000
+puisque quand le nombre 2 est égal à 6, cette
+condition n'est plus vraie. On sort de la boucle
+
+04:14.000 --> 04:18.799
+on pourrait très facilement voir la différence
+si on remplace le et par le ou. Là, il faut que
+
+04:18.799 --> 04:24.440
+l'une ou l'autre des conditions soient vraies pour
+que l'on exécute le code de la boucle. Dans ce
+
+04:24.440 --> 04:30.679
+cas-là, on voit bien tout de suite la différence
+au niveau du comportement. Une fois que les deux
+
+04:30.679 --> 04:36.720
+conditions sont fausses, c'est-à-dire qu'il
+faut que le nombre 1 soit supérieur à 10
+
+04:36.720 --> 04:40.640
+c'est à partir de là qu'on sort de la boucle.
+Pour finir, nous allons voir un troisième exemple
+
+04:40.839 --> 04:45.399
+qui correspond vraiment à un cas d'utilisation
+pratique de la boucle WAI. L'idée va être la
+
+04:45.399 --> 04:51.000
+suivante. On imagine que ma machine Linux est
+protégée par l'outil Krotsek, qui permet de
+
+04:51.000 --> 04:57.239
+détecter et bloquer les attaques. J'avais fait des
+vidéos sur cette solution. Mon idée, c'est de me
+
+04:57.239 --> 05:04.160
+dire que j'ai un fichier qui s'appelle ip.txt, qui
+est mentionné ici, qui contient des adresses IP
+
+05:04.160 --> 05:09.920
+malveillantes. D'ailleurs, on pourrait aller voir
+ce fichier-là. J'ai mis des IP aléatoirement
+
+05:09.920 --> 05:14.480
+j'ai 4 adresses IP, comme on le voit, une
+adresse IP par ligne. Je voudrais parcourir
+
+05:14.480 --> 05:21.000
+l'intégralité de ce fichier, de façon à bannir
+chaque adresse IP. Si je n'ai pas un script pour
+
+05:21.000 --> 05:26.480
+le faire, ça peut être assez contraignant,
+puisqu'il va falloir faire une commande par règle
+
+05:26.480 --> 05:30.760
+Du coup, ça peut être assez long. D'ailleurs,
+la commande qui permet de bannir une IP, c'est
+
+05:30.760 --> 05:37.200
+celle-ci, cscli-decision-add-ip, et là on met
+l'adresse IP. Mon idée, ça va être de prendre
+
+05:37.359 --> 05:42.320
+une boucle wild, on aurait pu faire autrement,
+on va prendre la boucle wild, on va parcourir le
+
+05:42.320 --> 05:47.519
+fichier ligne par ligne, de façon à exécuter
+une action. On voit qu'on peut même intégrer
+
+05:47.519 --> 05:52.200
+bien sûr, dans une boucle wild, autre chose,
+comme ici une structure conditionnelle. Là
+
+05:52.200 --> 05:57.000
+on a une première ligne un peu bizarre, qui est
+écrite de façon différente vis-à-vis de la
+
+05:57.000 --> 06:03.720
+condition entre crochets, puisque là on va lui
+dire de lire le contenu du fichier, et le contenu
+
+06:03.799 --> 06:08.760
+du fichier, on va l'injecter à la fin avec le
+redirecteur, comme ceci, et on va mettre du coup
+
+06:08.760 --> 06:16.440
+ip.txt. On va indiquer le IFS en majuscule,
+c'est pour indiquer le caractère séparateur �
+
+06:16.440 --> 06:22.519
+l'intérieur du fichier. Là, c'est blanc, puisque
+le caractère séparateur n'y en a pas, c'est une
+
+06:22.519 --> 06:29.679
+nouvelle ligne à chaque fois. Par exemple, nous
+aurions pu préciser le dièse, si c'est le dièse
+
+06:29.679 --> 06:34.440
+qui sépare chacune des valeurs dans le fichier.
+Tout dépend comment est formaté ce fameux fichier
+
+06:34.440 --> 06:41.880
+Ensuite, le read-rip, ça permet de dire qu'on va
+lire chaque valeur du fichier, et on va associer
+
+06:41.880 --> 06:49.000
+chaque valeur à la variable ip à chaque itération
+de la boucle. Le tirer-r, c'est pour ne pas tenir
+
+06:49.000 --> 06:56.239
+compte des caractères d'échappement, en l'occurrence
+le slash inversé. Une fois qu'on va avoir fait ça
+
+06:56.239 --> 07:01.279
+on va parcourir l'intégralité de la boucle.
+Quand on sera arrivé à la fin du fichier
+
+07:01.279 --> 07:08.000
+la condition sera fausse, et donc on va sortir de la
+boucle. Ensuite, le if est utilisé pour vérifier
+
+07:08.000 --> 07:12.600
+que la ligne n'est pas vide. Par exemple, si j'ai
+sauté une ligne entre deux ip, et que je me retrouve
+
+07:12.600 --> 07:17.519
+avec une valeur vide, ça va me renverrer une
+erreur au moment de faire exécuter cette commande
+
+07:17.519 --> 07:22.160
+Là, je regarde si la ligne n'est pas
+vide, donc si la valeur d'ip n'est pas vide
+
+07:23.119 --> 07:29.640
+je crée la règle. La règle, on l'appelle
+simplement notre variable $ip. Je pourrais
+
+07:29.640 --> 07:36.440
+m'amuser à exécuter ce script pour vous montrer ce
+que ça donne. J'ai à chaque fois une ligne avec
+
+07:36.440 --> 07:41.040
+le écho de la commande complète qui a été exécutée,
+puisque ça correspond au écho qui est ici. J'ai
+
+07:41.040 --> 07:46.559
+voulu afficher quand même la commande associée
+à chaque fois, et là c'est le résultat de la
+
+07:46.559 --> 07:52.040
+commande CSCLI en elle-même. Donc là, ça
+a bien ajouté la décision au niveau de mon
+
+07:52.040 --> 07:57.480
+crottesèque. D'ailleurs, je pourrais faire un
+CSCLI décision liste, et je retrouve bien ici mes
+
+07:57.480 --> 08:03.079
+adresses ip bannies au niveau de mon crottesèque
+local. J'ai agrandi la fenêtre, comme ça on voit
+
+08:03.079 --> 08:11.160
+mieux, mais ça a permis d'automatiser la création
+de ces fameuses règles. Nous venons de voir comment
+
+08:11.160 --> 08:16.200
+utiliser les boucles WILE en bâche. J'espère que
+cette vidéo vous a plu, n'hésitez pas à commenter
+
+08:16.399 --> 08:21.519
+à liker, à partager, à me poser vos questions
+en commentaire si vous en avez. Il y aura d'autres
+
+08:21.519 --> 08:25.679
+vidéos sur le scripting bâche, donc n'hésitez pas
+à vous abonner pour ne rien manquer ! A très vite 
+%t�eX&      gJngJnGrF�g;lI   �    O^partitionKey=%28https%2Cit-connect.fr%29,a,~FETCH,:https://video-meta.humix.com/caption/wTYcH5AWYKo5/c6a45bc0434a5530881f35eaa63730a3_fr-FR.vtt necko:classified 1 strongly-framed 1 security-info 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 request-method GET request-Origin https://www.it-connect.fr request-Accept-Encoding gzip, deflate, br, zstd response-head HTTP/2 200 
+date: Sat, 19 Oct 2024 05:58:06 GMT
+content-type: text/vtt; charset=utf-8
+content-length: 10513
+access-control-allow-origin: *
+content-disposition: inline
+etag: "c6a45bc0434a5530881f35eaa63730a3"
+last-modified: Fri, 06 Sep 2024 16:38:14 GMT
+vary: Origin, Accept-Encoding
+cache-control: max-age=2678400
+cf-cache-status: HIT
+age: 48293
+accept-ranges: bytes
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=VYxPqU6LMnor8I5%2Fz1We%2BmLYrW%2B%2FG1bVwNMXu70UeJjbBBPdjc%2F1w00eV3qnuhOMpoVq4hwYZHyLFPTpEvcZTPCB2qw3rFn304naYJs8C5A%2B0lItFhCvFY75Lg7S4KEh2jkXmEQLgA%3D%3D"}],"group":"cf-nel","max_age":604800}
+nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+server: cloudflare
+cf-ray: 8d4e88cfcd3eb79f-ABJ
+alt-svc: h3=":443"; ma=86400
+server-timing: cfL4;desc="?proto=TCP&rtt=14020&sent=82&recv=69&lost=0&retrans=0&sent_bytes=92568&recv_bytes=1939&delivery_rate=7250564&cwnd=257&unsent_bytes=0&cid=4d7d6c9dffcba43d&ts=121&x=0"
+X-Firefox-Spdy: h2
+ original-response-headers date: Sat, 19 Oct 2024 05:58:06 GMT
+content-type: text/vtt; charset=utf-8
+content-length: 10513
+access-control-allow-origin: *
+content-disposition: inline
+etag: "c6a45bc0434a5530881f35eaa63730a3"
+last-modified: Fri, 06 Sep 2024 16:38:14 GMT
+vary: Origin, Accept-Encoding
+cache-control: max-age=2678400
+cf-cache-status: HIT
+age: 48293
+accept-ranges: bytes
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=VYxPqU6LMnor8I5%2Fz1We%2BmLYrW%2B%2FG1bVwNMXu70UeJjbBBPdjc%2F1w00eV3qnuhOMpoVq4hwYZHyLFPTpEvcZTPCB2qw3rFn304naYJs8C5A%2B0lItFhCvFY75Lg7S4KEh2jkXmEQLgA%3D%3D"}],"group":"cf-nel","max_age":604800}
+nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+server: cloudflare
+cf-ray: 8d4e88cfcd3eb79f-ABJ
+alt-svc: h3=":443"; ma=86400
+server-timing: cfL4;desc="?proto=TCP&rtt=14020&sent=82&recv=69&lost=0&retrans=0&sent_bytes=92568&recv_bytes=1939&delivery_rate=7250564&cwnd=257&unsent_bytes=0&cid=4d7d6c9dffcba43d&ts=121&x=0"
+X-Firefox-Spdy: h2
+ ctid 1 net-response-time-onstart 153 net-response-time-onstop 154   )

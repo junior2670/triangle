@@ -1,0 +1,517 @@
+WEBVTT
+
+00:00.000 --> 00:07.039
+Salut à tous, c'est Florian du site ITKone,
+bienvenue dans cette nouvelle vidéo dédiée au
+
+00:07.039 --> 00:11.800
+scripting bash où nous allons apprendre à
+utiliser les boucles FOR qui vont également
+
+00:11.800 --> 00:15.680
+permettre de faire ce que l'on pourrait appeler
+des boucles FOREACH. Les boucles FOR vont être
+
+00:15.680 --> 00:20.479
+très intéressantes pour automatiser l'exécution
+de tâches répétitives, notamment sur un ensemble
+
+00:20.479 --> 00:24.479
+d'éléments. Cela peut être sur toutes les
+lignes d'un fichier ou un certain nombre de fois
+
+00:24.479 --> 00:29.120
+etc. en fonction des besoins. Cette vidéo est
+la troisième sur le sujet du scripting bash
+
+00:29.440 --> 00:33.279
+j'espère qu'elle vous plaira. Avant de regarder
+la suite, pensez à vous abonner à la chaîne
+
+00:33.279 --> 00:42.599
+YouTube ITKonect. Nous allons voir qu'en scripting
+bash, il y a deux syntaxes différentes pour
+
+00:42.599 --> 00:46.560
+utiliser les boucles FOR. D'ailleurs, cette
+première syntaxe présente à l'écran correspond
+
+00:46.560 --> 00:50.400
+en quelque sorte à du FOREACH puisqu'on va
+pouvoir parcourir par exemple l'ensemble des
+
+00:50.400 --> 00:56.159
+lignes d'un fichier sans faire d'efforts
+particuliers en termes de syntaxe. Ce que
+
+00:56.159 --> 01:00.240
+l'on va tout simplement écrire, c'est déjà le
+mot clé FOR. C'est toujours ce mot clé, peu
+
+01:00.240 --> 01:05.919
+importe la syntaxe qu'on va utiliser. Derrière, on
+va définir une variable qui va être propre à la
+
+01:05.919 --> 01:09.760
+boucle et qui va nous permettre de parcourir les
+éléments les uns après les autres. Ensuite
+
+01:09.760 --> 01:14.360
+IN et derrière on met notre liste d'éléments.
+Cela peut être simplement une liste de quelques
+
+01:14.360 --> 01:19.599
+valeurs ou un fichier, ce qui va permettre de
+dire à la boucle FOR qu'elle doit parcourir
+
+01:19.599 --> 01:23.680
+l'intégralité des lignes du fichier. Dans
+ce cas, on va partir de la première ligne
+
+01:23.680 --> 01:28.400
+on va aller jusqu'à la dernière et on va pouvoir
+appliquer une action de façon répétitive sur
+
+01:28.400 --> 01:33.680
+l'ensemble des éléments. Une fois qu'on a écrit
+cette première ligne, on va venir mettre le DOO
+
+01:33.680 --> 01:39.440
+et à la fin le DONE. Entre le DOO et le DONE,
+on va venir écrire l'ensemble du code que l'on
+
+01:39.440 --> 01:46.360
+veut exécuter pour chaque élément à traiter.
+C'est la première syntaxe d'une boucle FOR. Si
+
+01:46.360 --> 01:50.199
+l'on essaie de la mettre en pratique assez
+rapidement, voici un script très basique
+
+01:50.400 --> 01:55.040
+On a FOR i, et dans ce cas-là le i sera la variable
+que je vais pouvoir utiliser à l'intérieur de la
+
+01:55.040 --> 02:02.519
+boucle IN. Je définis un tableau de valeur de 1
+jusqu'à 5. On va simplement écrire étape numéro
+
+02:02.519 --> 02:08.399
+$i, c'est-à-dire étape numéro 1, numéro 2,
+etc. jusqu'à 5, en principe compte tenu du
+
+02:08.399 --> 02:13.880
+fonctionnement d'une boucle FOR. On va pouvoir
+exécuter ce premier script comme ceci. J'ai bien
+
+02:13.880 --> 02:19.520
+le retour étape numéro 1, numéro 2, etc. jusqu'à
+la 5. Une fois qu'on est arrivé à la fin de la
+
+02:19.520 --> 02:24.320
+liste d'éléments, la boucle s'arrête. Comme je
+n'ai rien d'autre dans mon script, on voit que j'ai
+
+02:24.320 --> 02:28.759
+bien le retour console qui apparaît à l'écran.
+Nous allons voir maintenant la seconde syntaxe
+
+02:28.759 --> 02:33.839
+possible. Dans ce cas-là, on va partir toujours
+avec le mot clé FOR, et on va avoir entre double
+
+02:33.839 --> 02:40.240
+parenthèse trois valeurs à indiquer. Déjà c'est
+l'état initial, typiquement le $i qui est égal à 1
+
+02:40.240 --> 02:45.440
+ou à 0, c'est souvent ce qu'on fait dans les
+boucles FOR dans les différents langages. Point
+
+02:45.440 --> 02:49.479
+virgule la condition de répétition, c'est à
+dire une condition à évaluer qui va permettre de
+
+02:49.479 --> 02:55.160
+déterminer si oui ou non on doit continuer à
+exécuter le bloc de code présent dans la boucle
+
+02:55.160 --> 03:01.720
+ou au contraire si on doit sortir de la boucle.
+Point virgule l'élément à incrémenter à chaque
+
+03:01.720 --> 03:06.399
+itération. On va avoir une variable qui va être
+notre état initial, que l'on va incrémenter �
+
+03:06.399 --> 03:10.679
+chaque itération, c'est à dire à chaque tour de
+boucle, de manière à un moment donné à pouvoir
+
+03:10.759 --> 03:16.800
+sortir, puisqu'on va évaluer cette variable au
+niveau de la condition de répétition. Si on
+
+03:16.800 --> 03:21.199
+reprend exactement le même principe que ce que
+je viens de vous montrer tout à l'heure avec le
+
+03:21.199 --> 03:27.199
+FOREACH, où on a fait étape numéro 1 jusqu'à 5,
+si on veut obtenir le même résultat avec cette
+
+03:27.199 --> 03:32.039
+seconde syntaxe, voici le code que l'on doit
+écrire. On voit que c'est un peu plus lourd en
+
+03:32.039 --> 03:39.440
+termes de syntaxe, mais on obtiendra strictement
+le même résultat. On définit la variable $i qui
+
+03:39.440 --> 03:47.199
+est égale à 1 dès le départ. On va à chaque
+fois faire plus 1 sur cette variable, d'où le i++
+
+03:47.199 --> 03:52.000
+qui va permettre d'incrémenter de 1 la variable
+à chaque itération. Ici c'est la condition de
+
+03:52.000 --> 04:00.080
+répétition, donc il faut que i soit inférieur ou
+égal à 5 pour qu'on continue à itérer la boucle
+
+04:00.720 --> 04:07.080
+Si on exécute ce script, on va voir qu'on obtient
+exactement le même résultat que tout à l'heure
+
+04:07.399 --> 04:11.479
+D'ailleurs vous avez la sortie des deux méthodes
+et on a exactement la même chose, c'est simplement
+
+04:11.479 --> 04:16.359
+une histoire d'écriture. Après c'est une histoire
+d'écriture, mais tout dépend de ce qu'on veut
+
+04:16.359 --> 04:20.160
+faire. Il y a des cas où on va directement
+s'orienter vers le FOREACH, notamment si on
+
+04:20.160 --> 04:25.440
+veut parcourir l'intégralité d'un fichier. Ce
+sera beaucoup plus simple que d'utiliser une boucle
+
+04:25.440 --> 04:32.880
+FOR tel que je viens de vous la montrer. Voici
+un exemple autour de cette notion de fichier
+
+04:32.880 --> 04:39.359
+puisque là on va prendre la liste de tous
+les fichiers .txt présents dans le dossier
+
+04:39.359 --> 04:45.399
+Home Flow Documents, et on va exécuter une action
+sur chacun de ces fichiers. On va pouvoir traiter
+
+04:45.399 --> 04:51.000
+de façon répétitive un ensemble de fichiers. J'ai
+ma variable fichier qui sera interne à la boucle
+
+04:51.000 --> 04:57.440
+et on va compter le nombre de lignes dans chacun
+de ces fichiers. C'est une action très basique
+
+04:57.440 --> 05:04.160
+mais ça vous montre un peu le potentiel des
+boucles FOREACH en scripting batch. J'ai mon
+
+05:04.160 --> 05:09.399
+dollar fichier pour rappeler le nom de mon fichier
+et pour l'afficher à l'écran. Entre le dollar
+
+05:09.399 --> 05:14.959
+la parenthèse qui est là et la parenthèse qui
+est là, ça me permet d'avoir à l'intérieur de ce
+
+05:14.959 --> 05:21.799
+bloc une expression à exécuter. Je vais exécuter
+la commande CAT pour afficher le contenu du fichier
+
+05:22.519 --> 05:27.959
+Le pipeline je l'envoie à wc-l pour compter
+le nombre de lignes et l'afficher à l'écran
+
+05:27.959 --> 05:33.000
+Et nous verrons que toute cette partie du script
+sera remplacée simplement par un nombre de lignes
+
+05:33.000 --> 05:40.359
+Donc on va exécuter ce petit script là, et j'ai
+bien l'ensemble de mes fichiers .txt présents
+
+05:40.359 --> 05:44.440
+dans ce dossier. Apparemment il y en a cinq, et à
+chaque fois j'ai le nombre de lignes qui apparaît
+
+05:44.440 --> 05:50.519
+Du coup on pourrait s'amuser même à vérifier,
+par exemple si on prend le fichier numéro 3
+
+05:50.959 --> 05:56.079
+on l'affiche. Alors effectivement il a bien une,
+deux, trois lignes, ce qui a bien été retourné ici
+
+05:56.079 --> 05:59.720
+Et donc on a pu faire cette action répétitive.
+On aurait pu faire totalement autre chose
+
+05:59.720 --> 06:03.600
+mais on a vraiment fait une action répétitive
+sur un ensemble de fichiers que l'on a souhait�
+
+06:03.600 --> 06:07.359
+traiter. Je vais vous présenter un autre exemple
+basé sur la manipulation de fichiers, où cette
+
+06:07.359 --> 06:12.040
+fois-ci nous allons prendre la liste de tous les
+fichiers .txt présents dans le répertoire courant
+
+06:12.040 --> 06:21.000
+Donc on voit bien ici que je n'ai pas précisé de chemin complet, ce qui veut dire qu'on va prendre
+le répertoire courant dans lequel on se situe au niveau du shell bash. Et donc on va faire une
+
+06:21.000 --> 06:25.839
+action de renommage, c'est à dire qu'on va prendre
+chaque fichier et on va le renommer en lui ajoutant
+
+06:25.839 --> 06:32.160
+le préfixe ITCONNECT. On pourrait renommer
+en masse des fichiers avec un tel script
+
+06:32.160 --> 06:40.920
+Donc là c'est un exemple très simple, une nouvelle fois où j'ai simplement rajouté ITCONNECT,
+mais ça évite de le faire à la main. Dans ce fichier là, qu'est-ce que j'ai ? J'ai
+
+06:41.040 --> 06:45.600
+un document 1, un document 2, jusqu'à 5.
+On va maintenant exécuter ce fameux script
+
+06:45.600 --> 06:51.079
+donc qui est celui-ci. Et en principe il n'y
+a aucun retour console, ce qui est normal
+
+06:51.079 --> 06:57.480
+je n'ai pas inclus de écho dans ma boucle. Mais
+maintenant si je refais un ls, j'ai bien pour le
+
+06:57.480 --> 07:01.839
+coup l'ensemble de mes documents qui ont été
+renommés avec ITCONNECT, donc c'est bien le
+
+07:01.839 --> 07:06.279
+préfixe que j'ai souhaité ajouter. Je n'ai pas eu
+à le faire à la main, donc là j'aurais eu 200
+
+07:06.279 --> 07:14.079
+fichiers à traiter, ça l'aurait fait très rapidement alors qu'à la main ça aurait été
+relativement pénible. Donc on voit bien ici l'intérêt d'une boucle fort pour automatiser
+
+07:14.079 --> 07:18.920
+l'exécution de tâches répétitives. Nous allons
+étudier un autre exemple, toujours dans cette
+
+07:18.920 --> 07:23.839
+idée de vous montrer un petit peu le potentiel
+de tout ça. Ici j'ai défini un tableau dans la
+
+07:23.839 --> 07:29.239
+variable SERVICE qui contient deux noms de
+services SSH et APACHE2. On voit en même temps
+
+07:29.239 --> 07:34.640
+que dans un tableau, entre parenthèses, on met les
+valeurs, on les sépare par un espace. L'objectif
+
+07:34.640 --> 07:40.480
+va être de parcourir ce tableau pour redémarrer de
+façon automatique les services qui sont présents
+
+07:40.480 --> 07:44.079
+dans ce tableau. On peut imaginer que c'est
+très intéressant sur un serveur quand on veut
+
+07:44.079 --> 07:47.959
+l'administrer. Si on a besoin de redémarrer un
+ensemble de services, plutôt que d'enchaîner
+
+07:47.959 --> 07:52.359
+à la main toutes les commandes en changeant le
+nom du service à chaque fois, on se fait un petit
+
+07:52.359 --> 07:56.279
+script comme ça. On lance le script et derrière
+c'est lui qui va s'occuper de redémarrer les
+
+07:56.279 --> 08:02.640
+services dans l'ordre tel qu'ils sont précisés
+dans la variable SERVICE. Je mets ici SERVICE
+
+08:02.720 --> 08:08.440
+sans S qui sera ma variable à l'intérieur de
+la boucle. Je vais parcourir l'ensemble de mon
+
+08:08.440 --> 08:13.399
+tableau. C'est pour ça qu'ici j'ai utilisé cette
+syntaxe avec le arrow base pour sélectionner
+
+08:13.399 --> 08:20.119
+l'ensemble des éléments du tableau. Cela va
+retourner tous les éléments. Le écho pour avoir
+
+08:20.119 --> 08:25.799
+une petite phrase de suivi dans la console et on
+va un système CTL restart derrière le nom du
+
+08:25.799 --> 08:32.159
+service. Je pourrais soit mettre le sudo directement
+ici ou je peux mettre le sudo quand je vais
+
+08:33.159 --> 08:38.719
+le dire directement appelé le script. Comme ça,
+cela va me permettre d'avoir l'élévation de
+
+08:38.719 --> 08:46.640
+privilèges nécessaire pour redémarrer les services. Cela me demande bien le mot de passe,
+donc cela nous permet de voir aussi en même temps le fait que l'on puisse utiliser sudo pour
+
+08:46.640 --> 08:51.400
+exécuter un script qui nécessite une élévation
+de privilèges. Là j'ai bien eu un redémarrage de
+
+08:51.400 --> 08:55.799
+mes services. J'ai le suivi directement dans la
+console qui est plutôt intéressant. Pour finir
+
+08:55.799 --> 09:00.400
+voici un dernier exemple. Nous allons mixer
+l'utilisation de la boucle fort avec les
+
+09:00.400 --> 09:05.479
+structures conditionnelles if-else. L'idée ici
+c'est toujours d'avoir notre liste de services
+
+09:05.479 --> 09:10.320
+avec simplement deux services. On va parcourir
+cette liste de services et on va vérifier l'état
+
+09:10.320 --> 09:19.479
+de chacun des services présents dans notre tableau.
+L'idée c'est de faire un if. La condition du if
+
+09:19.479 --> 09:27.320
+c'est systèmectl isActive de façon silencieuse.
+Le if tel qu'il est écrit ici va permettre de
+
+09:27.320 --> 09:33.080
+vérifier que le service est actif et on ne va rien
+retourner dans la console. C'est pour ça que j'ai
+
+09:33.080 --> 09:39.039
+rajouté le quiet. Si le service est actif, on
+retourne le service est actif en mettant le nom
+
+09:39.039 --> 09:46.239
+du service. Sinon, c'est qu'il est inactif. On
+va pouvoir exécuter ce script. J'ai donc bien
+
+09:46.239 --> 09:51.799
+vérification de l'état du service SSH. Le service
+SSH est actif et la même chose pour Apache 2
+
+09:51.799 --> 09:57.239
+A chaque fois j'ai le retour console, puisque j'ai
+bien une phrase qui était ici pour l'ensemble
+
+09:57.719 --> 10:02.080
+de mes services à traiter. Ensuite, en fonction de
+l'état du service en lui-même, on va retourner
+
+10:02.080 --> 10:07.380
+une valeur qui sera différente. Dans le cas
+présent, au niveau du if, on voit que je n'ai
+
+10:07.380 --> 10:11.799
+pas mis de crochet au niveau de la condition.
+C'est normal, sinon ça renverrait une erreur
+
+10:11.799 --> 10:17.520
+vis-à-vis du test qui a été fait dans le cas
+présent. Cela permet aussi de voir cette possibilité
+
+10:17.520 --> 10:24.440
+J'espère que cette vidéo vous a plu ! Après
+l'avoir regardée, vous êtes prêts à mettre
+
+10:24.440 --> 10:29.559
+en pratique les boucles forts en scripting bash.
+N'hésitez pas à aller sur le site itconnect.fr
+
+10:29.559 --> 10:33.400
+puisque vous pouvez retrouver l'ensemble des
+articles sur le scripting bash, et aussi l'ensemble
+
+10:33.400 --> 10:37.000
+des exemples, ce qui vous permet de faire des
+copier-coller éventuellement des scripts que
+
+10:37.000 --> 10:42.440
+je vous présente, pour les tester de votre côté,
+ou pour les améliorer, les adapter à vos besoins
+
+10:42.440 --> 10:46.719
+N'hésitez pas à commenter cette vidéo, à me dire
+ce que vous en pensez, à la partager également
+
+10:46.719 --> 10:48.159
+et puis je vous dis
+à très vite ! Ciao 
+���	      gJngJnGrF�g;��   �    O^partitionKey=%28https%2Cit-connect.fr%29,a,~FETCH,:https://video-meta.humix.com/caption/YQQ-49oO38pr/570baec0b5a123af6ed0855aa7eb46b1_fr-FR.vtt necko:classified 1 strongly-framed 1 security-info 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 request-method GET request-Origin https://www.it-connect.fr request-Accept-Encoding gzip, deflate, br, zstd response-head HTTP/2 200 
+date: Sat, 19 Oct 2024 05:58:06 GMT
+content-type: text/vtt; charset=utf-8
+content-length: 14803
+access-control-allow-origin: *
+content-disposition: inline
+etag: "570baec0b5a123af6ed0855aa7eb46b1"
+last-modified: Fri, 23 Aug 2024 16:40:53 GMT
+vary: Origin, Accept-Encoding
+cache-control: max-age=2678400
+cf-cache-status: HIT
+age: 27421
+accept-ranges: bytes
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=HtN0cEFYxJTMIwj2P%2B43CnK2rrhtRAmMslSS2Kiy%2Ft1oeQBlYeibEmDDm64YdxdVMofZb0PBQQ8Um3WrjzTLYMyrwG3OrzlBDibhfOWUArUzimrChFO9lYg1BNdFZoRs68d4p5T2iw%3D%3D"}],"group":"cf-nel","max_age":604800}
+nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+server: cloudflare
+cf-ray: 8d4e88cf9d22b79f-ABJ
+alt-svc: h3=":443"; ma=86400
+server-timing: cfL4;desc="?proto=TCP&rtt=5146&sent=34&recv=12&lost=0&retrans=0&sent_bytes=37143&recv_bytes=1686&delivery_rate=814277&cwnd=254&unsent_bytes=0&cid=4d7d6c9dffcba43d&ts=93&x=0"
+X-Firefox-Spdy: h2
+ original-response-headers date: Sat, 19 Oct 2024 05:58:06 GMT
+content-type: text/vtt; charset=utf-8
+content-length: 14803
+access-control-allow-origin: *
+content-disposition: inline
+etag: "570baec0b5a123af6ed0855aa7eb46b1"
+last-modified: Fri, 23 Aug 2024 16:40:53 GMT
+vary: Origin, Accept-Encoding
+cache-control: max-age=2678400
+cf-cache-status: HIT
+age: 27421
+accept-ranges: bytes
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=HtN0cEFYxJTMIwj2P%2B43CnK2rrhtRAmMslSS2Kiy%2Ft1oeQBlYeibEmDDm64YdxdVMofZb0PBQQ8Um3WrjzTLYMyrwG3OrzlBDibhfOWUArUzimrChFO9lYg1BNdFZoRs68d4p5T2iw%3D%3D"}],"group":"cf-nel","max_age":604800}
+nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+server: cloudflare
+cf-ray: 8d4e88cf9d22b79f-ABJ
+alt-svc: h3=":443"; ma=86400
+server-timing: cfL4;desc="?proto=TCP&rtt=5146&sent=34&recv=12&lost=0&retrans=0&sent_bytes=37143&recv_bytes=1686&delivery_rate=814277&cwnd=254&unsent_bytes=0&cid=4d7d6c9dffcba43d&ts=93&x=0"
+X-Firefox-Spdy: h2
+ ctid 1 net-response-time-onstart 129 net-response-time-onstop 129   9�

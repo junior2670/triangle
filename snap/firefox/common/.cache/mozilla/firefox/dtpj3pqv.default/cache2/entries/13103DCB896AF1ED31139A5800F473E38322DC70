@@ -1,0 +1,493 @@
+WEBVTT
+
+00:00.000 --> 00:07.559
+Salut à tous, c'est Florian du site IT-Connect.
+Bienvenue dans cette seconde vidéo au sujet du
+
+00:07.559 --> 00:12.359
+scripting Bash sous Linux. Je vous remercie tout
+d'abord pour vos nombreux commentaires sur ma
+
+00:12.359 --> 00:17.079
+première vidéo sur le sujet. Visiblement c'est
+un sujet qui vous intéresse donc je vais faire
+
+00:17.079 --> 00:21.440
+plusieurs vidéos dessus pour qu'on puisse aborder
+différentes notions et vous puissiez monter en
+
+00:21.440 --> 00:25.760
+compétence sur ce sujet. Aujourd'hui on va
+s'intéresser à quelque chose de très important
+
+00:25.760 --> 00:31.920
+c'est les structures conditionnelles IF, ELSE et
+LEAF, que je n'avais pas du tout abordé dans
+
+00:31.920 --> 00:37.400
+la première vidéo. Je vais vous expliquer
+totalement comment ça fonctionne au niveau
+
+00:37.400 --> 00:41.520
+de la syntaxe et puis nous allons mettre ça
+en pratique au travers de différents exemples
+
+00:41.520 --> 00:47.959
+Alors si le sujet vous plaît, n'hésitez pas à regarder la suite de la
+vidéo, mais avant cela pensez à vous abonner à la chaîne YouTube IT-Connect
+
+00:47.959 --> 00:55.580
+Alors déjà tout d'abord c'est quoi une structure
+conditionnelle ? C'est une structure de code qui
+
+00:55.580 --> 01:00.259
+va nous permettre d'agir en fonction d'une
+condition, c'est à dire si une condition est
+
+01:00.259 --> 01:05.019
+vraie on va pouvoir faire une action, sinon on va
+pouvoir faire une autre action. Le fait de mêler
+
+01:05.019 --> 01:10.059
+les conditions IF, ELSE et LEAF, on va voir que
+ça va nous permettre de gérer une multitude de
+
+01:10.059 --> 01:14.819
+conditions différentes. On va tout d'abord
+commencer par simplement la syntaxe de base
+
+01:14.819 --> 01:20.180
+avec uniquement le IF. Comment ça va s'écrire ?
+On va mettre le mot clé IF et entre crochets on
+
+01:20.180 --> 01:25.959
+va venir mettre notre condition et ensuite on va
+mettre le ZEN et à l'intérieur on va mettre le
+
+01:25.959 --> 01:31.699
+bloc de code que l'on veut exécuter et qui sera
+exécuté uniquement si la condition IF est vraie
+
+01:31.699 --> 01:37.540
+Et à la fin on a le mot clé PHI qui sera toujours
+là dans une structure conditionnelle en scripting
+
+01:37.540 --> 01:43.139
+bash de manière à clôturer la structure
+conditionnelle. Donc en fait le début c'est
+
+01:43.139 --> 01:48.900
+IF et la fin c'est forcément le PHI et entre deux
+ça peut évoluer en fonction de ce que l'on va
+
+01:48.900 --> 01:52.580
+vouloir faire. Voici un premier script très simple
+qui va nous permettre de mettre en pratique la
+
+01:52.580 --> 01:58.059
+syntaxe que je viens de vous présenter. On va
+affecter à la variable nombre la valeur 20 et
+
+01:58.059 --> 02:03.379
+on va tout simplement chercher à savoir si ce
+nombre est supérieur à 10 et s'il est supérieur
+
+02:03.379 --> 02:07.419
+à 10 et uniquement dans ce cas là on va exécuter
+une action. L'action en l'occurrence ici c'est
+
+02:07.419 --> 02:11.419
+simplement un message le nombre est supérieur à
+10. Alors comment ça va se passer ? On retrouve
+
+02:11.419 --> 02:17.380
+bien le mot clé IF et entre crochets la
+condition. Là je vais évaluer la valeur de ma
+
+02:17.380 --> 02:22.580
+variable nombre et je vais utiliser un opérateur
+de comparaison. Il y a différents opérateurs de
+
+02:22.580 --> 02:28.619
+comparaison en bash. Celui là permet de dire
+c'est plus grand que si on veut plus petit que
+
+02:28.619 --> 02:34.500
+on mettrait tirer LT. Il y en a une multitude donc
+là c'est vraiment strictement supérieur à 10
+
+02:34.500 --> 02:40.539
+Dans ce cas là on va afficher le message et sinon
+on ne fait rien et on continue l'exécution du
+
+02:40.539 --> 02:46.500
+script. Du coup ce script là après lui avoir
+ajouté les bons droits on va pouvoir l'exécuter
+
+02:46.820 --> 02:52.380
+Il me dit bien que le nombre est supérieur à
+10. Si je mets la valeur 5 pour le coup je vais
+
+02:52.380 --> 02:57.699
+l'exécuter. Ça ne me retourne rien donc j'ai bien
+le résultat attendu. Si on veut aussi exécuter une
+
+02:57.699 --> 03:03.460
+action lorsque ce fameux nombre est inférieur ou
+égal à 10, il va falloir ajouter le else dans
+
+03:03.460 --> 03:10.100
+cette fameuse structure. Là on va venir rajouter
+à la suite du zène le else. Là ça va donner
+
+03:10.100 --> 03:15.779
+si on lit un petit peu littéralement, si la
+condition est vraie alors on exécute ce bloc
+
+03:15.779 --> 03:21.020
+de code. Sinon c'est à dire que lorsque la
+condition est fausse on exécute le bloc de
+
+03:21.020 --> 03:26.860
+code qui est ici et on a bien le phi qui clôture
+le tout à la fin. Du coup si je retourne sur mon
+
+03:26.860 --> 03:33.100
+script ça me donne l'ajout d'un mot clé else et
+du code à exécuter dans le cas présent. J'ai
+
+03:33.100 --> 03:38.059
+bien toujours la même condition, simplement que
+je rajoute le else et donc cette fois ci le nombre
+
+03:38.059 --> 03:45.059
+du coup c'est égal à 5. Si j'exécute ce fameux
+script ça me dit bien le nombre est inférieur ou
+
+03:45.059 --> 03:51.539
+égal à 10 et si je remets la valeur 15 par
+exemple, cette fois ci ça me dit bien que le
+
+03:51.539 --> 03:56.940
+nombre est supérieur à 10. Là on a créé un
+script qui permet en fonction d'une valeur que
+
+03:56.940 --> 04:02.820
+l'on va évaluer dans la condition, d'exécuter un
+code ou un autre code. Ça commence à être vraiment
+
+04:02.820 --> 04:09.059
+très intéressant et nous pourrions nous intéresser
+à un autre exemple qui est celui-ci et qui va nous
+
+04:09.059 --> 04:14.500
+permettre de tester si un fichier existe sur
+la machine. On va définir dans la variable le
+
+04:14.500 --> 04:19.140
+chemin complet vers le fichier, en l'occurrence
+ici un simple fichier .txt et on va essayer de
+
+04:19.140 --> 04:24.179
+chercher si ce fichier existe ou non. C'est
+vraiment le type de bootcode que l'on va avoir
+
+04:24.179 --> 04:29.980
+à utiliser dans des script batch quand on va vouloir
+manipuler des données. Si on veut peut-être copier
+
+04:29.980 --> 04:35.579
+un fichier ou le déplacer, il y a plein de cas
+d'usage différents possibles, ça peut être
+
+04:35.579 --> 04:40.899
+intéressant avant de voir est-ce qu'il existe
+ou pas. Comment on va faire ce fameux test 
+
+04:40.899 --> 04:46.220
+On va utiliser l'opérateur "-e", que l'on
+va venir mettre devant le nom du fichier. Le
+
+04:46.220 --> 04:51.299
+batch va vérifier si le fichier existe. Si le
+fichier existe, c'est ce bout de code qui sera
+
+04:51.299 --> 04:56.500
+exécuté, sinon c'est le bout de code qui est ici.
+Je me souviens plus du fait si le fichier existe ou
+
+04:56.500 --> 05:04.660
+pas, mais on va très vite le savoir en
+exécutant ce script. Le fichier existe sur la
+
+05:04.660 --> 05:09.820
+machine, on pourrait même essayer de l'afficher
+pour le vérifier. Il est vide, mais on va aller
+
+05:09.820 --> 05:19.179
+lister le contenu du dossier home flow. Le fichier
+est présent ici. Maintenant, si je mets un autre
+
+05:19.179 --> 05:24.739
+nom de fichier ici, je rajoute simplement un T, en
+principe ce fichier-là je suis sûr qu'il n'existe
+
+05:24.739 --> 05:29.619
+pas. On me dit que le fichier, et j'ai rappelé le
+nom du fichier grâce à ma variable, n'existe pas
+
+05:29.619 --> 05:33.739
+sur cette machine. Pour aller encore plus loin
+avec les structures conditionnelles, on va venir
+
+05:33.739 --> 05:43.059
+rajouter le ELIF. Le ELIF c'est un nom court du
+ELSEIF, qui signifie « sinon si ». Ce qui veut dire
+
+05:43.059 --> 05:47.980
+qu'on va pouvoir avoir plusieurs conditions à
+évaluer de manière indépendante dans une même
+
+05:47.980 --> 05:54.500
+structure conditionnelle. Ça nous donne ceci, si
+la condition 1 est vraie, alors on exécute le code
+
+05:54.500 --> 05:59.420
+uniquement si la condition 1 est vraie. Et si
+celle-ci est fausse, on va aller évaluer la
+
+05:59.420 --> 06:04.779
+condition numéro 2, qui est dans le ELIF. Le
+ELIF vient se positionner ici avec sa propre
+
+06:04.779 --> 06:11.540
+condition, et on va l'évaluer. Si elle est vraie,
+on rajoute aussi le mot-clé ZEN, comme avec le IF
+
+06:11.540 --> 06:17.779
+on va exécuter le bloc de code qui est présent
+ici. Sinon, à la fin, si la condition 1 et la
+
+06:17.779 --> 06:23.700
+condition 2 sont fausses, on va exécuter ce
+qui est présent entre le ELSE et le FI. J'ai
+
+06:23.700 --> 06:28.619
+simplement mis un seul ELIF, mais on peut en
+avoir plusieurs en fonction des besoins. Un
+
+06:28.700 --> 06:33.420
+exemple s'impose pour vous montrer ce que ça peut
+donner en pratique. Ici, je définis simplement
+
+06:33.420 --> 06:38.899
+l'heure. J'ai mis une heure statique, par exemple
+16 heures. Je stocke cette information dans une
+
+06:38.899 --> 06:44.220
+variable, et on va retourner un message en fonction
+de l'heure. On va regarder si l'heure est plus
+
+06:44.220 --> 06:48.420
+petite que 13. Dans ce cas-là, si c'est le cas, on
+considère qu'on est encore en début de journée
+
+06:48.420 --> 06:53.779
+donc on va dire bonjour. Par contre, si l'heure
+est plus petite que 17, c'est-à-dire qu'elle sera
+
+06:53.779 --> 07:02.299
+comprise entre 13 et 17, on va dire bon après-midi.
+Sinon, on est plutôt en fin de journée, donc on
+
+07:02.299 --> 07:07.779
+va dire bonsoir. On voit ici qu'on va adapter le
+comportement du script en fonction d'une valeur de
+
+07:07.779 --> 07:14.059
+départ. C'est un exemple plutôt bateau, mais
+qui montre bien le fonctionnement. L'heure
+
+07:14.059 --> 07:19.380
+admettons si c'est 16 heures, si j'exécute
+ce bout de code, il me dit bon après-midi
+
+07:19.380 --> 07:24.260
+parce qu'effectivement, je suis bien dans une
+heure. C'est bien cette condition-là qui est
+
+07:24.260 --> 07:31.220
+vraie. Celle-ci étant fausse. Si je modifie, je
+mets par exemple 10 heures, je devrais avoir le
+
+07:31.220 --> 07:37.100
+message bonjour, c'est bien le cas. Enfin, si je
+mets par exemple 20 pour 20 heures, je devrais
+
+07:37.100 --> 07:43.100
+avoir le message bonsoir. On voit bien que la
+mécanique fonctionne parfaitement, et on a bien
+
+07:43.100 --> 07:48.859
+ici notre condition qui a été évaluée à chaque
+fois. Nous n'avons pas utilisé l'opérateur
+
+07:49.260 --> 07:54.179
+gt, mais lt, qui est plus petit que comme je
+l'évoquais précédemment. Il faut savoir qu'on
+
+07:54.179 --> 08:01.140
+peut aussi intégrer plusieurs tests dans une même
+condition globale. Ici, j'ai fait un script qui me
+
+08:01.140 --> 08:07.339
+permet de vérifier l'état de service. L'objectif,
+c'est de vérifier que le service SSH et le service
+
+08:07.339 --> 08:14.299
+APAGE2, pour le service web, sont bien actifs sur
+la machine. Du coup, je vais avoir deux conditions
+
+08:14.619 --> 08:21.140
+à tester dans une même condition if globale.
+Je vais avoir ici ma première condition entre
+
+08:21.140 --> 08:26.739
+crochets. Je vais avoir ensuite l'opérateur, c'est
+à dire que je veux que mes deux conditions soient
+
+08:26.739 --> 08:32.340
+vraies. Ça veut dire et, si je mets à la place
+deux barres verticales, ça veut dire ou. C'est
+
+08:32.340 --> 08:37.539
+l'opérateur ou, donc là il faudrait que l'une ou
+l'autre des conditions soient vraies pour exécuter
+
+08:37.539 --> 08:42.979
+le code ici. Alors que là, je veux que mes deux
+conditions soient vraies pour exécuter le code
+
+08:43.260 --> 08:46.780
+qui est ici. C'est à dire que là, je vérifie que
+mes deux services sont actifs. Si j'ai un service
+
+08:46.780 --> 08:51.780
+actif et l'autre inactif, c'est le code qui est
+dans le else qui sera exécuté. Si les deux sont
+
+08:51.780 --> 08:55.979
+actifs, c'est bien le code qui est ici. Donc,
+simplement un message de confirmation. Comment
+
+08:55.979 --> 09:03.419
+on va récupérer cette information ? On va s'appuyer
+sur System Control, il y a un argument qui est
+
+09:03.419 --> 09:09.219
+isActive et derrière on met le nom du service.
+Ça permet de retourner l'information. Du coup
+
+09:09.219 --> 09:15.340
+ça va retourner Active si le service est
+effectivement actif. Dans ce cas là, on regarde
+
+09:15.340 --> 09:20.979
+que la valeur qui est dans la variable est bien
+égale au mot clé Active. On fait ça pour les
+
+09:20.979 --> 09:26.219
+deux services et ça va nous renvoyer tout
+simplement le résultat dans la console. On
+
+09:26.219 --> 09:33.020
+va exécuter ce fameux script CheckService. Là
+visiblement, le SSH est inactif mais à page 2
+
+09:33.020 --> 09:38.940
+est actif. Je pourrais d'ailleurs faire un
+systèmectl status SSH pour le vérifier. Là
+
+09:38.940 --> 09:45.260
+il me dit bien qu'il est inactif. Je vais pouvoir
+le démarrer. Je vais rajouter sudo pour ne pas
+
+09:45.260 --> 09:50.659
+avoir un problème de droit. Je vais démarrer le
+service sur la machine. Désormais, il est bien
+
+09:50.659 --> 09:54.780
+actif et je vais réexécuter mon script. Cette
+fois-ci, il me dit bien que les deux services
+
+09:54.780 --> 10:01.539
+sont en cours d'exécution. Mon test fonctionne
+très bien et on a bien vu l'intérêt d'avoir
+
+10:01.539 --> 10:08.780
+cette double condition avec l'opérateur et entre
+les deux pour joindre les deux conditions ensemble
+
+10:08.780 --> 10:20.380
+Voilà cette vidéo de présentation sur les structures conditionnelles IF, ELSE, ELIF en
+Bash est terminée. J'espère que ça vous a plu, que les explications étaient claires. Vous
+
+10:20.380 --> 10:24.700
+avez aussi eu l'occasion de découvrir différents
+exemples qui vont peut-être vous donner des idées
+
+10:24.700 --> 10:29.020
+pour créer vos premiers scripts Bash qui vont
+intégrer les structures conditionnelles. Il y a
+
+10:29.020 --> 10:33.099
+d'autres manières de faire des tests comme ça
+en Bash, on pourra voir ça par la suite. Mais
+
+10:33.099 --> 10:38.739
+certainement dans le prochain épisode, on va
+s'intéresser à l'étude des boucles. En attendant
+
+10:38.739 --> 10:42.340
+n'hésitez pas à liker, à commenter cette
+vidéo et je vous dis à très vite ! Ciao 
+\C@;$      gJngJnGrF�g;f�   �    O^partitionKey=%28https%2Cit-connect.fr%29,a,~FETCH,:https://video-meta.humix.com/caption/RhXeCRBQZVSJ/4e6656cc04366b76787af41e2d7c01d0_fr-FR.vtt necko:classified 1 strongly-framed 1 security-info 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 request-method GET request-Origin https://www.it-connect.fr request-Accept-Encoding gzip, deflate, br, zstd response-head HTTP/2 200 
+date: Sat, 19 Oct 2024 05:58:06 GMT
+content-type: text/vtt; charset=utf-8
+content-length: 13889
+access-control-allow-origin: *
+content-disposition: inline
+etag: "4e6656cc04366b76787af41e2d7c01d0"
+last-modified: Sun, 30 Jun 2024 04:53:27 GMT
+vary: Origin, Accept-Encoding
+cache-control: max-age=2678400
+cf-cache-status: HIT
+age: 49647
+accept-ranges: bytes
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=CAJbTpwldSj75aV9ER2lfyjNXmzkcqJgEOqQbQYN58lefyZuJzeihEFjCbE4SQLTwa0T1tiaFvdN0a%2FQkN0PgmODxcxXcrBBYM6MGopSdOOQh%2BM%2FZyYQuIcOiGrIJatLLDki3BWeBA%3D%3D"}],"group":"cf-nel","max_age":604800}
+nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+server: cloudflare
+cf-ray: 8d4e88cf9d23b79f-ABJ
+alt-svc: h3=":443"; ma=86400
+server-timing: cfL4;desc="?proto=TCP&rtt=5146&sent=69&recv=12&lost=0&retrans=0&sent_bytes=78064&recv_bytes=1686&delivery_rate=814277&cwnd=254&unsent_bytes=0&cid=4d7d6c9dffcba43d&ts=94&x=0"
+X-Firefox-Spdy: h2
+ original-response-headers date: Sat, 19 Oct 2024 05:58:06 GMT
+content-type: text/vtt; charset=utf-8
+content-length: 13889
+access-control-allow-origin: *
+content-disposition: inline
+etag: "4e6656cc04366b76787af41e2d7c01d0"
+last-modified: Sun, 30 Jun 2024 04:53:27 GMT
+vary: Origin, Accept-Encoding
+cache-control: max-age=2678400
+cf-cache-status: HIT
+age: 49647
+accept-ranges: bytes
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=CAJbTpwldSj75aV9ER2lfyjNXmzkcqJgEOqQbQYN58lefyZuJzeihEFjCbE4SQLTwa0T1tiaFvdN0a%2FQkN0PgmODxcxXcrBBYM6MGopSdOOQh%2BM%2FZyYQuIcOiGrIJatLLDki3BWeBA%3D%3D"}],"group":"cf-nel","max_age":604800}
+nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+server: cloudflare
+cf-ray: 8d4e88cf9d23b79f-ABJ
+alt-svc: h3=":443"; ma=86400
+server-timing: cfL4;desc="?proto=TCP&rtt=5146&sent=69&recv=12&lost=0&retrans=0&sent_bytes=78064&recv_bytes=1686&delivery_rate=814277&cwnd=254&unsent_bytes=0&cid=4d7d6c9dffcba43d&ts=94&x=0"
+X-Firefox-Spdy: h2
+ ctid 1 net-response-time-onstart 131 net-response-time-onstop 132   6A

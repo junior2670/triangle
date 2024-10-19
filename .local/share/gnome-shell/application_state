@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<application-state>
+  <context id="">
+    <application id="org.gnome.Evince.desktop" score="1" last-seen="1729193138"/>
+    <application id="libreoffice-startcenter.desktop" score="0" last-seen="1729191277"/>
+    <application id="org.gnome.Nautilus.desktop" score="408" last-seen="1729334168"/>
+    <application id="gnome-initial-setup.desktop" score="9" last-seen="1728930103"/>
+    <application id="firefox_firefox.desktop" score="18035" last-seen="1729336429"/>
+    <application id="libreoffice-writer.desktop" score="9" last-seen="1729179876"/>
+    <application id="org.gnome.gedit.desktop" score="946" last-seen="1729336487"/>
+    <application id="org.remmina.Remmina.desktop" score="2" last-seen="1729072313"/>
+    <application id="libreoffice-impress.desktop" score="16" last-seen="1729193091"/>
+    <application id="gnome-control-center.desktop" score="17" last-seen="1729275804"/>
+    <application id="snapd-desktop-integration_snapd-desktop-integration.desktop" score="2" last-seen="1729195879"/>
+    <application id="org.gnome.Terminal.desktop" score="14229" last-seen="1729336479"/>
+    <application id="update-manager.desktop" score="0" last-seen="1729195922"/>
+  </context>
+</application-state>

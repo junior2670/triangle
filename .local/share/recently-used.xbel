@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbel version="1.0"
+      xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks"
+      xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
+>
+  <bookmark href="file:///home/wecode/delivery/test02" added="2024-10-14T13:04:41.080901Z" modified="2024-10-14T13:04:41.080904Z" visited="2024-10-14T13:04:41.080901Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2024-10-14T13:04:41.080902Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/wecode/delivery/task01/test01" added="2024-10-14T13:04:47.484949Z" modified="2024-10-14T13:04:47.485011Z" visited="2024-10-14T13:04:47.484949Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2024-10-14T13:04:47.484950Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/wecode/delivery/task01/test02" added="2024-10-16T14:26:56.275171Z" modified="2024-10-16T14:26:56.275173Z" visited="2024-10-16T14:26:56.275171Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2024-10-16T14:26:56.275172Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/wecode/script" added="2024-10-17T08:38:26.148092Z" modified="2024-10-17T08:38:26.148094Z" visited="2024-10-17T08:38:26.148092Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2024-10-17T08:38:26.148093Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/wecode/wecode-2-prepool-day01-koadjauh.konan/push_that.sh" added="2024-10-17T08:38:41.433515Z" modified="2024-10-17T08:38:41.433519Z" visited="2024-10-17T08:38:41.433515Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-shellscript"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2024-10-17T08:38:41.433517Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/wecode/wecode-2-prepool-day01-koadjauh.konan/task06/Professors.zip" added="2024-10-17T10:38:21.333093Z" modified="2024-10-17T10:38:21.333098Z" visited="2024-10-17T10:38:21.333094Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/zip"/>
+        <bookmark:applications>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;org.gnome.Nautilus %u&apos;" modified="2024-10-17T10:38:21.333095Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/wecode/wecode-2-prepool-day01-koadjauh.konan/task06/Professors" added="2024-10-17T10:40:41.248918Z" modified="2024-10-17T10:40:41.248924Z" visited="2024-10-17T10:40:41.248920Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;org.gnome.Nautilus %u&apos;" modified="2024-10-17T10:40:41.248920Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/wecode/wecode-2-prepool-day02-koadjauh.konan/jam.txt" added="2024-10-17T11:56:11.630248Z" modified="2024-10-17T12:04:55.606250Z" visited="2024-10-17T11:56:11.630248Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2024-10-17T12:03:33.620501Z" count="2"/>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;gedit %U&apos;" modified="2024-10-17T12:04:55.606248Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/wecode/wecode-2-prepool-day02-koadjauh.konan/jam.sh" added="2024-10-17T12:10:49.073512Z" modified="2024-10-17T14:17:23.473623Z" visited="2024-10-17T12:10:49.073512Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-shellscript"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2024-10-17T14:17:23.473622Z" count="5"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/wecode/wecode-2-prepool-day02-koadjauh.konan/jam3clor.sh" added="2024-10-17T13:40:13.031293Z" modified="2024-10-17T14:17:47.556018Z" visited="2024-10-17T13:40:13.031294Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-shellscript"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2024-10-17T14:17:47.556016Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/wecode/wecode-2-prepool-day01-koadjauh.konan/task01/test02" added="2024-10-17T13:56:41.255250Z" modified="2024-10-17T13:56:59.521131Z" visited="2024-10-17T13:56:41.255250Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2024-10-17T13:56:59.521118Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/wecode/wecode-2-prepool-day02-koadjauh.konan/jamclorscript.sh" added="2024-10-17T14:53:22.050208Z" modified="2024-10-17T15:21:12.969408Z" visited="2024-10-17T14:53:22.050208Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-shellscript"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2024-10-17T15:21:12.969404Z" count="6"/>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;gedit %U&apos;" modified="2024-10-17T15:11:40.331111Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/wecode/wecode-2-prepool-day01-koadjauh.konan/task02/z" added="2024-10-17T15:05:53.877507Z" modified="2024-10-17T15:05:53.877510Z" visited="2024-10-17T15:05:53.877507Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2024-10-17T15:05:53.877509Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/wecode/Downloads/Pr%C3%A9sentation%20projet%20jam-1.pdf" added="2024-10-17T18:36:11.793064Z" modified="2024-10-17T18:59:23.679792Z" visited="2024-10-17T18:36:11.793064Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Document Viewer" exec="&apos;evince %u&apos;" modified="2024-10-17T18:57:18.648539Z" count="2"/>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;evince %U&apos;" modified="2024-10-17T18:59:23.679784Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/wecode/Downloads/projetjam.pptx" added="2024-10-17T18:54:36.536832Z" modified="2024-10-17T19:24:51.997109Z" visited="2024-10-17T18:54:36.536833Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/vnd.openxmlformats-officedocument.presentationml.presentation"/>
+        <bookmark:applications>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;libreoffice --impress %U&apos;" modified="2024-10-17T18:54:36.536840Z" count="1"/>
+          <bookmark:application name="LibreOffice 7.3" exec="&apos;soffice %u&apos;" modified="2024-10-17T19:24:51.997108Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/wecode/wecode-2-prepool-day02-koadjauh.konan/jam/Pr%C3%A9sentation%20projet%20marketing%20professionnel%20moderne%20jaune-1.pdf" added="2024-10-17T19:05:19.271172Z" modified="2024-10-17T19:05:19.271182Z" visited="2024-10-17T19:05:19.271176Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Document Viewer" exec="&apos;evince %u&apos;" modified="2024-10-17T19:05:19.271179Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/wecode/wecode-2-prepool-day03-koadjauh.konan/my_print_alpha.c" added="2024-10-17T19:54:06.655042Z" modified="2024-10-17T20:26:57.401231Z" visited="2024-10-17T19:54:06.655043Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-csrc"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2024-10-17T20:26:57.401228Z" count="19"/>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;gedit %U&apos;" modified="2024-10-17T20:22:08.610752Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/wecode/wecode-2-prepool-day01-koadjauh.konan/task03/midLS" added="2024-10-17T20:51:13.127694Z" modified="2024-10-17T20:51:13.127697Z" visited="2024-10-17T20:51:13.127694Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2024-10-17T20:51:13.127696Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/wecode/EXERCICE%20DE%20WE.CODE" added="2024-10-18T10:47:12.271415Z" modified="2024-10-18T10:47:12.271417Z" visited="2024-10-18T10:47:12.271416Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;org.gnome.Nautilus %u&apos;" modified="2024-10-18T10:47:12.271416Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="trash:///file.txt" added="2024-10-18T10:48:51.033131Z" modified="2024-10-18T10:48:51.033133Z" visited="2024-10-18T10:48:51.033131Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2024-10-18T10:48:51.033132Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/wecode/script.sh" added="2024-10-18T21:04:48.297085Z" modified="2024-10-19T02:05:21.676476Z" visited="2024-10-18T21:04:48.297086Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-shellscript"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2024-10-19T02:05:21.676474Z" count="7"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/wecode/wecode-2-prepool-day01-koffikouameothiniel4/push_that.sh" added="2024-10-19T02:11:13.507459Z" modified="2024-10-19T10:47:26.436262Z" visited="2024-10-19T02:11:13.507461Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-shellscript"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2024-10-19T10:47:26.436261Z" count="16"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/wecode/scritsec.sh" added="2024-10-19T07:00:16.018134Z" modified="2024-10-19T08:03:15.640107Z" visited="2024-10-19T07:00:16.018135Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-shellscript"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2024-10-19T08:03:15.640103Z" count="7"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/wecode/triangle.sh" added="2024-10-19T10:56:42.541306Z" modified="2024-10-19T10:56:42.541311Z" visited="2024-10-19T10:56:42.541307Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-shellscript"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2024-10-19T10:56:42.541309Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+</xbel>

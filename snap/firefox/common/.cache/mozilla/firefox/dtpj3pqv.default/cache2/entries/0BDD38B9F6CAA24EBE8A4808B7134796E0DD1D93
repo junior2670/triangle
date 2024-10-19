@@ -1,0 +1,301 @@
+WEBVTT
+
+00:00.000 --> 00:06.920
+Salut à tous, c'est Florian du site IT-Connect,
+bienvenue dans cette nouvelle vidéo dédiée au
+
+00:06.920 --> 00:11.439
+Scripting Bash, une nouvelle fois. Aujourd'hui
+nous allons nous intéresser à la saisie
+
+00:11.439 --> 00:16.200
+utilisateur, ce qui va être très intéressant
+si on veut créer des scripts interactifs o�
+
+00:16.200 --> 00:21.319
+on va demander à l'utilisateur de saisir une
+ou plusieurs informations. Cela peut être un
+
+00:21.319 --> 00:26.000
+nom d'utilisateur, un mot de passe, un chemin vers
+un fichier, vers un dossier, etc. Tout ce que
+
+00:26.000 --> 00:30.040
+l'on veut. Cela va être très intéressant pour
+demander à l'utilisateur de saisir quelque chose
+
+00:30.040 --> 00:36.240
+sans pour autant lui demander d'aller modifier la
+valeur d'une variable dans un script, etc. Là
+
+00:36.240 --> 00:40.240
+on va rester dans le shell, on va lancer notre
+script et on va simplement renseigner les
+
+00:40.240 --> 00:45.159
+informations qui nous sont demandées. Dans cette
+vidéo, ce sera intégralement de la démo, mais
+
+00:45.159 --> 00:54.599
+avant de passer à la suite, pensez à vous abonner à la chaîne YouTube IT-Connect.
+Alors comment faire une saisie utilisateur en Scripting Bash ? En fait, on va utiliser
+
+00:54.919 --> 01:00.040
+l'instruction read. L'instruction read, que l'on va
+pouvoir découvrir tout de suite avec un premier
+
+01:00.040 --> 01:05.040
+exemple, va s'utiliser de la façon suivante.
+On va mettre le mot-clé read et derrière
+
+01:05.040 --> 01:12.279
+tout simplement, la variable à laquelle on
+veut affecter la saisie de l'utilisateur
+
+01:12.279 --> 01:19.720
+En fait, l'information saisie par l'utilisateur.
+On va mettre avant une information pour dire �
+
+01:19.720 --> 01:25.760
+l'utilisateur que voilà ce que l'on attend comme
+donné pour le guider. Le read pour demander la
+
+01:25.760 --> 01:31.000
+saisie et à la fin, on va tout simplement faire
+bonjour et on va rappeler la variable de leur
+
+01:31.000 --> 01:37.519
+prénom. Puisqu'ici, on va demander à l'utilisateur
+de saisir son prénom. On va lancer ce premier
+
+01:37.519 --> 01:43.720
+script comme ceci. Saisissez votre prénom, donc
+là je dois bien renseigner quelque chose. Je mets
+
+01:43.800 --> 01:50.360
+ma valeur, je fais entrer, je valide. Ensuite, j'ai
+bien récupéré la saisie dans une variable et
+
+01:50.360 --> 01:54.680
+cette variable, je l'ai tout simplement affichée
+dans un message. Maintenant, on va voir que l'on
+
+01:54.680 --> 01:59.720
+peut aussi demander la saisie de plusieurs
+informations. C'est pour ça que j'ai mis
+
+01:59.720 --> 02:06.680
+saisissez votre prénom et votre nom. Après, j'ai
+deux variables. J'ai read prénom et le nom derrière
+
+02:06.680 --> 02:12.440
+C'est-à-dire que l'on ne va pas avoir deux prompt
+différents pour saisir le prénom puis le nom
+
+02:13.039 --> 02:20.119
+Dans un seul prompt, on va mettre directement
+notre prénom, espace, notre nom et le bach va
+
+02:20.119 --> 02:24.160
+être capable d'associer la première valeur à
+la première variable et la seconde valeur à la
+
+02:24.160 --> 02:28.759
+seconde variable. C'est pour ça qu'après j'ai
+fait un bonjour, j'ai remis le prénom et le nom
+
+02:28.759 --> 02:33.639
+Après, je vais bien mettre indépendamment prénom,
+deux points, le prénom qui a été saisi et pareil
+
+02:33.639 --> 02:39.199
+pour le nom. On va voir tout de suite ce que ça
+donne. On va exécuter le script. Là, il demande
+
+02:39.199 --> 02:45.080
+votre prénom et votre nom. Je vais mettre les
+informations. Je fais entrer. Là, j'ai bien
+
+02:45.080 --> 02:52.119
+bonjour et derrière l'information complète qui
+a été saisie, les deux variables. Le prénom
+
+02:52.119 --> 02:57.160
+j'ai bien Florian qui est retourné et le nom,
+j'ai bien mon nom qui est retourné, qui est bien
+
+02:57.160 --> 03:02.399
+visible ici à l'écran. On comprend bien qu'avec
+un seul read, on peut alimenter plusieurs variables
+
+03:02.399 --> 03:06.720
+Maintenant, on va mettre en pratique le read en
+le couplant avec les boucles while. C'est ce que
+
+03:06.720 --> 03:11.399
+l'on avait vu dans la précédente vidéo. Ça,
+ça va être très intéressant puisqu'en fait
+
+03:11.399 --> 03:15.479
+si on demande à l'utilisateur de saisir une
+information, mais qu'on a impérativement besoin
+
+03:15.479 --> 03:21.320
+de saisir l'information, il faut s'assurer qu'on ne
+puisse pas mettre une chaîne vide. Puisqu'effectivement
+
+03:21.320 --> 03:29.039
+si je relance mon script 1 par exemple, ici je
+fais juste entrer. Du coup, j'ai bonjour avec
+
+03:29.039 --> 03:33.639
+une chaîne vide, ce qui peut être un réel
+problème si on attend un mot de passe, un identifiant
+
+03:34.360 --> 03:38.979
+etc. Comment on va pouvoir faire en sorte de
+s'assurer que la chaîne n'est pas vide ? On va
+
+03:38.979 --> 03:44.559
+coupler l'utilisation du read avec le while. En
+fait, ce que l'on va dire ici, c'est que tant que
+
+03:44.559 --> 03:51.960
+la variable de la username est vide, on va
+demander la saisie d'un identifiant. Là
+
+03:51.960 --> 03:56.960
+j'ai mon read username. C'est la variable username
+qui est ici, qui est bien réutilisée dans la
+
+03:56.960 --> 04:01.119
+condition du while. On va voir en pratique ce que
+ça donne. J'exécute le script. Vous voulez saisir
+
+04:01.119 --> 04:05.559
+votre identifiant ? Je ne mets rien, je ne mets
+encore rien. J'appuie sur entrer, il me redemande
+
+04:05.559 --> 04:11.440
+bien en boucle. Là, je mets Florian par exemple. Et
+là, identifiant sélectionné, Florian, on quitte
+
+04:11.440 --> 04:15.479
+bien la boucle, puisqu'il y a une valeur qui a
+été saisie. C'est vraiment très intéressant
+
+04:15.479 --> 04:21.720
+comme syntaxe pour vous assurer qu'on ne puisse
+pas vous envoyer des chaînes vides dans une saisie
+
+04:21.720 --> 04:26.679
+utilisateur. Nous allons terminer avec un dernier
+exemple qui va nous permettre de faire de la saisie
+
+04:26.679 --> 04:30.239
+de mots de passe. C'est à dire que là, on voit
+que quand j'écris dans la console ma saisie
+
+04:30.239 --> 04:35.160
+utilisateur, vous voyez directement à l'écran ce
+que je saisis. Si on veut saisir un mot de passe
+
+04:35.160 --> 04:43.480
+c'est un peu gênant. Ce que l'on va pouvoir
+faire, c'est rajouter l'option "-s read". Ici
+
+04:43.480 --> 04:48.959
+j'ai déclaré une variable password, ce qui fait
+qu'on va cacher la saisie utilisateur. On pourra
+
+04:48.959 --> 04:56.959
+saisir un mot de passe sans qu'il soit directement visible, ce qui n'empêche pas par contre d'aller
+consulter la variable password et d'afficher le mot de passe en question. Je vais vous rajouter
+
+04:57.440 --> 05:02.959
+un écho sur le dollar password, on va quand
+même l'afficher ce fameux mot de passe. Je vais
+
+05:02.959 --> 05:11.239
+exécuter le script, saisissez votre mot de passe.
+Je mets un mot de passe, je vais faire rentrer. On
+
+05:11.239 --> 05:18.239
+voit bien que j'ai saisi quelque chose, mais on n'a rien du tout qui est visible à l'écran, on
+n'a même pas les petits astérisques pour voir éventuellement la longueur du mot de passe ou voir
+
+05:18.239 --> 05:21.880
+qu'on est bien en train de saisir. Mais il y a
+bien eu une saisie, le mot de passe est stocké en
+
+05:21.880 --> 05:26.640
+mémoire et j'ai simplement retourné le mot de
+passe que je viens de saisir. Password avec un
+
+05:26.720 --> 05:31.760
+arrow base et un point d'exclamation à la fin. On
+voit que la variable est accessible, elle n'est
+
+05:31.760 --> 05:36.640
+pas protégée en soi, par contre la saisie
+d'utilisateur a été améliorée puisqu'on a
+
+05:36.640 --> 05:44.959
+masqué l'affichage dans la console de l'information.
+Voilà, après avoir regardé cette vidéo vous
+
+05:44.959 --> 05:50.320
+devriez être en mesure d'intégrer de la saisie
+utilisateur dans vos script bash. J'espère que
+
+05:50.320 --> 05:54.359
+ça vous a plu, n'hésitez pas à poser vos questions
+en commentaire, n'hésitez pas aussi à partager et
+
+05:54.359 --> 05:59.200
+à liker, puis à regarder aussi les autres vidéos
+de la chaîne YouTube et aussi celle de la playlist
+
+05:59.200 --> 06:02.320
+dédiée au scripting bash. J'ai plus 20
+mois, je vous dis à très vite, ciao 
+A\��}      gJngJnGrF�g;�e   �    O^partitionKey=%28https%2Cit-connect.fr%29,a,~FETCH,:https://video-meta.humix.com/caption/u5Is15FPYWLZ/7a1c8b39890945104a409b312363e7a6_fr-FR.vtt necko:classified 1 strongly-framed 1 security-info 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 request-method GET request-Origin https://www.it-connect.fr request-Accept-Encoding gzip, deflate, br, zstd response-head HTTP/2 200 
+date: Sat, 19 Oct 2024 05:58:06 GMT
+content-type: text/vtt; charset=utf-8
+content-length: 8194
+access-control-allow-origin: *
+content-disposition: inline
+etag: "7a1c8b39890945104a409b312363e7a6"
+last-modified: Sun, 04 Aug 2024 22:25:50 GMT
+vary: Origin, Accept-Encoding
+cache-control: max-age=2678400
+cf-cache-status: HIT
+age: 42121
+accept-ranges: bytes
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=R%2FN3wr0OVhoK81FdAQyztT8HPnItNZvNNIYf6YIDjFRTskIe8DBU9yAclBBUP%2BPpzO3%2B3O6Qq3OMwJo8X80o0b3zR4ZjyHFBxf1Nz7IcYKyZ7g4Sp9jKr%2BXlzt%2F%2B0fRvvwXb9TlgSg%3D%3D"}],"group":"cf-nel","max_age":604800}
+nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+server: cloudflare
+cf-ray: 8d4e88cf9d24b79f-ABJ
+alt-svc: h3=":443"; ma=86400
+server-timing: cfL4;desc="?proto=TCP&rtt=5146&sent=61&recv=12&lost=0&retrans=0&sent_bytes=69295&recv_bytes=1686&delivery_rate=814277&cwnd=254&unsent_bytes=0&cid=4d7d6c9dffcba43d&ts=94&x=0"
+X-Firefox-Spdy: h2
+ original-response-headers date: Sat, 19 Oct 2024 05:58:06 GMT
+content-type: text/vtt; charset=utf-8
+content-length: 8194
+access-control-allow-origin: *
+content-disposition: inline
+etag: "7a1c8b39890945104a409b312363e7a6"
+last-modified: Sun, 04 Aug 2024 22:25:50 GMT
+vary: Origin, Accept-Encoding
+cache-control: max-age=2678400
+cf-cache-status: HIT
+age: 42121
+accept-ranges: bytes
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=R%2FN3wr0OVhoK81FdAQyztT8HPnItNZvNNIYf6YIDjFRTskIe8DBU9yAclBBUP%2BPpzO3%2B3O6Qq3OMwJo8X80o0b3zR4ZjyHFBxf1Nz7IcYKyZ7g4Sp9jKr%2BXlzt%2F%2B0fRvvwXb9TlgSg%3D%3D"}],"group":"cf-nel","max_age":604800}
+nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+server: cloudflare
+cf-ray: 8d4e88cf9d24b79f-ABJ
+alt-svc: h3=":443"; ma=86400
+server-timing: cfL4;desc="?proto=TCP&rtt=5146&sent=61&recv=12&lost=0&retrans=0&sent_bytes=69295&recv_bytes=1686&delivery_rate=814277&cwnd=254&unsent_bytes=0&cid=4d7d6c9dffcba43d&ts=94&x=0"
+X-Firefox-Spdy: h2
+ ctid 1 net-response-time-onstart 131 net-response-time-onstop 131    

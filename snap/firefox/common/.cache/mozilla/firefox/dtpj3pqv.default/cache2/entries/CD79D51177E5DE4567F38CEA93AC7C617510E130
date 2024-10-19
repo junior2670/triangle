@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      Chapitre&nbsp;6.&nbsp;Sortie et code de sortie (ou d'Ètat)
+    </title>
+    <link rel="stylesheet" href="stylesheets/abs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.71.0" />
+    <link rel="stylesheet" href="stylesheets/abs-print.css" type="text/css"
+    media="print" />
+  </head>
+  <body id="lfs" class=
+  "exploration en profondeur de l'art de la programmation shell">
+    <div class="navheader">
+      <div class="headertitles">
+        <h4>
+          Guide avancÈ d'Ècriture des scripts Bash - Une exploration en
+          profondeur de l'art de la programmation shell
+        </h4>
+        <h3>
+          Partie&nbsp;Part 2.&nbsp;Bases
+        </h3>
+      </div>
+      <ul class="headerlinks">
+        <li class="prev">
+          <a accesskey="p" href="ch05s02.html" title=
+          "…chappement">PrÈcÈdent</a>
+          <p>
+            …chappement
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="ch07.html" title="Tests">Suivant</a>
+          <p>
+            Tests
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="pt02.html" title=
+          "Partie&nbsp;Part 2.&nbsp;Bases">Niveau supÈrieur</a>.
+        </li>
+        <li class="home">
+          <a accesskey="h" href="index.html" title=
+          "Guide avancÈ d'Ècriture des scripts Bash - Une exploration en profondeur de l'art de la programmation shell">
+          Sommaire</a>
+        </li>
+      </ul>
+    </div>
+    <div class="chapter" lang="fr" xml:lang="fr">
+      <div class="titlepage">
+        <h1 class="chapter">
+          6. Sortie et code de sortie (ou d'Ètat)
+        </h1>
+      </div>
+      <div class="epigraph">
+        <p>
+          ... il existe des coins sombres dans le shell Bourne et les gens
+          les utilisent tous.
+        </p>
+        <p>
+          -- Chet Ramey
+        </p>
+      </div>
+      <p>
+        <a id="exitcommandref" name="exitcommandref"></a>La commande
+        <span><strong class="command">exit</strong></span> est utilisÈe pour
+        terminer un script, comme dans un programme <em class=
+        "firstterm">C</em>. Elle peut Ègalement renvoyer une valeur, qui sera
+        disponible pour le processus parent du script.
+      </p>
+      <p>
+        <a id="exitstatusref" name="exitstatusref"></a>Chaque commande
+        renvoie un <em class="firstterm">code de sortie</em> (quelque fois
+        nommÈ <em class="firstterm">Ètat de retour</em> ).
+      </p>
+      <p>
+        <a id="exitsuccess" name="exitsuccess"></a>Une commande ayant rÈussi
+        renvoie un <span class="returnvalue">0</span>, alors qu'une ayant
+        ÈchouÈ renvoie une valeur <span class="returnvalue">diffÈrente de
+        zÈro</span> qui est habituellement interprÈtable comme un code
+        d'erreur. Les commandes, programmes et utilitaires UNIX bien
+        rÈalisÈs, renvoient un code de sortie <span class=
+        "returnvalue">0</span> lors de leur exÈcution rÈussie, bien qu'il y
+        ait quelques exceptions.
+      </p>
+      <p>
+        De mÍme, les fonctions dans un script et le script lui-mÍme renvoient
+        un code de sortie. La derniËre commande exÈcutÈe dans la fonction ou
+        le script dÈtermine le code de sortie. ¿ l'intÈrieur d'un script, une
+        commande <strong class="userinput"><tt>exit <em class=
+        "replaceable"><tt>nnn</tt></em></tt></strong> peut Ítre employÈe pour
+        retourner un code de sortie <span class="returnvalue"><em class=
+        "replaceable"><tt>nnn</tt></em></span> au shell (<span class=
+        "returnvalue"><em class="replaceable"><tt>nnn</tt></em></span> doit
+        Ítre un nombre dÈcimal compris entre <span class=
+        "returnvalue">0</span> et <span class="returnvalue">255</span>).
+      </p>
+      <div class="note">
+        <div class="admonhead">
+          <img alt="[Note]" src="images/note.png" />
+          <h3 class="admontitle">
+            Note
+          </h3>
+        </div>
+        <div class="admonbody">
+          <p>
+            Lorsqu'un script se termine avec un <span><strong class=
+            "command">exit</strong></span> sans paramËtre, le code de sortie
+            du script est le code de sortie de la derniËre commande exÈcutÈe
+            dans le script (avant <span><strong class=
+            "command">exit</strong></span>).
+          </p>
+          <pre class="programlisting">
+#!/bin/bash
+
+COMMANDE_1
+
+. . .
+
+# Sortira avec le code de la derniËre commande.
+DERNIERE_COMMANDE
+
+exit
+</pre>
+          <p>
+            L'Èquivalent d'un simple <span><strong class=
+            "command">exit</strong></span> est <span><strong class=
+            "command">exit $?</strong></span>, voire mÍme en omettant le
+            <span><strong class="command">exit</strong></span>.
+          </p>
+          <pre class="programlisting">
+#!/bin/bash
+
+COMMANDE_1
+
+. . .
+
+# Sortira avec le code de la derniËre commande.
+DERNIERE_COMMANDE
+
+exit $?
+</pre>
+          <pre class="programlisting">
+#!/bin/bash
+
+COMMANDE1
+
+. . .
+
+# Sortira avec le code de la derniËre commande.
+DERNIERE_COMMANDE
+</pre>
+        </div>
+      </div>
+      <p>
+        <a id="exsref" name="exsref"></a> <tt class="varname">$?</tt> lit le
+        code de sortie de la derniËre commande exÈcutÈe. AprËs la fin d'une
+        fonction, <tt class="varname">$?</tt> donne le code de sortie de la
+        derniËre commande exÈcutÈe dans la fonction. C'est la maniËre de Bash
+        de donner aux fonctions une ´&nbsp;<span class="quote">valeur de
+        retour</span>&nbsp;ª. AprËs la fin d'un script, un <tt class=
+        "varname">$?</tt> sur la ligne de commande indique le code de sortie
+        du script, c'est-‡-dire celui de la derniËre commande exÈcutÈe dans
+        le script qui est, par convention, <strong class=
+        "userinput"><tt>0</tt></strong> en cas de succËs ou un entier compris
+        entre <span class="returnvalue">1 et 255</span> en cas d'erreur.
+      </p>
+      <div class="example">
+        <a id="ex5" name="ex5"></a>
+        <p class="title">
+          <b>Exemple&nbsp;6.1.&nbsp;exit / code de sortie</b>
+        </p>
+        <div class="example-contents">
+          <pre class="programlisting">
+#!/bin/bash
+
+echo bonjour
+echo $?    # Code de sortie 0 renvoyÈ car la commande s'est correctement
+           # exÈcutÈe.
+
+lskdf      # Commande non reconnue.
+echo $?    # Code de sortie diffÈrent de zÈro car la commande a ÈchouÈ.
+
+echo
+
+exit 113   # Retournera 113 au shell.
+           # Pour vÈrifier ceci, tapez "echo $?" une fois le script terminÈ.
+
+#  Par convention, un 'exit 0' indique un succËs,
+#+ alors qu'un code de sortie diffÈrent de zÈro indique une erreur ou une
+#+ condition anormale.
+</pre>
+        </div>
+      </div><br class="example-break" />
+      <p>
+        <a href="ch09.html#xstatvarref">$?</a> est particuliËrement utile
+        pour tester le rÈsultat d'une commande dans un script (voir
+        l'<a href="ch15s05.html#filecomp" title=
+        "Exemple&nbsp;15.33.&nbsp;Utiliser cmp pour comparer deux fichiers 	 ‡ l'intÈrieur d'un script.">Exemple&nbsp;15.33,
+        ´&nbsp;Utiliser <em class="firstterm">cmp</em> pour comparer deux
+        fichiers ‡ l'intÈrieur d'un script.&nbsp;ª</a> et l'<a href=
+        "ch15s04.html#lookup" title=
+        "Exemple&nbsp;15.18.&nbsp;Chercher les mots dans une liste pour tester leur validitÈ">Exemple&nbsp;15.18,
+        ´&nbsp;Chercher les mots dans une liste pour tester leur
+        validitÈ&nbsp;ª</a>).
+      </p>
+      <div class="note">
+        <div class="admonhead">
+          <img alt="[Note]" src="images/note.png" />
+          <h3 class="admontitle">
+            Note
+          </h3>
+        </div>
+        <div class="admonbody">
+          <p>
+            Le <a href="ch03.html#notref">!</a>, qualificateur du <em class=
+            "firstterm">non logique</em>, inverse le rÈsultat d'un test ou
+            d'une commande et ceci affecte son <a href=
+            "ch06.html#exitstatusref">code de sortie</a>.
+          </p>
+          <div class="example">
+            <a id="negcond" name="negcond"></a>
+            <p class="title">
+              <b>Exemple&nbsp;6.2.&nbsp;Inverser une condition en utilisant
+              <span class="token">!</span></b>
+            </p>
+            <div class="example-contents">
+              <pre class="programlisting">
+true    # La commande intÈgrÈe "true"
+echo "code de sortie de \"true\" = $?"     # 0
+
+! true
+echo "code de sortie de \"! true\" = $?"   # 1
+# Notez que "!" nÈcessite une espace entre lui et la commande.
+#    !true   renvoie une erreur "command not found"
+#
+#  L'opÈrateur '!' prÈfixant une commande appelle le mÈcanisme d'historique de
+#+ Bash.
+
+true
+!true
+# Aucune erreur cette fois, mais pas de nÈgation non plus.
+# Il rÈpËte simplement la prÈcÈdente commande (true).
+
+# Merci, StÈphane Chazelas et Kristopher Newsome.
+</pre>
+            </div>
+          </div>
+          <p>
+            <br class="example-break" />
+          </p>
+        </div>
+      </div>
+      <div class="caution">
+        <div class="admonhead">
+          <img alt="[Attention]" src="images/caution.png" />
+          <h3 class="admontitle">
+            Attention
+          </h3>
+        </div>
+        <div class="admonbody">
+          <p>
+            Certains codes de sortie ont une <a href=
+            "apd.html#exitcodesref">signification spÈciale</a> et ne
+            devraient pas Ítre employÈs par l'utilisateur dans un script.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="ch05s02.html" title=
+          "…chappement">PrÈcÈdent</a>
+          <p>
+            …chappement
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="ch07.html" title="Tests">Suivant</a>
+          <p>
+            Tests
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="pt02.html" title=
+          "Partie&nbsp;Part 2.&nbsp;Bases">Niveau supÈrieur</a>.
+        </li>
+        <li class="home">
+          <a accesskey="h" href="index.html" title=
+          "Guide avancÈ d'Ècriture des scripts Bash - Une exploration en profondeur de l'art de la programmation shell">
+          Sommaire</a>.
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
+Nœ.G      goégoèGr`og™   T    O^partitionKey=%28https%2Ctraduc.org%29,:https://abs.traduc.org/abs-5.0-fr/ch06.html necko:classified 1 strongly-framed 1 security-info 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 request-method GET response-head HTTP/2 200 
+content-type: text/html
+etag: "2372081575"
+last-modified: Mon, 23 Feb 2009 12:48:46 GMT
+content-length: 10616
+strict-transport-security: max-age=63072000
+accept-ranges: bytes
+date: Sat, 19 Oct 2024 08:36:30 GMT
+server: lighttpd
+X-Firefox-Spdy: h2
+ original-response-headers content-type: text/html
+etag: "2372081575"
+last-modified: Mon, 23 Feb 2009 12:48:46 GMT
+content-length: 10616
+strict-transport-security: max-age=63072000
+accept-ranges: bytes
+date: Sat, 19 Oct 2024 08:36:30 GMT
+server: lighttpd
+X-Firefox-Spdy: h2
+ ctid 1 uncompressed-len 0 net-response-time-onstart 317 net-response-time-onstop 406   )x

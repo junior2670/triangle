@@ -1,0 +1,484 @@
+WEBVTT
+
+00:00.000 --> 00:07.000
+Salut à tous c'est Florian d'IT-Connect,
+aujourd'hui nous allons voir comment installer
+
+00:07.000 --> 00:12.000
+et configurer Steerling PDF. Alors qu'est ce que
+Steerling PDF ? C'est une puissante boîte à outils
+
+00:12.000 --> 00:18.000
+gratuite et open source qui va nous permettre de
+gérer et manipuler facilement des documents PDF
+
+00:18.000 --> 00:22.000
+En effet elle intègre des fonctionnalités que
+l'on va retrouver habituellement plutôt dans des
+
+00:22.000 --> 00:28.399
+applications payantes professionnelles puisqu'on va
+pouvoir fusionner des documents PDF, les diviser
+
+00:28.399 --> 00:32.400
+extraire des pages, les protéger par un mot de
+passe, modifier le mot de page, voire même ajouter
+
+00:32.400 --> 00:37.400
+une signature avec une autre image de signature,
+voire même signer le document avec un certificat
+
+00:37.400 --> 00:43.400
+On va pouvoir ajouter des éléments, convertir
+les PDF, donc prendre un PDF le convertir en images
+
+00:43.400 --> 00:48.400
+ou dans d'autres formats ou à l'inverse prendre
+des fichiers source et les convertir en PDF
+
+00:48.400 --> 00:54.400
+Il y a énormément de fonctionnalités comme vous
+pouvez le voir à l'écran sur l'installation de
+
+00:54.400 --> 00:58.400
+Steerling PDF que j'ai fait sur mon Asynology,
+puisque c'est bien ça qu'on va faire aujourd'hui
+
+00:58.400 --> 01:04.400
+c'est voir comment installer Steerling PDF sur
+un Asynology à l'aide d'un conteneur Docker
+
+01:04.400 --> 01:08.400
+Puisque nous allons utiliser un fichier de configuration
+Docker Compose, ça veut dire que vous pouvez
+
+01:08.400 --> 01:13.400
+aussi reproduire cette configuration sur
+d'autres systèmes en adaptant un petit peu
+
+01:13.400 --> 01:18.400
+Il y a également une version Steerling PDF que vous
+pouvez exécuter en local sur votre machine Windows
+
+01:18.400 --> 01:23.400
+Il vous suffit de télécharger l'exécutable
+disponible sur le GitHub du projet
+
+01:23.400 --> 01:31.400
+ce qui va nécessiter aussi d'installer Java sur votre machine. Assez parlé
+pour la phase d'introduction, maintenant nous allons passer à la phase de démo
+
+01:31.400 --> 01:42.400
+mais avant cela pensez à vous abonner à la chaîne YouTube IT Connect. Je me suis
+connecté sur mon Asynology sur lequel j'ai installé l'application Container Manager
+
+01:42.400 --> 01:46.400
+qui est le nouveau nom depuis quelques
+temps maintenant de l'application Docker
+
+01:46.400 --> 01:51.400
+Ce que j'ai fait, c'est comme d'habitude quand on a
+besoin de déployer une application dans un conteneur
+
+01:51.400 --> 01:55.400
+dans le répertoire Docker du NAS j'ai créé
+un répertoire pour accueillir le projet
+
+01:55.400 --> 02:01.400
+en l'occurrence ici j'ai fait un répertoire Steerling-PDF. A
+l'intérieur de ce répertoire j'ai créé ces deux dossiers-là
+
+02:01.400 --> 02:11.399
+puisqu'on va devoir ensuite les mapper à l'intérieur du conteneur. Une fois qu'on
+a préparé cette coquille vide, nous allons pouvoir passer sur le Container Manager
+
+02:11.399 --> 02:20.399
+et dans la partie projet on va créer un nouveau projet. Ici on va lui donner un
+nom et on va choisir en tant que chemin le dossier que l'on a créé précédemment
+
+02:20.399 --> 02:24.399
+Ensuite, en tant que source, on va créer un
+nouveau fichier de configuration Docker Compose
+
+02:24.399 --> 02:31.399
+Je vais vous mettre le code et vous le présenter. Ce que j'ai fait ici,
+c'est que j'ai repris le code disponible sur le GitHub officiel du projet
+
+02:31.399 --> 02:35.399
+ce qui m'a évité de tout réécrire, je
+suis reparti au moins de cette base-là
+
+02:35.399 --> 02:39.399
+On va voir maintenant ce qui va être intéressant
+d'adapter et de modifier en fonction de vos besoins
+
+02:39.399 --> 02:46.399
+Tout d'abord, ici il y a le mappage au niveau du port. Le port à gauche, c'est le
+port du côté de votre NAS, le port sur lequel il faudra accéder à l'application
+
+02:46.399 --> 02:54.399
+Et le port à droite, c'est à l'intérieur du conteneur. Ici, on va
+nous accéder à l'application en mettant l'adresse IP du NAS 2.80.80
+
+02:54.399 --> 02:59.399
+Attention, si ce port est déjà utilisé par un
+autre conteneur, il faudra en choisir un autre
+
+02:59.399 --> 03:03.399
+Vous voyez, en fonction de votre configuration.
+Ensuite, on va faire le mappage au niveau des volumes
+
+03:03.399 --> 03:12.399
+C'est le chemin à l'intérieur du conteneur. A gauche, on va mettre
+le chemin vers les répertoires que l'on a créé précédemment
+
+03:12.399 --> 03:18.399
+Notamment celui-là, qui est utile pour la
+partie OCR, reconnaissance de caractère
+
+03:18.399 --> 03:25.399
+C'est pour la partie configuration. On verra que l'on peut accéder
+à un fichier de config que l'on peut éditer par la suite
+
+03:25.399 --> 03:30.399
+Les autres sont pas indispensables. Il y a celui-là,
+puis le dernier certainement pour les journaux
+
+03:30.399 --> 03:39.399
+Ensuite, au niveau des directives dans la partie environnement. Ce qui va
+être intéressant, c'est que par défaut, si on ne met pas cette option
+
+03:39.399 --> 03:44.399
+on peut accéder à l'interface
+de Sterling PDF sans mot de passe
+
+03:44.399 --> 03:50.399
+C'est vraiment open bar. Si on veut sécuriser et avoir
+une fenêtre d'authentification, on va activer cette option
+
+03:50.399 --> 03:57.399
+Ce qui implique aussi d'activer celle-ci. On va ensuite
+définir un nom d'utilisateur par défaut et un mot de passe
+
+03:57.399 --> 04:05.399
+On va mettre ça pour lancer le conteneur. On va voir qu'on va
+pouvoir changer le nom d'utilisateur, changer le mot de passe
+
+04:05.399 --> 04:12.399
+voire même créer d'autres utilisateurs. Ici, c'est une
+fonctionnalité qui est désactivée, que je n'ai pas utilisée
+
+04:12.399 --> 04:20.399
+Elle permet d'ajouter l'application Calibre, qui va
+permettre de gérer une bibliothèque de livres numériques
+
+04:20.399 --> 04:25.399
+et de lier tout ça à Sterling
+PDF. C'est la partie langue
+
+04:25.399 --> 04:29.399
+C'est lié, si j'ai bien compris, aux
+fonctionnalités de conversion de documents
+
+04:29.399 --> 04:33.399
+Ce qui n'empêchera pas l'application d'être
+disponible dans plein de langues différentes
+
+04:33.399 --> 04:38.399
+y compris le français. Une fois qu'on a
+fait ça, il suffit de se laisser guider
+
+04:38.399 --> 04:42.399
+On va faire suivant jusqu'à la fin.
+On va lancer la création du projet
+
+04:42.399 --> 04:47.399
+Container Manager va télécharger l'image Docker que
+l'on a référencée dans le fichier Docker Compose
+
+04:47.399 --> 04:52.399
+Il va créer le conteneur, le lancer, et on
+va pouvoir se connecter à notre application
+
+04:52.399 --> 04:57.399
+Une fois que c'est fait, on clique sur Fermer.
+Ici, on a bien le conteneur qui a été lancé
+
+04:57.399 --> 05:01.399
+Il est en cours d'exécution. On va pouvoir
+ouvrir un nouvel onglet et accéder à l'URL
+
+05:01.399 --> 05:08.399
+On met l'IP du NAS 2.8080. J'arrive sur l'application Sterling PDF.
+Je vais pouvoir me connecter avec le compte PDF et le mot de passe
+
+05:08.399 --> 05:14.399
+C'est IT-Connect par rapport à ce qu'on avait mis avant. On va faire
+Connexion. On voit qu'on peut éventuellement choisir une autre langue
+
+05:14.399 --> 05:19.399
+Je fais Connexion. J'arrive sur l'interface
+où je vais avoir accès à tous les outils
+
+05:19.399 --> 05:24.399
+Tous les outils que vous voyez à l'écran. Tout est gratuit
+de toute façon. Il n'y a pas à se poser la question
+
+05:24.399 --> 05:28.399
+On les a à cet endroit-là. On peut
+faire une recherche également ici ou ici
+
+05:28.399 --> 05:35.399
+On peut y accéder directement dans le menu Outils.
+On voit que tout est organisé par catégorie
+
+05:35.399 --> 05:41.399
+Notamment, on a la possibilité de signer un PDF. Comme je
+le disais en introduction, on va retrouver pas mal de choses
+
+05:41.399 --> 05:45.399
+Après, c'est assez facile à utiliser.
+On va pouvoir fusionner des PDF
+
+05:45.399 --> 05:50.399
+On a aussi ce qu'on appelle l'outil multiple. Vous chargez
+des PDF et vous pouvez faire des rotations de pages
+
+05:50.399 --> 05:56.399
+intervertir des pages, etc. Dans cette interface,
+on peut compresser des documents, les diviser, etc
+
+05:56.399 --> 06:01.399
+On a même la possibilité d'avoir un thème son.
+Je sais que cela plaira à certaines personnes
+
+06:01.399 --> 06:07.399
+Maintenant, on va se concentrer un peu sur les options de la configuration.
+Je vous laisserai voir toute la partie utilisation par vous-même
+
+06:07.399 --> 06:13.399
+C'est relativement simple. Là, on va aller dans Paramètres du
+compte. Ici, vous allez pouvoir modifier votre nom d'utilisateur
+
+06:13.399 --> 06:17.399
+Au lieu de mettre PDF, vous mettez autre chose.
+Vous mettez le mot de passe actuel, donc IT-Connect
+
+06:17.399 --> 06:23.399
+Vous validez. Ensuite, vous allez revenir ici pour modifier le
+mot de passe. Comme cela, vous sécurisez l'accès à votre compte
+
+06:23.399 --> 06:30.399
+On voit aussi qu'il y a la possibilité d'avoir une API. Ce qui va être
+intéressant, c'est d'aller voir dans les paramètres d'administration
+
+06:30.399 --> 06:37.399
+Puisque nous allons pouvoir créer d'autres utilisateurs, y
+compris des utilisateurs qui vont avoir des droits limités
+
+06:37.399 --> 06:41.399
+comme on le voit ici. En tant qu'administrateur,
+vous pouvez gérer la plateforme
+
+06:41.399 --> 06:47.399
+créer, gérer les comptes utilisateurs. En tant
+qu'utilisateur, on pourra s'authentifier et uniquement accéder
+
+06:47.399 --> 06:52.399
+utiliser les outils sans avoir la main
+sur la création des utilisateurs
+
+06:52.399 --> 06:56.399
+Voilà pour cela. Maintenant, en termes de
+configuration, est-ce qu'on peut aller plus loin 
+
+06:56.399 --> 07:01.399
+La réponse est oui. Pour cela,
+il faut rebasculer sur le NAS
+
+07:01.399 --> 07:07.399
+aller dans la gestion dans le File
+Station, dans l'explorateur de fichiers
+
+07:07.399 --> 07:13.399
+Dans Extra Config, on va retrouver un
+fichier Settings.yml, au format YAML
+
+07:13.399 --> 07:19.399
+Ce fichier, on va pouvoir le télécharger et venir l'éditer.
+On va retrouver là-dedans un certain nombre de paramètres
+
+07:19.399 --> 07:25.399
+Des paramètres notamment intéressants ici, tout en haut, pour la partie
+sécurité. On voit que par défaut, l'application a une protection
+
+07:25.399 --> 07:29.399
+contre les attaques de type bruit de force, puisque
+si on essaie de se connecter à l'application
+
+07:29.399 --> 07:36.399
+et qu'on fait une erreur de login, mot de passe cinq fois de
+suite, le compte sera bloqué pendant 2 heures, soit 120 minutes
+
+07:36.399 --> 07:40.399
+On peut le voir ici. À vous de voir
+si vous voulez le personnaliser ou pas
+
+07:40.399 --> 07:46.399
+Ce qui peut être intéressant, et notamment pour le déploiement
+de Stirling PDF en entreprise, c'est la prise en charge
+
+07:46.399 --> 07:51.399
+de OAuth 2.0 pour l'authentification. Ce
+qui veut dire qu'on peut lier Stirling PDF
+
+07:51.399 --> 07:57.399
+à un fournisseur d'identité externe.
+On a ici Google, GitHub ou CakeLock
+
+07:57.399 --> 08:01.399
+qui est pris en charge. Ce qui veut dire
+que les utilisateurs pourraient se connecter
+
+08:01.399 --> 08:07.399
+à Stirling PDF grâce à leur compte Google
+Entreprise. Ce qui peut être assez intéressant
+
+08:07.399 --> 08:12.399
+plutôt que de gérer une base de compte
+utilisateur locale dans l'application
+
+08:12.399 --> 08:17.399
+On va avoir d'autres paramètres, notamment
+pour changer le nom de l'application
+
+08:17.399 --> 08:23.399
+Je vais mettre ITConnect, je pourrais même mettre
+une autre description. Je vais enregistrer le fichier
+
+08:23.399 --> 08:28.399
+je vais venir le mettre à jour sur le NAS,
+simplement par un glissé-déposé en fin de compte
+
+08:28.399 --> 08:34.400
+Une fois qu'on a fait ça, il va falloir relancer
+le projet. Pour prendre en compte l'application
+
+08:34.400 --> 08:38.400
+la nouvelle modification qu'on vient de
+faire dans le fichier de configuration
+
+08:38.400 --> 08:42.400
+on est obligé de redémarrer le conteneur.
+Ce n'est pas pris en compte en live
+
+08:42.400 --> 08:48.400
+Je fais le petit redémarrage du conteneur manager,
+et ensuite on va rebasculer sur l'application
+
+08:48.400 --> 08:52.400
+On voit déjà qu'ici, maintenant, ce n'est plus
+marqué Stirling PDF, c'est marqué ITConnect
+
+08:52.400 --> 08:56.400
+puisque j'ai changé le nom de l'application. Ce qui
+peut vous permettre de mettre le nom de votre entreprise
+
+08:56.400 --> 09:00.400
+Une fois que vous êtes logué,
+vous retrouvez aussi ce fameux nom
+
+09:00.400 --> 09:04.400
+L'autre paramètre qu'on avait dans le fichier de
+configuration permettrait de modifier la ligne qui est ici
+
+09:04.400 --> 09:10.400
+Maintenant, vous venez en quelques minutes de déployer
+Stirling PDF que vous pouvez mettre à disposition
+
+09:10.400 --> 09:16.400
+des membres de votre famille, des salariés de
+votre entreprise, en fonction de la situation
+
+09:16.400 --> 09:20.400
+C'est vraiment très intéressant, et ça évite de
+déployer une application sur chaque poste de travail
+
+09:20.400 --> 09:26.400
+En plus, c'est en mode web, c'est facilement
+utilisable. Vous gardez la maîtrise des données
+
+09:26.400 --> 09:30.400
+puisque toutes les données échangées avec
+l'application transitent par votre NAS, par votre serveur
+
+09:30.400 --> 09:36.400
+Cela évite d'aller charger des documents
+potentiellement confidentiels sur des services en ligne
+
+09:36.400 --> 09:40.400
+où on ne sait pas trop ce que ça devient.
+Là, vous gardez la maîtrise de vos données
+
+09:40.400 --> 09:48.400
+en plus d'avoir une solution très complète, auto-hébergée sur
+votre infrastructure. Voilà, cette vidéo est à présent terminée
+
+09:48.400 --> 09:52.400
+J'espère que ça vous a plu. N'hésitez
+pas à tester Stirling PDF de votre côté
+
+09:52.400 --> 09:56.400
+N'hésitez pas aussi à parcourir la chaîne YouTube,
+puisque j'ai déjà expliqué comment déployer
+
+09:56.400 --> 10:02.400
+d'autres applications sur un NAS Synology. Cela
+peut être l'occasion d'explorer d'autres projets
+
+10:02.400 --> 10:06.400
+En attendant, je vous dis à très vite.
+N'hésitez pas à me partager tout ça
+
+10:06.400 --> 10:10.400
+A bientôt ! Ciao 
+����      gr�gr�Gq�#g:~�   �    O^partitionKey=%28https%2Cit-connect.fr%29,a,~FETCH,:https://video-meta.humix.com/caption/GJ9aT3ZZ-92A/a547e68fb7d69428ce12068fa91391be_fr-FR.vtt necko:classified 1 strongly-framed 1 security-info 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 request-method GET request-Origin https://www.it-connect.fr request-Accept-Encoding gzip, deflate, br, zstd response-head HTTP/2 200 
+date: Fri, 18 Oct 2024 14:37:27 GMT
+content-type: text/vtt; charset=utf-8
+content-length: 14161
+access-control-allow-origin: *
+content-disposition: inline
+etag: "a547e68fb7d69428ce12068fa91391be"
+last-modified: Fri, 21 Jun 2024 16:50:18 GMT
+vary: Origin, Accept-Encoding
+cache-control: max-age=2678400
+cf-cache-status: HIT
+age: 53837
+accept-ranges: bytes
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=qaRi0UpNLgxrx2DXSiMNGSps3%2FnVgM77fTv%2BtMWrt1pcQyzfrG7XA%2BT4XO4RenwbY1r2GdSnp7h2qXBOnFVuIxRLAoA70f9o0%2Fiab88sdx79bIPjH%2ByVz7FeOmiXSPWBreWJqUp2gA%3D%3D"}],"group":"cf-nel","max_age":604800}
+nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+server: cloudflare
+cf-ray: 8d494436eaacb7a1-ABJ
+alt-svc: h3=":443"; ma=86400
+server-timing: cfL4;desc="?proto=TCP&rtt=14177&sent=9&recv=10&lost=0&retrans=0&sent_bytes=3725&recv_bytes=1385&delivery_rate=800731&cwnd=254&unsent_bytes=0&cid=de1b4651a1fb477e&ts=407&x=0"
+X-Firefox-Spdy: h2
+ original-response-headers date: Fri, 18 Oct 2024 14:37:27 GMT
+content-type: text/vtt; charset=utf-8
+content-length: 14161
+access-control-allow-origin: *
+content-disposition: inline
+etag: "a547e68fb7d69428ce12068fa91391be"
+last-modified: Fri, 21 Jun 2024 16:50:18 GMT
+vary: Origin, Accept-Encoding
+cache-control: max-age=2678400
+cf-cache-status: HIT
+age: 53837
+accept-ranges: bytes
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=qaRi0UpNLgxrx2DXSiMNGSps3%2FnVgM77fTv%2BtMWrt1pcQyzfrG7XA%2BT4XO4RenwbY1r2GdSnp7h2qXBOnFVuIxRLAoA70f9o0%2Fiab88sdx79bIPjH%2ByVz7FeOmiXSPWBreWJqUp2gA%3D%3D"}],"group":"cf-nel","max_age":604800}
+nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+server: cloudflare
+cf-ray: 8d494436eaacb7a1-ABJ
+alt-svc: h3=":443"; ma=86400
+server-timing: cfL4;desc="?proto=TCP&rtt=14177&sent=9&recv=10&lost=0&retrans=0&sent_bytes=3725&recv_bytes=1385&delivery_rate=800731&cwnd=254&unsent_bytes=0&cid=de1b4651a1fb477e&ts=407&x=0"
+X-Firefox-Spdy: h2
+ ctid 1 net-response-time-onstart 409 net-response-time-onstop 411   7Q

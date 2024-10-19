@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>La commande find — DMS</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgRequestId":"ZxLACMgOqgQu3rlhlO-OtwAAAAE","wgCSPNonce":!1,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"La_commande_find","wgTitle":"La commande find","wgCurRevisionId":5248,"wgRevisionId":5248,"wgArticleId":199,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Commandes"],"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgRelevantPageName":"La_commande_find","wgRelevantArticleId":199,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgMediaViewerOnClick":!0,
+"wgMediaViewerEnabledByDefault":!0,"wgRPRatingAllowedNamespaces":null,"wgRPRatingPageBlacklist":[],"wgRPRatingMin":1,"wgRPRatingMax":5,"wgRPTarget":null};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","mediawiki.toc.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","mediawiki.page.ready","mediawiki.toc","ext.ratePage","ext.ratePage.mmv"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});mw.user.options.set({"variant":"fr"});
+});});</script>
+<link rel="stylesheet" href="/wiki/load.php?lang=fr&amp;modules=mediawiki.toc.styles&amp;only=styles&amp;skin=aether"/>
+<script async="" src="/wiki/load.php?lang=fr&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=aether"></script>
+<link rel="stylesheet" href="https://dms.umontreal.ca/wiki/skins/aether/resources/bootstrap.css"/><link rel="stylesheet" href="https://dms.umontreal.ca/wiki/skins/aether/resources/aether-mediawiki.6d2ee017.css"/><link rel="stylesheet" href="https://dms.umontreal.ca/wiki/skins/aether/resources/aether-sidebar.e68d9d92.css"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/wiki/load.php?lang=fr&amp;modules=site.styles&amp;only=styles&amp;skin=aether"/>
+<meta name="generator" content="MediaWiki 1.35.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/wiki/opensearch_desc.php" title="DMS (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="https://dms.umontreal.ca/wiki/api.php?action=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de DMS" href="/wiki/index.php?title=Sp%C3%A9cial:Modifications_r%C3%A9centes&amp;feed=atom"/>
+<!--[if lt IE 9]><script src="/wiki/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-La_commande_find rootpage-La_commande_find skin-aether action-view">
+  <main class="body">
+    <header class="header clearfix d-print-none">
+      <nav class="navbar navbar-expand-lg">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarPersonal" aria-controls="navbarPersonal" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarPersonal">
+          <ul class="navbar-nav mr-auto">
+            <li id="pt-login" class="nav-item"><a href="/wiki/index.php?title=Sp%C3%A9cial:Connexion&amp;returnto=La+commande+find" title="Nous vous encourageons à vous connecter ; ce n’est cependant pas obligatoire. [o]" accesskey="o" class="nav-link">Se connecter</a></li>          </ul>
+                    <form action="/wiki/index.php" id="searchform" class="form-inline ml-auto">
+            <input id="searchInput" name="search" type="search" placeholder="Rechercher..."
+                   class="form-control" autocomplete="off"
+                          value=""
+             />
+
+            <input type="hidden" name="title" value="Spécial:Recherche" />
+          </form>
+                </div>
+      </nav>
+    </header>
+    <aside class="sidebar noprint" valign="top">
+      <div id="sidebar-header" class="menu-box">
+        <div class="menu-title">
+          <h2>
+            <a href="/wiki/index.php?title=Accueil">
+              DMS            </a>
+          </h2>
+        </div>
+      </div>
+      <div class="menu-box">
+        <div class="menu-title">
+          <h2>Actions</h2>
+        </div>
+        <div class="menu-content">
+          <ul>
+                          <li>
+                Lire              </li>
+                          <li>
+                                  <a href="/wiki/index.php?title=La_commande_find&amp;action=edit">
+                    Voir le texte source                  </a>
+                              </li>
+                          <li>
+                                  <a href="/wiki/index.php?title=La_commande_find&amp;action=history">
+                    Historique                  </a>
+                              </li>
+                      </ul>
+          <ul class="mt-2">
+                            <li>
+                  Page                </li>
+                              <li>
+                  <a href="/wiki/index.php?title=Discussion:La_commande_find&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t">
+                    Discussion                  </a>
+                </li>
+                        </ul>
+        </div>
+      </div>
+          <div class="menu-box">
+      <div class="menu-title" id='p-1er_cycle' >
+        <h2>1er cycle</h2>
+      </div>
+      <div class="menu-content">
+        <ul><li id="n-Accueil"><a href="/wiki/index.php?title=Accueil_1er_cycle">Accueil</a></li><li id="n-Logiciels"><a href="/wiki/index.php?title=Logiciels">Logiciels</a></li><li id="n-Connexion-.C3.A0-distance"><a href="/wiki/index.php?title=Compte_MAS#Connexion_.C3.A0_distance">Connexion à distance</a></li><li id="n-Activation-du-compte-MAS"><a href="/wiki/index.php?title=Compte_MAS">Activation du compte MAS</a></li><li id="n-Aide"><a href="/wiki/index.php?title=Qui_contacter%3F">Aide</a></li><li id="n-Authentification-.C3.A0-deux-facteurs-.28A2F.29"><a href="/wiki/index.php?title=Authentification_%C3%A0_deux_facteurs_(A2F)_via_Python">Authentification à deux facteurs (A2F)</a></li></ul>      </div>
+    </div>
+        <div class="menu-box">
+      <div class="menu-title" id='p-Cycles_sup.C3.A9rieurs' >
+        <h2>Cycles supérieurs</h2>
+      </div>
+      <div class="menu-content">
+        <ul><li id="n-mainpage-description"><a href="/wiki/index.php?title=Accueil" title="Accueil général [z]" accesskey="z">Accueil</a></li><li id="n-Nouveaux-.C3.A9tudiants"><a href="/wiki/index.php?title=Renseignements_pour_nouveaux_%C3%A9tudiants">Nouveaux étudiants</a></li><li id="n-Logiciels"><a href="/wiki/index.php?title=Logiciels">Logiciels</a></li><li id="n-LaTeX-.2F-gabarit"><a href="/wiki/index.php?title=LaTeX">LaTeX / gabarit</a></li><li id="n-Copie-de-sauvegarde"><a href="/wiki/index.php?title=Copie_de_sauvegarde">Copie de sauvegarde</a></li><li id="n-Connexion-.C3.A0-distance"><a href="/wiki/index.php?title=Connexion_%C3%A0_distance">Connexion à distance</a></li><li id="n-Simulations"><a href="/wiki/index.php?title=Simulations">Simulations</a></li><li id="n-Imprimer-.C3.A0-partir-d.27un-portable"><a href="/wiki/index.php?title=Imprimer_%C3%A0_partir_d%27un_portable">Imprimer à partir d'un portable</a></li><li id="n-Page-web-personnelle"><a href="/wiki/index.php?title=Page_web_personnelle">Page web personnelle</a></li><li id="n-Aide"><a href="/wiki/index.php?title=Qui_contacter%3F">Aide</a></li><li id="n-Authentification-.C3.A0-deux-facteurs-.28A2F.29"><a href="/wiki/index.php?title=Authentification_%C3%A0_deux_facteurs_(A2F)_via_Python">Authentification à deux facteurs (A2F)</a></li></ul>      </div>
+    </div>
+        <div class="menu-box">
+      <div class="menu-title" id='p-ratePage-vote-title' >
+        <h2>Rate article</h2>
+      </div>
+      <div class="menu-content">
+        <ul></ul>      </div>
+    </div>
+        <div class="menu-box">
+      <div class="menu-title" id='p-tb' >
+        <h2>Outils</h2>
+      </div>
+      <div class="menu-content">
+        <ul><li id="t-whatlinkshere"><a href="/wiki/index.php?title=Sp%C3%A9cial:Pages_li%C3%A9es/La_commande_find" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="/wiki/index.php?title=Sp%C3%A9cial:Suivi_des_liens/La_commande_find" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="/wiki/index.php?title=Sp%C3%A9cial:Pages_sp%C3%A9ciales" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="javascript:print();" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="/wiki/index.php?title=La_commande_find&amp;oldid=5248" title="Adresse permanente de cette version de la page">Lien permanent</a></li><li id="t-info"><a href="/wiki/index.php?title=La_commande_find&amp;action=info" title="Plus d’informations sur cette page">Informations sur la page</a></li></ul>      </div>
+    </div>
+        </aside>
+    <article class="content">
+      <div id="mw-js-message" class="alert alert-info" style="display:none;"
+        >
+      </div>
+
+      
+      <div id="contentSub" class="mb-3"></div>
+
+      
+      
+      <div id="content">
+        <h1 class="mt-1 h2" id="firstHeading">La commande find</h1>
+        <div id="mw-content-text">
+          <div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><pre>find &lt;répertoire&gt; -name &lt;fichier&gt;
+</pre>
+<p>La <a href="/wiki/index.php?title=Commandes_%C3%A9l%C3%A9mentaires" title="Commandes élémentaires">commande</a> <b><tt>find</tt></b> sonde l'arborescence complète de <tt>&lt;répertoire&gt;</tt> à la recherche de fichiers (ou répertoires) portant le nom <tt>&lt;fichier&gt;</tt>. Son exécution est donc plus lente que celle de la commande <a href="/wiki/index.php?title=Commandes_%C3%A9l%C3%A9mentaires#locate" title="Commandes élémentaires"><tt>locate</tt></a> qui cherche son information dans une base de données. Cependant, <tt>find</tt> peut trouver des fichiers qui ne sont pas encore indexés dans la base de données et permet également des recherches avancées utilisant des <a href="/wiki/index.php?title=Regexp" title="Regexp"> expressions régulières</a>.
+</p><p>Pour une liste exhaustive des options et des fonctionnalités, consultez le manuel de la commande (<a href="/wiki/index.php?title=Commandes_%C3%A9l%C3%A9mentaires#man" title="Commandes élémentaires"><tt>man</tt></a> <tt>find</tt>).
+</p><p><br />
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="fr" dir="ltr"><h2 id="mw-toc-heading">Sommaire</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Exemples"><span class="tocnumber">1</span> <span class="toctext">Exemples</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Voir_aussi"><span class="tocnumber">2</span> <span class="toctext">Voir aussi</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Articles_connexes"><span class="tocnumber">2.1</span> <span class="toctext">Articles connexes</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h3><span class="mw-headline" id="Exemples">Exemples</span></h3>
+<p>La ligne suivante,
+</p>
+<pre>find /home -name UdeM
+</pre>
+<p>effectue une recherche dans l'arborescence de <tt>/home</tt> pour un fichier nommé &#171;&#160;UdeM&#160;&#187;. 
+</p>
+<h2><span class="mw-headline" id="Voir_aussi">Voir aussi</span></h2>
+<h3><span class="mw-headline" id="Articles_connexes">Articles connexes</span></h3>
+<ul><li><a href="/wiki/index.php?title=Commandes_%C3%A9l%C3%A9mentaires" title="Commandes élémentaires">Commandes élémentaires</a></li>
+<li><a href="/wiki/index.php?title=Regexp" title="Regexp">Expressions régulières</a></li>
+<li><a href="/wiki/index.php?title=Commandes_%C3%A9l%C3%A9mentaires#locate" title="Commandes élémentaires"><tt>locate</tt></a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20241017205418
+Cache expiry: 86400
+Dynamic content: false
+Complications: []
+CPU time usage: 0.004 seconds
+Real time usage: 0.005 seconds
+Preprocessor visited node count: 24/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 93/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key wikiDMS117:pcache:idhash:199-0!canonical and timestamp 20241017205418 and revision id 5248
+ -->
+</div></div>        </div>
+      </div>
+
+              <div class="printfooter">
+          Récupérée de «&#160;<a dir="ltr" href="https://dms.umontreal.ca/wiki/index.php?title=La_commande_find&amp;oldid=5248">https://dms.umontreal.ca/wiki/index.php?title=La_commande_find&amp;oldid=5248</a>&#160;»        </div>
+      
+              <div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/index.php?title=Sp%C3%A9cial:Cat%C3%A9gories" title="Spécial:Catégories">Catégorie</a> : <ul><li><a href="/wiki/index.php?title=Cat%C3%A9gorie:Commandes" title="Catégorie:Commandes">Commandes</a></li></ul></div></div>      
+      
+      <div class="float-clear"></div>
+
+      
+      <div class="pb-2">
+                   <br />
+             <div class="page-info float-none">
+                                 La dernière modification de cette page a été faite le 19 juin 2013 à 11:04.                            </div>
+                  </div>
+  <footer id="kFooter" class="footer d-print-none">
+	<section id="kLegal" class="containerlegal">
+		Modèle basé sur le modèle <a href="https://invent.kde.org/websites/aether-mediawiki/">Aether Template</a> et adapté par le DMS, licence Creative Commons Attribution <a href="http://creativecommons.org/licenses/by-sa/4.0/legalcode">Partage dans les mêmes conditions 4.0 International</a>, <a href="https://dms.umontreal.ca/wiki/index.php/Politique_d%27utilisation_du_r%C3%A9seau">Politique d'utilisation du réseau</a>
+	</section>
+  </footer>
+
+
+    </article>
+
+  </main>
+  
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.004","walltime":"0.005","ppvisitednodes":{"value":24,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":93,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20241017205418","ttl":86400,"transientcontent":false}}});});</script>
+<!-- Matomo -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["trackPageView"]);
+  _paq.push(["enableLinkTracking"]);
+
+  (function() {
+    var u = (("https:" == document.location.protocol) ? "https" : "http") + "://"+"dms.umontreal.ca/a/";
+    _paq.push(["setTrackerUrl", u+"piwik.php"]);
+    _paq.push(["setSiteId", "2"]);
+    _paq.push(['setDomains', 'dms.umontreal.ca/wiki']);
+    _paq.push(['setCookiePath', '/wiki']);
+
+
+    var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+    g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+
+<!-- Matomo Image Tracker -->
+<noscript><img src="https://dms.umontreal.ca/a/piwik.php?idsite=2&rec=1" style="border:0" alt="" /></noscript>
+<!-- End Matomo -->
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":247});});</script>  <!-- <script type="text/javascript" src="https://cdn.kde.org/aether/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/skins/Aether/resources/jquery.ba-throttle-debounce.min.js"></script>
+  <script type="text/javascript" src="/skins/Aether/resources/main.js"></script> -->
+  <script type="text/javascript" src="/wiki/skins/aether/resources/bootstrap.js"></script>
+  <script>
+    const toggler = document.querySelector('.navbar-toggler');
+    const body = document.querySelector('.body');
+    body.classList.remove('no-js');
+    toggler.addEventListener('click', () => {
+      body.classList.toggle('sidebar-active');
+    });
+  </script>
+</body>
+</html>
+
+U�v'      g�g�	Gq��g�	   c    O^partitionKey=%28https%2Cumontreal.ca%29,:https://dms.umontreal.ca/wiki/index.php/La_commande_find necko:classified 1 strongly-framed 1 security-info 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 request-method GET request-Accept-Encoding gzip, deflate, br, zstd response-head HTTP/1.1 200 OK
+Date: Fri, 18 Oct 2024 20:07:36 GMT
+Server: Apache
+X-Content-Type-Options: nosniff
+Content-language: fr
+Vary: Accept-Encoding,Cookie
+Expires: Fri, 18 Oct 2024 20:07:36 GMT
+Cache-Control: private, must-revalidate, max-age=0
+X-Request-Id: ZxLACMgOqgQu3rlhlO-OtwAAAAE
+Strict-Transport-Security: max-age=63072000; includeSubDomains
+Last-Modified: Mon, 24 Jul 2023 10:48:19 GMT
+Content-Security-Policy: font-src https: data:; img-src https: data:; style-src 'self' 'unsafe-inline' https:; frame-ancestors 'none'
+X-Frame-Options: DENY
+Content-Type: text/html; charset=UTF-8
+ original-response-headers Date: Fri, 18 Oct 2024 20:07:36 GMT
+Server: Apache
+X-Content-Type-Options: nosniff
+Content-language: fr
+Vary: Accept-Encoding,Cookie
+Expires: Fri, 18 Oct 2024 20:07:36 GMT
+Cache-Control: private, must-revalidate, max-age=0
+X-Request-Id: ZxLACMgOqgQu3rlhlO-OtwAAAAE
+Strict-Transport-Security: max-age=63072000; includeSubDomains
+Upgrade: h2
+Connection: Upgrade, Keep-Alive
+Last-Modified: Mon, 24 Jul 2023 10:48:19 GMT
+Content-Security-Policy: font-src https: data:; img-src https: data:; style-src 'self' 'unsafe-inline' https:; frame-ancestors 'none'
+X-Frame-Options: DENY
+Keep-Alive: timeout=5, max=100
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+ ctid 1 uncompressed-len 0 net-response-time-onstart 1099 net-response-time-onstop 1276   D�

@@ -1,0 +1,707 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!---->
+<title>commande pour arrêter un script / Terminal, scripts et ligne de commande / Forum Ubuntu-fr.org</title>
+      
+    <link rel="shortcut icon" href="//www-static.ubuntu-fr.org/theme2010/images/commun/ubuntu/icone.png"/>
+          <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu" href="//www-static.ubuntu-fr.org/theme2010/css/forum.css" />
+    <link rel="stylesheet" media="screen" type="text/css" title="Design Ubuntu" href="//www-static.ubuntu-fr.org/theme2010/css/forum-ubuntu.css" />
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="style/Ubuntu.css" />
+    <script type="text/javascript" src="//www-static.ubuntu-fr.org/theme2010/js/common.js"></script> 
+    <script type="text/javascript">
+    var menu_hidden=0;
+    </script>
+    <script type="text/javascript" src="//www-static.ubuntu-fr.org/theme2010/js/menu.js"></script>
+  
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+<link rel="canonical" href="viewtopic.php?id=392705" title="Page 1" />
+</head>
+
+<body>
+  <div id="accessibar">
+    <a href="#main" tabindex="1">Contenu</a> | <a href="#qsearch__in" tabindex="2">Rechercher</a> | <a href="#navigation" tabindex="3">Menus</a>
+  </div>
+  <div id="punviewtopic">
+    <div id="page">
+
+      <div id="header">
+        <div id="logo">
+          <h1>Ubuntu-fr</h1>
+          <a href="http://www.ubuntu-fr.org" title="Accueil">Communauté francophone d'utilisateurs d'Ubuntu</a>
+        </div>
+
+        <form action="search_ubuntufr.php" id="search">
+          <fieldset>
+            <input type="text" value="Recherche rapide...." id="qsearch__in" accesskey="f" name="q" title="[F]" size="34" />
+            <select name="tsearch">
+              <option value="wiki">Documentation</option>
+              <option  value="forum" selected="selected">Forum</option>
+              <option  value="planet" >Planet</option>
+            </select>
+            <input type="submit" value="ok" class="button" title="Chercher" />
+          </fieldset>
+        </form>
+
+        <div id="brdwelcome" class="inbox">
+			<form action="login.php?action=in" accept-charset="utf-8" id="login_top" method="post"><fieldset>
+  <input type="hidden" name="form_sent" value="1" />
+<input type="hidden" name="redirect_url" value="//forum.ubuntu-fr.org/viewtopic.php?id=392705" />
+<input type="text" placeholder="Identifiant" required="required" title="Entrez votre identifiant" name="req_username" size="9" /><input type="password" placeholder="Mot de passe" required="required" title="Entrez votre mot de passe" name="req_password" size="9" /><input type="submit" value="connexion" id="connect" /> / <a href="register.php">inscription</a></fieldset></form>
+			<div class="clearer"></div>
+		</div>
+ 
+        <div class="clearer"></div>
+      </div>
+
+      <div id="navigation">
+        <ul>
+          <li class="menu"><a id="menu-accueil" class="title" href="http://www.ubuntu-fr.org"><span>Accueil</span></a></li>
+          <li class="menu"><a id="menu-doc" class="title" href="http://doc.ubuntu-fr.org" title="Documentation Ubuntu francophone"><span>Documentation</span></a></li>
+          <li class="menu" id="active" >
+            <a id="menu-forum" class="title" href="index.php" title="Index du forum"><span>Forum</span></a>
+            <ul>
+              <li class="cat">
+                <h2>Navigation</h2>
+                <div class="inbox">
+			<ul>
+				<li id="navrules"><a href="misc.php?action=rules" title="Charte du Forum Ubuntu-fr">Règles</a></li>
+				<li id="navregister"><a href="register.php">Inscription</a></li>
+				<li id="navlogin"><a href="login.php">Identification</a></li>
+			</ul>
+		</div>
+              </li>
+              
+		<li class="cat"><h2>Liens de recherche</h2>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li><a href="search.php?action=show_24h" title="300 dernières discussions actives">Messages récents</a></li>
+				<li><a href="search.php?action=show_unanswered" title="300 dernières discussions sans réponse">Discussions sans réponse</a></li>
+			</ul>
+		</div></li>
+	
+            </ul>
+          </li>
+          <li class="menu"><a id="menu-planet" class="title" href="http://planet.ubuntu-fr.org"><span>Planet</span></a></li>
+        </ul>
+        <div class="clearer"></div>
+      </div>
+    
+      <div id="wrapper">
+        <div id="announce" class="block">
+	<div class="hd"><h2><span>Annonce</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent"><p>Si vous avez des soucis pour rester connecté, déconnectez-vous puis reconnectez-vous depuis <a href='https://forum.ubuntu-fr.org/login.php'>ce lien</a> en cochant la case <br/>Me connecter automatiquement lors de mes prochaines visites.</p><p><a href='https://doc.ubuntu-fr.org/groupes/ubuntu-fr-forum'>À propos de l'équipe du forum.</a></p></div>
+		</div>
+	</div>
+</div>
+        <div id="main">
+          <div id="hidemenu" title="Masquer le menu"></div><!--
+	<div id="hidemenu"><a accesskey="z" title="Masquer le menu - AccessKey Z" href="javascript:switchMenuVisible()"><span>&nbsp;</span></a></div>-->
+          <div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+				<li><a href="http://www.ubuntu-fr.org" name="Accueil">Accueil</a></li>
+				<li><span>»&#160;</span><a href="index.php">Forum</a></li>
+				<li><span>»&#160;</span><a href="viewforum.php?id=78">Terminal, scripts et ligne de commande</a></li>
+				<li><span>»&#160;</span><strong><a href="viewtopic.php?id=392705">commande pour arrêter un script</a></strong></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages&#160;: </span><strong class="item1">1</strong></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p3438056" class="blockpost rowodd firstpost blockpost1">
+	<h2><span><span class="conr">#1</span> <a href="viewtopic.php?pid=3438056#p3438056">Le 30/04/2010, à 19:58</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong>isloer</strong></dt>
+											</dl>
+				</div>
+				<div class="postright">
+					<h3>commande pour arrêter un script</h3>
+					<div class="postmsg">
+						<p>Bonjour,<br />J&#039; aimerais savoir comment arrêter un script (en ligne de commande).<br />Je lance mon script en faisant</p><div class="codebox"><pre><code>/home/isy/script/intuos.sh</code></pre></div><p>top me donne</p><div class="codebox"><pre class="vscroll"><code>  top - 19:53:33 up 22 min,  2 users,  load average: 0.25, 0.22, 0.23
+Tasks: 139 total,   1 running, 138 sleeping,   0 stopped,   0 zombie
+Cpu(s):  8.0%us,  4.7%sy,  0.0%ni, 87.4%id,  0.0%wa,  0.0%hi,  0.0%si,  0.0%st
+Mem:   1018464k total,   624360k used,   394104k free,    82808k buffers
+Swap:  2666676k total,        0k used,  2666676k free,   285740k cached
+
+  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND                                                                                                                                 
+  793 root      20   0  174m  17m  10m S  6.3  1.8   0:35.86 Xorg                                                                                                                                    
+ 1484 isy       20   0 51724  13m  10m S  5.3  1.4   0:04.12 gnome-terminal                                                                                                                          
+ 1530 isy       20   0  2544 1208  908 R  0.3  0.1   0:01.62 top                                                                                                                                     
+    1 root      20   0  2796 1612 1164 S  0.0  0.2   0:00.41 init                                                                                                                                    
+    2 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kthreadd                                                                                                                                
+    3 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 migration/0                                                                                                                             
+    4 root      20   0     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/0                                                                                                                             
+    5 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 watchdog/0                                                                                                                              
+    6 root      20   0     0    0    0 S  0.0  0.0   0:00.02 events/0                                                                                                                                
+    7 root      20   0     0    0    0 S  0.0  0.0   0:00.00 cpuset                                                                                                                                  
+    8 root      20   0     0    0    0 S  0.0  0.0   0:00.00 khelper                                                                                                                                 
+    9 root      20   0     0    0    0 S  0.0  0.0   0:00.00 netns                                                                                                                                   
+   10 root      20   0     0    0    0 S  0.0  0.0   0:00.00 async/mgr                                                                                                                               
+   11 root      20   0     0    0    0 S  0.0  0.0   0:00.00 pm                                                                                                                                      
+   12 root      20   0     0    0    0 S  0.0  0.0   0:00.00 sync_supers                                                                                                                             
+   13 root      20   0     0    0    0 S  0.0  0.0   0:00.00 bdi-default                                                                                                                             
+   14 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kintegrityd/0                                                                                                                           
+   15 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kblockd/0                                                                                                                               
+   16 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kacpid                                                                                                                                  
+   17 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kacpi_notify                                                                                                                            
+   18 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kacpi_hotplug                                                                                                                           
+   19 root      20   0     0    0    0 S  0.0  0.0   0:00.43 ata/0                                                                                                                                   
+   20 root      20   0     0    0    0 S  0.0  0.0   0:00.00 ata_aux                                                                                                                                 
+   21 root      20   0     0    0    0 S  0.0  0.0   0:00.00 ksuspend_usbd                                                                                                                           
+   22 root      20   0     0    0    0 S  0.0  0.0   0:00.00 khubd                                                                                                                                   
+   23 root      20   0     0    0    0 S  0.0  0.0   0:00.01 kseriod                                                                                                                                 
+   24 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kmmcd                                                                                                                                   
+   27 root      20   0     0    0    0 S  0.0  0.0   0:00.00 khungtaskd                                                                                                                              
+   28 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kswapd0                                                                                                                                 
+   29 root      25   5     0    0    0 S  0.0  0.0   0:00.00 ksmd                                                                                                                                    
+   30 root      20   0     0    0    0 S  0.0  0.0   0:00.00 aio/0                                                                                                                                   
+   31 root      20   0     0    0    0 S  0.0  0.0   0:00.00 ecryptfs-kthrea                                                                                                                         
+   32 root      20   0     0    0    0 S  0.0  0.0   0:00.00 crypto/0                                                                                                                                
+   36 root      20   0     0    0    0 S  0.0  0.0   0:00.00 scsi_eh_0                                                                                                                               
+   37 root      20   0     0    0    0 S  0.0  0.0   0:01.54 scsi_eh_1                                                                                                                               
+   40 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kstriped                                                                                                                                
+   41 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kmpathd/0                                                                                                                               
+   42 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kmpath_handlerd                                                                                                                         
+   43 root      20   0     0    0    0 S  0.0  0.0   0:00.00 ksnapd</code></pre></div><p>Et je ne sais que faire pour arrêter ce script qui détermine le fonctionnement d&#039;une tablette graphique.<br />Au passage, je réalise que mypaint qui est lancé ne figure pas dans le retour de top ?<br />Merci pour votre aide.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Hors ligne</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p3438315" class="blockpost roweven">
+	<h2><span><span class="conr">#2</span> <a href="viewtopic.php?pid=3438315#p3438315">Le 30/04/2010, à 21:30</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong>sputnick</strong></dt>
+												<dd class="postavatar"><img src="http://forum.ubuntu-fr.org/img/avatars/6959.jpg?m=1310129731" width="40" height="60" alt="" /></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re&#160;: commande pour arrêter un script</h3>
+					<div class="postmsg">
+						<p>control+c</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p><strong>On ne peut pas mettre d&#039;array dans un string!</strong><br /><a href="https://sputnick.fr/" rel="nofollow">https://sputnick.fr/</a></p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Hors ligne</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p3438566" class="blockpost rowodd">
+	<h2><span><span class="conr">#3</span> <a href="viewtopic.php?pid=3438566#p3438566">Le 30/04/2010, à 22:55</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong>isloer</strong></dt>
+											</dl>
+				</div>
+				<div class="postright">
+					<h3>Re&#160;: commande pour arrêter un script</h3>
+					<div class="postmsg">
+						<p>Merci pour ta réponse sputnick,<br />je viens d&#039;essayer sur la 10.04 et la seule &#039;commande&#039; que je connaisse et qui fonctionne, pour fermer ce script, c&#039;est de redémarrer .</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Hors ligne</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p3438657" class="blockpost roweven">
+	<h2><span><span class="conr">#4</span> <a href="viewtopic.php?pid=3438657#p3438657">Le 30/04/2010, à 23:23</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong>Sciensous</strong></dt>
+											</dl>
+				</div>
+				<div class="postright">
+					<h3>Re&#160;: commande pour arrêter un script</h3>
+					<div class="postmsg">
+						<p>killall gnome-terminal</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>antiX 19 et 21 et Ubuntu 20.04 et 22.04<br />( sous LXDE et gnome-shell )</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Hors ligne</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p3438724" class="blockpost rowodd">
+	<h2><span><span class="conr">#5</span> <a href="viewtopic.php?pid=3438724#p3438724">Le 30/04/2010, à 23:43</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong>indo4ever</strong></dt>
+												<dd class="postavatar"><img src="http://forum.ubuntu-fr.org/img/avatars/156677.jpg?m=1310129723" width="60" height="60" alt="" /></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re&#160;: commande pour arrêter un script</h3>
+					<div class="postmsg">
+						<p>salut,</p><p>sinon tu as kill [nom PID]</p><p>fin c&#039;est surtout pour tuer un process<br />Voilà a+</p>
+						<p class="postedit"><em>Dernière modification par indo4ever (Le 30/04/2010, à 23:43)</em></p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Que la Linuxforce soit avec toi!</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Hors ligne</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p3438890" class="blockpost roweven">
+	<h2><span><span class="conr">#6</span> <a href="viewtopic.php?pid=3438890#p3438890">Le 01/05/2010, à 00:51</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong>isloer</strong></dt>
+											</dl>
+				</div>
+				<div class="postright">
+					<h3>Re&#160;: commande pour arrêter un script</h3>
+					<div class="postmsg">
+						<p>@Sciensous<br />merci, mais chez moi ta commande ne tue que le terminal <br />@indo4ever&#160; <br /> merci, mais comment savoir quel est le nom du PID ?dans le premier post j&#039;ai indiqué la sortie de top, top étant lancé tandis que le script fonctionnait.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Hors ligne</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p3439109" class="blockpost rowodd">
+	<h2><span><span class="conr">#7</span> <a href="viewtopic.php?pid=3439109#p3439109">Le 01/05/2010, à 05:32</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong>Watael</strong></dt>
+												<dd class="postavatar"><img src="http://forum.ubuntu-fr.org/img/avatars/166625.jpg?m=1588937461" width="60" height="60" alt="" /></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re&#160;: commande pour arrêter un script</h3>
+					<div class="postmsg">
+						<div class="codebox"><pre><code>kill $(pidof -x intuos.sh)</code></pre></div><p>Dans <em>ton</em> script, tu peux ajouter</p><div class="codebox"><pre><code>echo $$ &gt; /tmp/intuos.pid</code></pre></div><p>puis si ton shell est bash</p><div class="codebox"><pre><code>kill $(&lt;/tmp/intuos.pid)</code></pre></div>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Connected \o/<br />Welcome to sHell. · <strong><em>eval</em></strong> is evil.</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Hors ligne</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p3441964" class="blockpost roweven">
+	<h2><span><span class="conr">#8</span> <a href="viewtopic.php?pid=3441964#p3441964">Le 02/05/2010, à 00:18</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong>isloer</strong></dt>
+											</dl>
+				</div>
+				<div class="postright">
+					<h3>Re&#160;: commande pour arrêter un script</h3>
+					<div class="postmsg">
+						<p>Merci Watael,<br />Voici ce que j&#039;obtiens comme réponse avec et sans ajoute de&#160; &#160;echo $$ &gt; /tmp/intuos.pid</p><div class="codebox"><pre><code> kill $(pidof -x intuos.sh)
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]</code></pre></div><div class="codebox"><pre><code>   kill $(&lt;/tmp/intuos.pid)
+bash: /tmp/intuos.pid: Aucun fichier ou dossier de ce type
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]</code></pre></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Hors ligne</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p3442008" class="blockpost rowodd">
+	<h2><span><span class="conr">#9</span> <a href="viewtopic.php?pid=3442008#p3442008">Le 02/05/2010, à 00:34</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong>Watael</strong></dt>
+												<dd class="postavatar"><img src="http://forum.ubuntu-fr.org/img/avatars/166625.jpg?m=1588937461" width="60" height="60" alt="" /></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re&#160;: commande pour arrêter un script</h3>
+					<div class="postmsg">
+						<p>oui, j&#039;ai oublié de spécifier le signal que kill doit envoyer au script</p><div class="codebox"><pre><code>kill -15 $(pidof -x intuos.sh)</code></pre></div><p>c&#039;est écrit dans le message d&#039;erreur !</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Connected \o/<br />Welcome to sHell. · <strong><em>eval</em></strong> is evil.</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Hors ligne</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p3442033" class="blockpost roweven">
+	<h2><span><span class="conr">#10</span> <a href="viewtopic.php?pid=3442033#p3442033">Le 02/05/2010, à 00:46</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong>isloer</strong></dt>
+											</dl>
+				</div>
+				<div class="postright">
+					<h3>Re&#160;: commande pour arrêter un script</h3>
+					<div class="postmsg">
+						<p>je viens d&#039;essayer, mais j&#039;obtiens encore</p><div class="codebox"><pre><code>    kill -15 $(pidof -x intuos.sh)
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]</code></pre></div><p>(Je ne dois pas te préciser que je ne comprends rien à ce genre de message d&#039;erreur <img src="http://forum.ubuntu-fr.org/img/smilies/smile.png" width="15" height="15" alt="smile" />&#160; <br />un jour peut-être, mais j&#039;en suis encore fort loin <img src="http://forum.ubuntu-fr.org/img/smilies/sad.png" width="15" height="15" alt="sad" />&#160; )</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Hors ligne</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p3442041" class="blockpost rowodd">
+	<h2><span><span class="conr">#11</span> <a href="viewtopic.php?pid=3442041#p3442041">Le 02/05/2010, à 00:51</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong>Watael</strong></dt>
+												<dd class="postavatar"><img src="http://forum.ubuntu-fr.org/img/avatars/166625.jpg?m=1588937461" width="60" height="60" alt="" /></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re&#160;: commande pour arrêter un script</h3>
+					<div class="postmsg">
+						<p>au moins, tu obtiens quelque chose en tapant seulement<br />pidof -x intuos.sh<br />?</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Connected \o/<br />Welcome to sHell. · <strong><em>eval</em></strong> is evil.</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Hors ligne</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p3442054" class="blockpost roweven">
+	<h2><span><span class="conr">#12</span> <a href="viewtopic.php?pid=3442054#p3442054">Le 02/05/2010, à 00:57</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong>isloer</strong></dt>
+											</dl>
+				</div>
+				<div class="postright">
+					<h3>Re&#160;: commande pour arrêter un script</h3>
+					<div class="postmsg">
+						<p>je n&#039;obtiens rien du tout&#160; (?)</p>
+						<p class="postedit"><em>Dernière modification par isloer (Le 02/05/2010, à 01:00)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Hors ligne</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p3442057" class="blockpost rowodd">
+	<h2><span><span class="conr">#13</span> <a href="viewtopic.php?pid=3442057#p3442057">Le 02/05/2010, à 01:00</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong>Watael</strong></dt>
+												<dd class="postavatar"><img src="http://forum.ubuntu-fr.org/img/avatars/166625.jpg?m=1588937461" width="60" height="60" alt="" /></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re&#160;: commande pour arrêter un script</h3>
+					<div class="postmsg">
+						<p>c&#039;est que le script n&#039;est pas lancé <img src="http://forum.ubuntu-fr.org/img/smilies/wink.png" width="15" height="15" alt="wink" /></p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Connected \o/<br />Welcome to sHell. · <strong><em>eval</em></strong> is evil.</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Hors ligne</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p3442090" class="blockpost roweven">
+	<h2><span><span class="conr">#14</span> <a href="viewtopic.php?pid=3442090#p3442090">Le 02/05/2010, à 01:11</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong>isloer</strong></dt>
+											</dl>
+				</div>
+				<div class="postright">
+					<h3>Re&#160;: commande pour arrêter un script</h3>
+					<div class="postmsg">
+						<p>le script est, je le pense, lancé, même s&#039;il est assez bancal.<br />Le pad de la tablette réagit à une sollicitation (sur 8), lorsque le &#039;script&#039; est lancé.<br />Ce pad ne répond à aucune sollicitation lorsque le script n&#039;est pas lancé.(par alt+F2 le chemin de mon script)<br />Je pense que je fais les choses un peu à l&#039;envers.<br />Plutôt que de chercher à connaître la commande pour arrêter un script bancal, mieux vaudrait que je cherche à remettre ce script d&#039;équerre&#160; <img src="http://forum.ubuntu-fr.org/img/smilies/smile.png" width="15" height="15" alt="smile" /></p><p>j&#039;édite<br />Merci pour les indications que tu m&#039;as données, j&#039;y reviendrai sûrement lorsque ce script sera moins vacillant.</p>
+						<p class="postedit"><em>Dernière modification par isloer (Le 02/05/2010, à 01:18)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Hors ligne</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages&#160;: </span><strong class="item1">1</strong></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Forum</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=78">Terminal, scripts et ligne de commande</a></li>
+			<li><span>»&#160;</span><strong><a href="viewtopic.php?id=392705">commande pour arrêter un script</a></strong></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+        </div>
+
+        <div id="footer">
+          <div id="brdfooter" class="block">
+	<h2><span>Pied de page des forums</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+				<form id="qjump" method="get" action="viewforum.php">
+					<div><label><span>Atteindre<br /></span>
+					<select name="id" onchange="window.location=('viewforum.php?id='+this.options[this.selectedIndex].value)">
+						<optgroup label="Débuter avec Ubuntu">
+							<option value="9">Questions et informations avant l&#039;installation</option>
+							<option value="10">Installation d&#039;Ubuntu</option>
+						</optgroup>
+						<optgroup label="Configuration matérielle">
+							<option value="27">Affichage et cartes graphiques</option>
+							<option value="16">Accès internet et réseaux</option>
+							<option value="79">Imprimantes et scanners</option>
+							<option value="6">Autres types de matériel</option>
+						</optgroup>
+						<optgroup label="Utilisation générale">
+							<option value="25">Installation de logiciels et changements de version</option>
+							<option value="13">Bureautique et logiciels pour l&#039;internet et le réseau</option>
+							<option value="17">Lecture et configuration multimédia</option>
+							<option value="81">Création graphique, musicale et vidéo</option>
+							<option value="40">Logiciels éducatifs</option>
+							<option value="15">Jeux</option>
+							<option value="78" selected="selected">Terminal, scripts et ligne de commande</option>
+							<option value="65">Accessibilité</option>
+							<option value="18">Autres logiciels et problèmes généraux</option>
+							<option value="5">Archives</option>
+						</optgroup>
+						<optgroup label="Environnements">
+							<option value="121">GNOME</option>
+							<option value="66">KDE/Plasma</option>
+							<option value="38">XFCE</option>
+							<option value="101">LXQt / LXDE</option>
+							<option value="201">Mate</option>
+							<option value="204">Budgie</option>
+							<option value="37">Unity</option>
+							<option value="207">Cinnamon</option>
+							<option value="41">Autres environnements et personnalisations d&#039;Ubuntu</option>
+						</optgroup>
+						<optgroup label="Utilisations avancées">
+							<option value="51">Ubuntu en entreprise</option>
+							<option value="28">Serveurs</option>
+							<option value="63">Virtualisation et émulation</option>
+							<option value="23">Trucs, astuces et scripts utiles</option>
+							<option value="35">Développement et programmation</option>
+							<option value="91">Sécurité</option>
+							<option value="206">WSL - Ubuntu Core</option>
+							<option value="131">Ubuntu Touch (smartphones et tablettes)</option>
+							<option value="53">Version instable : 24.10 Oracular Oriole</option>
+						</optgroup>
+						<optgroup label="Activités autour du libre">
+							<option value="29">Événements</option>
+							<option value="69">Vos développements libres</option>
+							<option value="71">Vos sites sur le libre</option>
+							<option value="73">Revendeurs libres</option>
+						</optgroup>
+						<optgroup label="Divers">
+							<option value="42">Actualités autour du logiciel libre</option>
+							<option value="21">À propos du site - Contribution(s)</option>
+							<option value="171">Café Ubuntu</option>
+						</optgroup>
+						<optgroup label="Sous-forums">
+							<option value="22">LiveCD/LiveUSB</option>
+							<option value="7">Archives</option>
+							<option value="205">NAS</option>
+							<option value="181">Être ou ne pas être…?</option>
+							<option value="111">Gnome2</option>
+							<option value="82">WiFi</option>
+							<option value="61">Wubi : installation dans Windows</option>
+							<option value="4">Archive version instable</option>
+							<option value="20">Autres architectures</option>
+						</optgroup>
+					</select></label>
+					<input type="submit" value="Aller" accesskey="g" />
+					</div>
+				</form>
+			</div>
+			<div class="conr">
+				<p id="poweredby">Propulsé par <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+          <div class="end-box"><div><!-- Bottom corners --></div></div>
+        </div>
+      </div>
+
+	    <div class="block-inner">
+
+        <div class="content">
+          <ul class="menu"><li class="leaf first contact"><a href="http://www.ubuntu-fr.org/contacts">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+  <!-- Inclusion du script pour les stats de Sp4rKy -->
+  <!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.forum.ubuntu-fr.org","*.forum.ubuntu-fr.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//piwik.ubuntu-fr.org/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//piwik.ubuntu-fr.org/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+</body>
+</html>
+��.y\�      goygozGr`agoz   _    O^partitionKey=%28https%2Cubuntu-fr.org%29,:https://forum.ubuntu-fr.org/viewtopic.php?id=392705 necko:classified 1 strongly-framed 1 security-info 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 request-method GET response-head HTTP/1.1 200 OK
+Server: nginx/1.14.2
+Date: Sat, 19 Oct 2024 08:36:10 GMT
+Content-Type: text/html; charset=utf-8
+Cache-Control: public, max-age=0, s-maxage=300
+Vary: Cookie
+X-Frame-Options: deny
+Strict-Transport-Security: max-age=31536000; includeSubdomains
+ original-response-headers Server: nginx/1.14.2
+Date: Sat, 19 Oct 2024 08:36:10 GMT
+Content-Type: text/html; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Cache-Control: public, max-age=0, s-maxage=300
+Vary: Cookie
+X-Frame-Options: deny
+Strict-Transport-Security: max-age=31536000; includeSubdomains
+ ctid 1 uncompressed-len 0 net-response-time-onstart 967 net-response-time-onstop 980   �"

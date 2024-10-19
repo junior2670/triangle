@@ -1,0 +1,946 @@
+WEBVTT
+
+00:05.110 --> 00:12.020
+salut à tous. C'est Florian Dr Connect Dans cette vidéo, on va s'intéresser
+à trois notions indispensables lorsque l'on parle de délivrable
+
+00:12.020 --> 00:21.309
+des emails et de sécurité, des emails c'est-à-dire, le SPF D Kim et des marques
+aujourd'hui de nombreuses entreprises et bien utilisent l'email comme moyen
+
+00:21.309 --> 00:27.409
+de communication principal. Donc c'est à dire qu'on va être
+susceptible d'envoyer de nombreux emails par jour par semaine
+
+00:27.409 --> 00:32.569
+notamment dans le cadre du newsletter Peut-être
+ou dans le cadre de la relation avec des clients
+
+00:32.569 --> 00:38.049
+Donc ça, ça fait un gros paquet d'emails déjà qui va
+sortir au niveau des boîtes mails de votre entreprise
+
+00:38.049 --> 00:47.580
+Et d'autre part, nous avons les cybercriminels qui eux vont exploiter les domaines
+de messagerie pour envoyer des emails de fishing pour essayer d'usurper l'identit�
+
+00:47.580 --> 00:52.659
+des utilisateurs, etc. Ce qui représente une véritable
+menace. Nous, en tant qu'administrateur système
+
+00:52.659 --> 00:59.930
+on doit faire le nécessaire pour protéger les utilisateurs, donc en
+faisant une configuration adéquate au niveau de notre domaine de messagerie
+
+01:00.040 --> 01:07.129
+Mais ça sera aussi le l'occasion de nous assurer que les emails légitimes
+et uniquement les emails légitimes arrivent bien dans la boîte aux lettres
+
+01:07.129 --> 01:11.419
+de nos destinataires. Aujourd'hui, je vais
+vous présenter les grands principes de SPF
+
+01:11.419 --> 01:17.019
+D Kim et des marques. Et je vous présenterai
+également quelques outils bien utiles pour tester
+
+01:17.019 --> 01:24.410
+pour vérifier vos configurations puisque aujourd'hui, bien
+c'est le début du mois de février deux mille vingt quatre
+
+01:24.410 --> 01:28.349
+Et c'est d'autant plus important de s'y
+intéresser puisque il y a de nombreux fournisseurs
+
+01:28.349 --> 01:36.370
+notamment du côté de chez Google où l'on commence à durcir le ton pour
+considérer comme spam tous les emails qui proviennent de domaines de
+
+01:36.370 --> 01:42.019
+messagerie où il n'y a pas eu une
+configuration correcte du SPF d km des marques
+
+01:42.019 --> 01:46.809
+Alors vous avez tout intérêt à creuser ce sujet et
+c'est pour ça que j'ai décidé de faire cette vidéo
+
+01:46.809 --> 01:51.660
+Déjà pour vous permettre et bien d'en savoir un
+petit peu plus sur ces trois notions essentielles
+
+01:51.660 --> 01:56.870
+Alors n'hésitez pas à regarder la suite de la vidéo. Mais avant
+cela, pensez à vous abonner à la chaîne YouTube it Connect
+
+02:00.010 --> 02:07.059
+Pour commencer, voici cinq bonnes raisons de sécuriser vos domaines
+de messagerie puisqu'ici l'objectif de SPF des cahiers et des marques
+
+02:07.059 --> 02:11.750
+c'est surtout de sécuriser votre domaine à
+vous c'est-à-dire que vous allez empêcher
+
+02:11.750 --> 02:18.800
+eh bien les cybercriminels d'utiliser votre domaine, donc
+d'usurper votre identité pour envoyer des emails en votre nom
+
+02:18.800 --> 02:24.789
+On va dire en tout cas avec votre domaine, mais aussi
+pour assurer une bonne délivrable de vos emails
+
+02:25.220 --> 02:32.179
+Donc c'est pour ça que j'ai nommé ici donc la prévention contre plusieurs
+patients d'identité mais également contre la distribution de malware
+
+02:32.470 --> 02:39.369
+On va ensuite améliorer la délivrable des emails c'est-à-dire qu'on va
+faire en sorte d'avoir un taux de spam le plus faible possible et faire
+
+02:39.369 --> 02:43.369
+en sorte que nos emails légitimes arrivent bien
+dans les boîtes aux lettres de nos destinataires
+
+02:43.970 --> 02:51.279
+On va donc ensuite se protéger contre la distribution de spam
+puisque notre domaine ne pourra pas être détourné à cette fin là
+
+02:51.580 --> 03:00.949
+àmoinsqu'ilyaitunecompromissiondirectementdenotreserveurdemessagerie.Etenfinçavapermettredemaintenirlaréputationdevotreorganisationdevotredomainepuisquesivotredomaine
+
+03:00.949 --> 03:07.880
+est utilisé pour envoyer des spams ou une campagne de bien, ça fait ça
+donne pas une bonne image et surtout vous risquerez d'être blacklist�
+
+03:07.880 --> 03:15.240
+Donc c'est pour ça qu'il est important de mettre en place SPF D km
+et des marques pour essayer de se protéger contre ces différentes
+
+03:15.240 --> 03:24.330
+menaces. Commençons par évoquer la notion de SPM, donc
+c'est probablement le plus rapide et le plus facile à mettre
+
+03:24.330 --> 03:32.029
+en oeuvre. Et son objectif, ça va être d'authentifier le serveur de messagerie
+émetteur d'un courrier électronique c'est-à-dire que si on veut le formuler un
+
+03:32.029 --> 03:40.126
+petit peu, un petit peu différemment. Et bien le serveur de messagerie qui
+a été utilisé pour envoyer un email est-il légitime est-il autorisé par
+
+03:40.126 --> 03:47.785
+rapport au domaine de messagerie en question. C'est à dire que si
+j'envoie un email en tant que it connect fr à partir d'un serveur
+
+03:47.785 --> 03:53.746
+de messagerie bien est-ce que le serveur de messagerie que j'ai
+utilisé, il a le droit d'envoyer des emails pour it connect fr
+
+03:53.746 --> 04:01.692
+Eh bien ça pour le savoir, il va falloir aller lire le contenu
+d'un enregistrement DNS de type txt qui correspondra au SPF
+
+04:02.432 --> 04:06.401
+donc qui sera dans la zone DNS publique, donc
+accessible à tout le monde. Et donc lui
+
+04:06.401 --> 04:14.992
+il va contenir cette liste de serveurs autorisés de serveurs légitimes
+et ça me permettra de savoir si oui ou non le serveur est légitime
+
+04:14.992 --> 04:21.011
+Donc si on essaie un petit peu de schématiser, tout ça pour
+que ce soit plus clair, donc on va avoir un utilisateur qui émet
+
+04:21.011 --> 04:30.040
+un email. Donc ça c'est l'étape une Le serveur de messagerie donc
+qu'on utilise pour envoyer cet e-mail va va donc le traiter et on
+
+04:30.040 --> 04:34.850
+aura du coup au niveau de l'email, un ensemble
+de champs qui sont qui seront renseignés
+
+04:35.320 --> 04:44.149
+notamment le le champ from le champ tout et on a ici l'adresse
+I P du serveur qui a été utilisé pour envoyer le message
+
+04:44.149 --> 04:51.480
+Alors pourquoi j'ai mis ici le et le champ from? Et en fait
+ce sont des champs qui sont dans l'en tête de l'email
+
+04:51.869 --> 04:59.600
+le from Eh bien, c'est ce que l'on voit notamment dans Outlook
+par exemple l'adresse expéditrice de l'email le Eh bien
+
+04:59.600 --> 05:04.119
+c'est en gros s'il y a un souci pour envoyer
+cet e-mail, et bien on va retourner l'erreur
+
+05:04.119 --> 05:08.209
+La notification à la personne enfin à
+l'adresse mail qui est mentionnée ici
+
+05:08.209 --> 05:14.010
+donc en général l'utilisateur et il faut savoir
+que le SPF donc au moment de la vérification
+
+05:14.079 --> 05:19.109
+c'est bien le domaine qui est ici qui est
+récupéré. C'est pas le domaine du champ from
+
+05:19.109 --> 05:24.290
+ce qui veut dire que et c'est pour ça que ça est
+important de mettre en place des Kim et des marques
+
+05:24.290 --> 05:33.450
+çaveutdirequeonpourraitmanipulerlesen-têtesd'unemailpourquelechampfromparaisselégitimeavecledomainequel'onsouhaiteetonvaallerjouer
+
+05:33.450 --> 05:38.089
+sur le domaine du de manière à à
+passer un petit peu ou à détourner
+
+05:38.089 --> 05:46.540
+Et bien la vérification du SP m. Donc voilà, ça c'était la petite parenthèse
+donc Ensuite l'email sera envoyé au serveur de messagerie du destinataire
+
+05:46.540 --> 05:52.059
+par exemple en domaine Point fr et lui ce serveur de messagerie,
+qu'est ce qu'il va faire? Il va faire une interrogation du D N
+
+05:52.059 --> 05:57.700
+S pour lire l'enregistrement SPF de Point
+tech qui est le domaine sélectionné ici
+
+05:58.059 --> 06:05.510
+Et donc grâce à ça, il va pouvoir répondre à la question suivante
+le serveur est-il légitime par rapport euh et bien à la lecture
+
+06:05.510 --> 06:13.140
+de l'enregistrement SP e Donc il va comparer l'adresse I P du
+serveur qui est ici avec les informations qu'il y a dans le SP
+
+06:13.140 --> 06:18.750
+F. Il va pouvoir déterminer ensuite si l'email a été envoyé
+depuis un serveur légitime ou depuis un serveur illégitime
+
+06:19.109 --> 06:22.649
+ce qui pourra faire en sorte d'avoir un
+email qui part plutôt dans les spams
+
+06:25.630 --> 06:30.839
+Ensuite, on va se demander comment mettre en
+place le SPF et bien au niveau de votre zone D N S
+
+06:30.839 --> 06:35.549
+Vous allez créer un enregistrement de type T
+X T cet enregistrement de type de type T x T
+
+06:35.549 --> 06:44.589
+vous allez lui mettre une valeur qui aura la syntaxe suivante.
+Donc V SP F un et ensuite on aura plusieurs plusieurs options
+
+06:44.589 --> 06:52.510
+possibles pour spécifier les serveurs qui sont légitimes. Donc on
+pourra mettre I P quatre pour une i PV quatre IP six pour une PV
+
+06:52.510 --> 06:56.829
+six par exemple. Ici si je veux autoriser mon
+serveur que j'avais sur le schéma précédent
+
+06:56.829 --> 07:01.130
+donc le un point deux point trois point quatre
+et bien je vais le préciser comme ceci
+
+07:01.500 --> 07:05.100
+Ensuite on va dire Mais moi j'utilise
+pas mon savoir de messagerie en interne
+
+07:05.100 --> 07:10.630
+j'utilise Microsoft trois cent Soixante-cinq
+Google Peut-être même un service en ligne
+
+07:10.869 --> 07:16.609
+comment faire? Et bien dans ce cas là, on va
+intégrer une directive de type comme c'est le cas ici
+
+07:16.660 --> 07:20.829
+hein et on va indiquer la valeur fournie par
+notre fournisseur. Donc la première ligne
+
+07:20.829 --> 07:25.350
+c'est ce que l'on a pour du Google. La seconde
+ligne, c'est ce que l'on a pour du Microsoft
+
+07:25.350 --> 07:29.937
+trois cent Soixante-cinq. Donc voilà ça
+ça, ça permet En fait, le fait de faire un
+
+07:30.458 --> 07:39.518
+çaveutdirequ'onvaallerincluretouslesserveursdemessageriequisecachentderrièrel'enregistrementdnSquiesticidonccequipermetenfaitd'importer
+
+07:39.518 --> 07:46.067
+dans votre SPF tous les serveurs de messagerie de Microsoft
+ou de Google par rapport à ce qui est mentionné ici
+
+07:46.227 --> 07:50.388
+Donc on va pouvoir ensuite dans cette
+dans ce SPF cumuler plusieurs directives
+
+07:50.388 --> 07:54.148
+On peut très bien avoir un i P quatre et
+en plus un cloud ou avoir plusieurs cloud
+
+07:54.697 --> 08:04.415
+Çaserapotentiellementlecassions'appuiesurplusieursfournisseursdeservices.Doncilfautsavoirtoutdemêmequeonestlimitéàdeuxcentcinquante-cinqcaractères
+
+08:04.415 --> 08:12.665
+au niveau et bien du champ SPF et qu'on peut avoir au maximum
+dix instructions qui sont comprises dans cet enregistrement
+
+08:12.665 --> 08:16.165
+Ce qui va permettre aussi de ne pas
+consommer trop de ressources en fait
+
+08:16.165 --> 08:21.555
+lors de la lecture de l'enregistrement SPF, puisque
+sinon ça peut être problématique d'un point de vue DNS
+
+08:22.105 --> 08:29.493
+donc un petit point d'attention pour finir sur la partie
+tiré ou de en fait qu'on a à la fin ici d'enregistrement
+
+08:29.574 --> 08:34.044
+alors le tiré, ça correspond à du
+donc c'est-à-dire c'est plus strict
+
+08:34.343 --> 08:41.193
+On va tout simplement considérer que si le serveur qui a été
+utilisé pour envoyer l'email n'est pas renseigné dans le SPF
+
+08:41.193 --> 08:44.984
+et bien on considère qu'on doit rejeter
+l'email car il n'est pas légitime
+
+08:44.984 --> 08:52.851
+Donc ce sera vraiment cette valeur qui est conseillée quand on veut lutter
+contre l'usurpation identité et ensuite et bien de la deuxième possibilité
+
+08:52.901 --> 09:00.822
+c'est le de donc le où là on est un peu plus indulgent puisque
+si l'email a été envoyé depuis un serveur qui n'est pas
+
+09:00.822 --> 09:05.552
+autorisé et bien voilà, il sera marqué comme non
+légitime, mais il ne sera pas forcément rejeté
+
+09:05.552 --> 09:11.142
+Donc c'est surtout intéressant dans une phase de test
+où on va dire avant de mettre en prod éventuellement
+
+09:11.142 --> 09:20.190
+çapermetd'avoiruneétapeintermédiaire.VoilàEncequiconcerneleSPF,nousallonsmaintenantparlerdeDKIM.Qu'estce
+
+09:20.190 --> 09:26.989
+que DK I M? Eh bien, il faut savoir que c'est une méthode d'authentification du
+courrier électronique basée sur des signatures cryptographiques qui va nous
+
+09:26.989 --> 09:33.169
+permettre de lutter à la fois contre l'usurpation des adresses
+mail mais également contre la modification des messages
+
+09:33.169 --> 09:41.039
+Donc ça va être intéressant et ça va apporter une couche de protection
+supplémentaire vis-à-vis du SP F que l'on vient de voir donc vu
+
+09:41.039 --> 09:46.232
+que ça s'appuie sur des signatures cryptographiques
+et en L de la cryptographie à clé publique
+
+09:46.232 --> 09:50.232
+Eh bien on va avoir au niveau de DK
+une paire de clés avec une paire
+
+09:50.232 --> 09:57.122
+une clé publique et une clé privée. Il n'y a que la clé
+publique que l'on va communiquer et pour la communiquer bien
+
+09:57.122 --> 10:01.362
+on va la stocker dans un enregistrement
+DNS au même titre que le SPF
+
+10:01.362 --> 10:10.255
+Ce sera un enregistrement DNS de type txt et on va venir ajouter un
+certain nombre d'options et notamment la valeur correspondant à notre cl�
+
+10:10.255 --> 10:18.075
+publique. Et donc lorsque d km est utilisé, une signature numérique est
+ajoutée à l'en-tête des emails que l'on envoie à partir de notre domaine
+
+10:18.296 --> 10:25.955
+Donc j'ai schématisé ça une nouvelle fois donc on a notre utilisateur
+qui émet un email ici au niveau de notre serveur de messagerie It
+
+10:25.955 --> 10:34.796
+Connect Tech, on a la connaissance de la paire de clés, donc
+la clé publique et la clé privée qui est ici en rouge et
+
+10:34.796 --> 10:38.609
+donc au niveau de mon email qui
+va être envoyé bien cet email
+
+10:38.609 --> 10:47.520
+Il a été signé avec la clé privée donc grâce à mon savoir de
+messagerie donc ensuite cet email va être transmis au savoir de
+
+10:47.520 --> 10:55.309
+messagerie du destinataire. Lui qu'est ce qu'il va faire? Et bien
+il va aller consulter les enregistrements d N S de CC pour lire la
+
+10:55.309 --> 11:02.409
+clé publique DK I M correspondante et ce qui va lui permettre ensuite
+à son niveau et bien de faire une vérification de la signature
+
+11:02.604 --> 11:08.765
+Il va pouvoir déterminer si l'email est authentique ou non et
+un petit peu comme le SPF et bien en fonction du retour que l'on
+
+11:08.765 --> 11:16.205
+a ici, on va pouvoir et bien déterminer voilà signature vérifiée
+l'email est légitime Donc s'il y a une un échec de la vérification
+
+11:16.205 --> 11:20.385
+cela peut vouloir dire que l'email a
+été altéré pendant sa transmission
+
+11:23.270 --> 11:29.299
+Alors comment on va pouvoir mettre en place des K I M alors
+déjà il faut savoir que il va falloir générer une paire de
+
+11:29.299 --> 11:33.359
+clés ou utiliser celle fournie par
+le fournisseur. Donc dans ce cas là
+
+11:33.359 --> 11:39.640
+en fait il n'y a pas de réponse toute faite. Ça va dépendre si
+vous êtes sur Microsoft trois cent soixante-cinq du Google ou autre
+
+11:39.640 --> 11:43.309
+ou si vous utilisez directement un
+domaine chez OVH chez OS. Voilà
+
+11:43.309 --> 11:48.885
+il y a plusieurs manières de faire. Il faut se
+renseigner dans la documentation de votre fournisseur
+
+11:48.885 --> 11:56.414
+Si on prend l'exemple de Microsoft trois cent Soixante-cinq on va
+devoir faire une série de commandes pour faire la configuration
+
+11:56.724 --> 12:00.645
+Ensuite il faudra configurer votre serveur
+de messagerie pour signer les emails
+
+12:00.645 --> 12:04.885
+Donc là c'est pareil, il faut se renseigner dans la
+documentation et une fois qu'on aura fait tout ça
+
+12:04.885 --> 12:12.760
+on va devoir configurer la zone DNS pour dk cette zone D N S
+Donc on aura tout d'abord un enregistrement qui aura le nom
+
+12:12.760 --> 12:19.859
+suivant à créer donc un nom de sélecteur. Donc je vais revenir
+là dessus après point domaine qui point domaine point fr Donc si on
+
+12:19.859 --> 12:25.630
+prend un exemple un tech et
+ensuite donc j'ai ici le domaine
+
+12:25.859 --> 12:32.866
+Donc ça c'est typiquement le genre d'enregistrement que l'on a sur un
+environnement Microsoft trois cent soixante-cinq où on a un sector un un et
+
+12:32.866 --> 12:41.005
+un selector deux et à chaque fois la valeur de cet enregistrement
+doit faire référence à DK M et indiquer la clé publique donc V
+
+12:41.005 --> 12:49.195
+dk M un Donc ça c'est la version On va dire le K égal RSA
+c'est l'algorithme utilisé pour calculer la signature et le p
+
+12:49.195 --> 12:58.271
+égal.Etbenlàc'estderrière,c'esttoutelavaleurcorrespondantàlaclépubliqueetdoncdanscecaslà,onessaieraaussideprioriseruneclédesKmdelongueurdeux
+
+12:58.271 --> 13:06.161
+mille quarante-huit huit plutôt que la longueur mille vingt-quatre qui est
+celle par défaut et donc le sélecteur qui est précisé ici veut dire qu'on
+
+13:06.161 --> 13:14.481
+peut avoir plusieurs enregistrements des km avec des noms de sélecteurs
+différents Et ensuite quand un quand un serveur de messagerie va recevoir un email
+
+13:14.481 --> 13:20.591
+pour votre domaine? Et bien il ira lire dans le DNS
+l'information correspondant au sélecteur en question
+
+13:23.390 --> 13:28.789
+Qu'est ce que démarque? Et bien c'est ce que nous allons voir dès
+maintenant. Alors déjà démarques on peut le traduire par authentification
+
+13:28.789 --> 13:37.020
+notification et conformité des messages basés sur un domaine, ce qui nous donne déjà
+des informations assez intéressantes et finalement et bien l'objectif de démarche
+
+13:37.020 --> 13:46.044
+çavaêtred'authentifierlesemailsgrâceauxinfoformationsquisontcontenuesdanslesenregistrementsSPFetDKMCequiveutdirequedmarkonva
+
+13:46.044 --> 13:53.085
+le configurer à la fin une fois qu'on aura mis en
+place SPF et DK M qu'on aura testé ces deux là
+
+13:53.085 --> 14:01.559
+on viendra mettre en place le dmark en supplément. Et donc j'ai
+mis une petite phrase en fait qui je trouve représente bien à quoi
+
+14:01.559 --> 14:08.239
+va servir des marques et où est-ce qu'il va se positionner
+également dans la chaîne de vérification on va voilà
+
+14:08.239 --> 14:15.489
+voici comment je signe mes emails. Donc on a voilà
+SPF et ou DK m et voici ce que vous devriez faire
+
+14:15.489 --> 14:20.909
+Donc là on a une politique des marques que l'on va voir après
+si vous recevez un email qui semble venir de mon domaine mais
+
+14:20.909 --> 14:26.609
+qui ne correspond pas à ces signatures, donc on va pouvoir
+mettre en place une politique qui indique ce que l'on doit faire
+
+14:26.609 --> 14:33.309
+des emails qui sont légitimes ou non. Donc, comme je l'ai mis des
+marques sert à définir une politique sur la conduite à tenir lors
+
+14:33.309 --> 14:38.630
+d'un échec d'authentification. Et on a aussi tout un
+système de, c'est à dire qu'on va avoir des rapports
+
+14:38.630 --> 14:43.760
+des marques qui vont être générés et qui vont
+permettre aux propriétaires du domaine savoir est-ce
+
+14:43.760 --> 14:50.869
+qu'il y a eu des emails qui n'ont pas été reçus par les
+destinataires ou est-ce qu'il y a eu aussi des d'usurpation au niveau
+
+14:50.869 --> 14:54.440
+du domaine de messagerie. Donc une
+fois de plus ça je l'ai schématisé
+
+14:54.859 --> 15:00.460
+On va avoir ici notre utilisateur qui émet un email
+toujours sur le même principe savoir de messagerie
+
+15:00.460 --> 15:05.520
+expéditeur de l'email On envoie ça ensuite au
+savoir de messagerie du destinataire de l'email
+
+15:05.520 --> 15:10.190
+Lui, il va faire une lecture de la politique
+des marques via une interrogation du DNS
+
+15:10.450 --> 15:19.619
+Puis une nouvelle fois, on s'appuie sur un enregistrement DNS spécifique pour
+déclarer notre politique des marques et ensuite il va pouvoir vérifier donc
+
+15:19.619 --> 15:25.940
+si l'authentification est conforme ou non. Donc forcément
+quand il y aura ça aussi il y a toute la partie SP F DK I M
+
+15:25.940 --> 15:33.549
+qui sera vérifiée derrière hein puisque ça va faire suite à la
+lecture de la politique des marques et on va pouvoir déterminer si l'email
+
+15:33.549 --> 15:38.760
+est légitime ou pas. Si c'est le cas, bon ben il est délivré
+sinon et bien on va appliquer la politique des marques et l�
+
+15:38.760 --> 15:47.880
+çapourraetbiendécoulersurtroissituationsdifférentessoitl'emailseradélivrémalgrétout,soitilseraenquarantaineousoitilseratotalement
+
+15:47.880 --> 15:57.119
+rejeté Comment ça va fonctionner la politique des marques? Et
+bien on va on va voir ça en s'intéressant en fait au à la
+
+15:57.119 --> 16:04.320
+création de l'enregistrement D N S donc on va enregistrer
+créer un enregistrement d N S T X T dans la zone d n S
+
+16:04.320 --> 16:09.989
+publique. Mais avant cela, on fera bien l'effort de
+vérifier que SP F et DK I M sont bien configurés
+
+16:10.299 --> 16:18.919
+Cet enregistrement doit être nommé des marques. Donc voilà, ça me donnerait
+l'exemple suivant sur mon domaine point tech et ensuite on va lui mettre
+
+16:18.919 --> 16:25.750
+la valeur suivante. Alors le V égal des marques un P égal politique
+donc je vais vous présenter après les différentes politiques
+
+16:25.750 --> 16:31.830
+Le R U a égale, c'est à dire à quelle adresse
+mail on doit envoyer les rapports des marques
+
+16:31.830 --> 16:39.549
+mais en gros, c'est celle qui est indiquée ici. Cette valeur là et
+bien en fait veut dire à quel pourcentage d'email on doit appliquer
+
+16:40.039 --> 16:44.130
+la politique des marques et ça, je vais
+vous en parler juste après. Ensuite
+
+16:44.130 --> 16:48.140
+on va tester la configuration des marques
+et surveiller les rapports des marques
+
+16:48.140 --> 16:52.849
+ce qui permettra de voir Est-ce qu'il y a des problèmes de
+livraison des emails est-ce qu'il y a des tentatives d'usurpation etc
+
+16:53.530 --> 16:59.650
+Donc si on s'intéresse un petit peu plus dans le détail à cet
+enregistrement D N S on va voir qu'on a trois politiques hein
+
+16:59.650 --> 17:03.369
+qui correspondent aux trois statuts que
+j'ai mis en évidence sur mon schéma
+
+17:03.429 --> 17:07.079
+On a la politique égale? Non? En
+fait, ça c'est aucune protection
+
+17:07.150 --> 17:13.650
+c'est en mode audit, donc c'est-à-dire que quand vous allez mettre en
+place des marques, je vous recommande de mettre en place cette politique l�
+
+17:13.650 --> 17:18.180
+au début pour voir un petit peu quel
+est l'impact de la nouvelle configuration
+
+17:18.180 --> 17:25.459
+Vous déployez sans pour autant et bien commencer à rejeter
+des emails puisque si vous avez fait une erreur de configuration
+
+17:25.459 --> 17:33.060
+bien en fait, vous pouvez avoir beaucoup d'emails légitimes qui vont être marqués
+comme non authentifiés et qui vont finir potentiellement en spam ou totalement
+
+17:33.060 --> 17:36.719
+rejetés. Donc ça peut être un vrai
+problème au niveau de votre entreprise
+
+17:36.719 --> 17:41.859
+On passe d'ailleurs par la phase d'audit. Après on va se
+mettre en mode, ensuite on va passer en mode quarantaine
+
+17:41.859 --> 17:48.849
+Donc là on va taguer les emails non authentifiés. Donc il y a
+eu un échec et ils vont être considérés comme spam grâce au
+
+17:48.849 --> 17:55.579
+tag on va dire qui va être mis sur ces emails là et ensuite
+on a une dernière politique qui est la plus stricte rejet
+
+17:55.579 --> 18:04.839
+ici et là tout simplement les emails non authentifiés ils sont rejetés
+alors en production en général on on garde sur le mode quarantaine
+
+18:04.839 --> 18:13.969
+qui qui permet de trouver un bon compromis entre sécurité et euh
+délivrable puisque voilà ça ça peut être un problème si si
+
+18:13.969 --> 18:19.430
+on a des emails non authentifiés alors qu'en fait ils sont légitimes
+et bien ils vont être rejetés au moins là ils arrivent quand même
+
+18:19.430 --> 18:25.449
+dans les spams donc ça permet de trouver un un compromis. Un
+bon compromis on va dire et donc en ce qui concerne les autres
+
+18:25.449 --> 18:32.670
+options bah celle-là j'ai déjà expliqué la dernière aussi
+par contre j'ai pas expliqué le a DK i M égal s et le a SP
+
+18:32.670 --> 18:39.729
+F égal s alors si on commence par le a SP F égal s alors
+en fait ça permet de vérifier la correspondance au niveau
+
+18:39.729 --> 18:43.849
+du nom de domaine entre le nom de domaine qui
+est présent dans le champ from de l'en tête
+
+18:43.849 --> 18:47.489
+de l'email et le nom de domaine
+qui est présent au niveau du SP F
+
+18:47.489 --> 18:53.619
+Alors si on est sur égal s en fait on est en mode strict
+c'est-à-dire qu'il faut qu'il y ait une correspondance exacte
+
+18:53.770 --> 19:02.369
+on a une autre valeur, c'est le égal r, ce qui permet d'être un
+peu plus souple et autoriser une correspondance non pas au niveau
+
+19:02.369 --> 19:08.969
+du domaine principal, mais domaine exact on va dire mais
+on va aussi autoriser l'utilisation de sous-domaine
+
+19:08.969 --> 19:15.400
+Donc ça c'est à vous de voir si vous avez ce besoin ou non.
+Et on a exactement la même chose avec la vérification entre
+
+19:15.400 --> 19:19.680
+le champ from et DK i m au
+niveau du paramètre a DK I M
+
+19:19.680 --> 19:29.060
+ÉgalsoùonpeutaussiavoiraDKIM.Égalrsurlemêmeprincipe.Enfaitc'estselonsionveutfairecettecorrespondanceenautorisantounon
+
+19:29.310 --> 19:33.849
+les sous-domaines en fait ou si on veut vraiment que ce soit
+strict et que ce soit uniquement sur les domaines principaux
+
+19:33.849 --> 19:40.560
+Et enfin, sachez que l'enregistrement des marques doit
+être unique au niveau de votre zone d n S publique
+
+19:43.469 --> 19:51.329
+Pour finir, je vais évoquer quelques outils très pratiques et indispensables que
+vous devez connaître lorsque vous vous intéressez et bien à la sécurité de
+
+19:51.329 --> 19:59.849
+la messagerie à la délivrable de vos emails et notamment lorsque vous allez
+chercher à vérifier votre configuration SPF DK M des marques Le premier
+
+19:59.849 --> 20:06.944
+c'est M X Box vous avez donc dans la partie super ici un ensemble
+de vérifications possibles vous pouvez dire bah tiens moi je vais
+
+20:06.944 --> 20:11.045
+vérifier le dmark, le DK m
+le SPF donc je mets pas SPF
+
+20:11.214 --> 20:17.755
+je mets le nom de domaine et je clique sur le bouton donc
+il va me retourner le SPF correspondant à ce domaine et il
+
+20:17.755 --> 20:24.114
+va aussi bien m'indiquer si voilà si la syntaxe est correcte
+etc Donc là j'ai le SPF correspondant à mon domaine
+
+20:24.114 --> 20:30.040
+ce qui me permet aussi de voir qu'il a bien
+été lu au niveau de du domaine Connect Point
+
+20:30.099 --> 20:34.180
+Donc ça me permet de vérifier la configuration.
+Vraiment, je vous encourage à mettre M
+
+20:34.180 --> 20:40.619
+Xbox dans vos favoris et à l'utiliser lorsque vous
+allez chercher à vérifier votre configuration
+
+20:40.619 --> 20:48.760
+Je vous encourage aussi à utiliser l'outil Google Post master qui va
+permettre de connaître le taux de spam en ce qui concerne votre domaine
+
+20:48.760 --> 20:52.680
+donc vous allez aller sur cette interface
+avec votre compte Google. Ensuite
+
+20:52.680 --> 20:56.462
+il faudra vérifier votre domaine Si vous
+l'avez jamais fait pour les services Google
+
+20:56.702 --> 21:01.222
+vous cliquez dessus et vous allez pouvoir
+obtenir des statistiques. Par exemple
+
+21:01.222 --> 21:06.802
+ici, le taux de mise en spam, on peut voir sur les sept derniers
+jours, sur les quatre-vingt-dix derniers jours par exemple
+
+21:06.962 --> 21:13.651
+on va avoir différents différents graphiques qui vont
+être ici. Et il faut savoir que depuis février deux mille
+
+21:13.651 --> 21:22.562
+vingt-quatre Google et Yahoo! Ils veulent qu'on maintienne le taux de spam
+sous zéro virgule dix pour cent et qu'il faut absolument éviter de dépasser
+
+21:22.562 --> 21:29.644
+zéro virgule trente pour cent. Donc cette interface peut vous
+servir à vérifier si votre taux de spam est trop élevé ou non
+
+21:29.644 --> 21:35.063
+Et vous allez aussi avoir d'autres informations
+réputation des adresses I P des domaines authentification
+
+21:35.063 --> 21:40.894
+chiffrement, etc. Authentification par exemple. Voilà,
+je peux voir que j'ai des taux de réussite des marques
+
+21:40.894 --> 21:46.004
+Taux de réussite SPF Bon, visiblement c'est
+variable, il faudra regarder pourquoi voilà
+
+21:46.004 --> 21:52.306
+Et donc on a des informations comme ça qui sont visibles dans
+cette interface qui est qui est un outil quand même assez sympa
+
+21:52.306 --> 21:59.345
+Enfin, nous avons l'outil mail testeur qui permet, comme
+C'est écrit ici de tester l'indésirable de vos e-mails
+
+21:59.345 --> 22:02.956
+Alors en fait, comment ça va marcher? Eh bien,
+on va envoyer un e-mail à l'adresse qui est ici
+
+22:02.956 --> 22:08.906
+donc on va copier cette adresse et on va ensuite
+ouvrir un Outlook ou en tout cas son client messagerie
+
+22:08.906 --> 22:13.666
+Et on va envoyer un email à cette adresse là une
+fois que l'email envoyé, on clique ici Tout d'abord
+
+22:13.666 --> 22:19.907
+nous avons une note globale et ce qui va être intéressant, c'est d'aller
+regarder les items qui sont en dessous pour au niveau des catégories
+
+22:19.907 --> 22:25.328
+bien qu'est ce que l'on peut améliorer ou
+pas, justement pour que la note soit meilleure
+
+22:25.328 --> 22:31.017
+Donc c'est pour ça qu'ici on aura notamment la partie
+authentification où là on va vérifier le SPF
+
+22:31.017 --> 22:37.417
+le DK M notamment aussi le dmark, etc. Et
+on peut avoir des informations voir là
+
+22:37.417 --> 22:44.197
+En fait, c'est un score qui a été généré à partir d'un
+serveur de messagerie qui a reçu mon e-mail et qui a suivi toutes
+
+22:44.197 --> 22:49.290
+les étapes de vérification pour voir
+si mon email était légitime ou non
+
+22:49.640 --> 22:54.339
+Donc c'est intéressant de connaître aussi
+cet outil. Voilà donc il y a d'autres outils
+
+22:54.339 --> 23:00.280
+hein, J'en ai présenté quelques uns. N'hésitez pas aussi à
+commenter la vidéo pour vous donner les outils que vous utilisez
+
+23:00.280 --> 23:05.744
+Vous connaissez? Il y a aussi celui-ci qui permet
+de faire de l'yse de rapport des marques
+
+23:05.744 --> 23:10.135
+Donc n'hésitez pas à explorer aussi
+cet outil là si le sujet vous intéresse
+
+23:10.135 --> 23:16.425
+Et en tout cas moi j'ai fait le tour des outils que je souhaitais
+vous présenter dans le cadre de cette vidéo d'introduction
+
+23:19.229 --> 23:23.599
+Voilà, cette vidéo d'introduction à SPF
+DK M et des marques est désormais terminée
+
+23:23.599 --> 23:32.170
+J'espère que vous avez bien compris l'importance et la nécessité de
+configurer et bien ces trois éléments au niveau de votre domaine de messagerie
+
+23:32.400 --> 23:38.130
+J'insiste sur le fait que ça ne va pas vous empêcher
+de recevoir des spams ou des emails malveillants
+
+23:38.130 --> 23:45.510
+mais par contre ça va faire en sorte que votre domaine à vous
+ne puisse pas être utilisé pour envoyer du spam ou des emails
+
+23:45.510 --> 23:52.926
+de donc en fait, ça veut dire que si un maximum de personnes
+jouent le jeu et bien de bien protéger leur domaine de messagerie
+
+23:52.926 --> 24:02.485
+çaveutdirequ'onauraaufinaletbienlesdomainesdemessagerielégitimesetbienserontcorrectementprotégéspourluttercontrel'usurpation
+
+24:02.666 --> 24:11.416
+d'identité, enfin le détournement et ce tout ce qu'on veut. Donc c'est
+vraiment un effort collectif finalement qui est associé à la mise en place
+
+24:11.515 --> 24:16.852
+de De de SP F DK M et des marques en attendant
+peut-être d'autres vidéos sur le sujet
+
+24:16.852 --> 24:24.421
+notamment une vidéo sur la configuration de de SP F DK M des marques
+avec Microsoft trois cent soixante cinq et on pouvait vous intéresser
+
+24:24.421 --> 24:33.541
+àARCetàBMIPeut-êtremêmeàDNSCquivientpourallerencoreplusloindanslaprotectiondevotredomainedemessagerie.J'espèrequecettevidéo
+
+24:33.541 --> 24:37.281
+vous a plu, que vous avez pu apprendre des choses.
+N'hésitez pas à me le dire en commentaire
+
+24:37.281 --> 24:41.171
+n'hésitez pas également à liker et à
+partager et je vous dis à très vite ciao
+���{��      gJngJnGrF�g;đ   �    O^partitionKey=%28https%2Cit-connect.fr%29,a,~FETCH,:https://video-meta.humix.com/caption/kLQQH1oz-YCG/131b5b4ee08381caea4fc36736a87023_fr-FR.vtt necko:classified 1 strongly-framed 1 security-info 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 request-method GET request-Origin https://www.it-connect.fr request-Accept-Encoding gzip, deflate, br, zstd response-head HTTP/2 200 
+date: Sat, 19 Oct 2024 05:58:06 GMT
+content-type: text/vtt; charset=utf-8
+content-length: 32099
+access-control-allow-origin: *
+content-disposition: inline
+etag: "131b5b4ee08381caea4fc36736a87023"
+last-modified: Fri, 30 Aug 2024 17:03:12 GMT
+vary: Origin, Accept-Encoding
+cache-control: max-age=2678400
+cf-cache-status: HIT
+age: 25693
+accept-ranges: bytes
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=qZ%2B0b3Yzrr44vaP%2BGZAD8D%2FKP11OAvB3sbo5butjnk6N%2FuNQx9ozcGgTStRWQOmBljSKcHXWeJIp%2BRdGm%2BgCyS447mGplcChVenD50CumRicp%2FcB3%2BD3UUkJM5IUBTL7RJCQZn0kBw%3D%3D"}],"group":"cf-nel","max_age":604800}
+nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+server: cloudflare
+cf-ray: 8d4e88cf9d21b79f-ABJ
+alt-svc: h3=":443"; ma=86400
+server-timing: cfL4;desc="?proto=TCP&rtt=5146&sent=7&recv=12&lost=0&retrans=0&sent_bytes=3727&recv_bytes=1686&delivery_rate=814277&cwnd=254&unsent_bytes=0&cid=4d7d6c9dffcba43d&ts=93&x=0"
+X-Firefox-Spdy: h2
+ original-response-headers date: Sat, 19 Oct 2024 05:58:06 GMT
+content-type: text/vtt; charset=utf-8
+content-length: 32099
+access-control-allow-origin: *
+content-disposition: inline
+etag: "131b5b4ee08381caea4fc36736a87023"
+last-modified: Fri, 30 Aug 2024 17:03:12 GMT
+vary: Origin, Accept-Encoding
+cache-control: max-age=2678400
+cf-cache-status: HIT
+age: 25693
+accept-ranges: bytes
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=qZ%2B0b3Yzrr44vaP%2BGZAD8D%2FKP11OAvB3sbo5butjnk6N%2FuNQx9ozcGgTStRWQOmBljSKcHXWeJIp%2BRdGm%2BgCyS447mGplcChVenD50CumRicp%2FcB3%2BD3UUkJM5IUBTL7RJCQZn0kBw%3D%3D"}],"group":"cf-nel","max_age":604800}
+nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+server: cloudflare
+cf-ray: 8d4e88cf9d21b79f-ABJ
+alt-svc: h3=":443"; ma=86400
+server-timing: cfL4;desc="?proto=TCP&rtt=5146&sent=7&recv=12&lost=0&retrans=0&sent_bytes=3727&recv_bytes=1686&delivery_rate=814277&cwnd=254&unsent_bytes=0&cid=4d7d6c9dffcba43d&ts=93&x=0"
+X-Firefox-Spdy: h2
+ ctid 1 net-response-time-onstart 118 net-response-time-onstop 118   }c

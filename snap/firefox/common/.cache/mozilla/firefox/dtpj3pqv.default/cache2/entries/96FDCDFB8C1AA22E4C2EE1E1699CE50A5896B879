@@ -1,0 +1,1073 @@
+WEBVTT
+
+00:00.000 --> 00:07.880
+Salut à tous c'est Florian du site ITConnect,
+bienvenue dans cette introduction au scripting
+
+00:07.880 --> 00:12.880
+bash sous Linux, puisque effectivement aujourd'hui
+je vous propose une vidéo complète d'introduction
+
+00:12.880 --> 00:17.639
+au scripting bash. Nous allons voir ce que c'est
+le bash, nous allons également faire nos premiers
+
+00:17.639 --> 00:23.159
+pas avec l'exécution de nos premières commandes
+et puis après on va créer notre premier script
+
+00:23.159 --> 00:27.559
+bash. Je vais vous expliquer un petit peu la
+syntaxe globale et quelques notions de base
+
+00:27.680 --> 00:32.759
+comme les variables, des choses comme ça, ce qui
+vous permettra de bien prendre en main le bash pour
+
+00:32.759 --> 00:37.400
+faire vos premiers pas. Et puis par la suite je
+pourrais vous proposer d'autres vidéos pour
+
+00:37.400 --> 00:42.560
+approfondir le sujet et aborder des notions
+complémentaires comme les structures conditionnelles
+
+00:42.560 --> 00:47.959
+les boucles, etc. N'hésitez pas aussi à commenter
+cette vidéo pour me dire si c'est un sujet qui
+
+00:47.959 --> 00:52.639
+vous intéresse, si c'est un sujet pour lequel
+vous aimeriez plus de contenu, pour aussi que
+
+00:52.639 --> 00:57.080
+j'adapte en fonction de ce que vous aimeriez
+voir sur la chaîne YouTube ITConnect. Nous
+
+00:57.080 --> 01:00.720
+allons tout de suite rentrer dans le vif du sujet
+mais avant cela pensez à vous abonner à la chaîne
+
+01:00.720 --> 01:10.760
+YouTube ITConnect. Le bash est l'un des interpréteurs
+de commandes les plus populaires sur les
+
+01:10.760 --> 01:15.360
+environnements Linux Unix. Effectivement on
+va le retrouver par défaut sur de nombreuses
+
+01:15.360 --> 01:22.120
+distributions comme Debian, Ubuntu, Rocky Linux,
+etc. On va installer ces distributions là et de
+
+01:22.120 --> 01:26.760
+base on aura accès à cet interpréteur de
+commandes qui est le bash. Alors c'est quoi le
+
+01:26.760 --> 01:31.760
+bash ? En fait c'est ce que l'on appelle un shell.
+Le shell va être une interface système qui
+
+01:31.760 --> 01:36.760
+va venir se positionner entre l'utilisateur
+et le système d'exploitation et qui va nous
+
+01:36.760 --> 01:42.239
+permettre d'interagir avec le système d'exploitation
+par l'intermédiaire de commandes que l'on va venir
+
+01:42.239 --> 01:48.000
+exécuter. On va pouvoir utiliser le bash pour
+faire de l'administration d'une machine locale
+
+01:48.000 --> 01:53.559
+donc pour gérer les fichiers, gérer les données,
+etc. On va pouvoir faire de l'administration en
+
+01:53.559 --> 01:59.239
+ligne de commande de notre machine Linux, mais
+on va aussi pouvoir s'appuyer sur le bash pour
+
+01:59.239 --> 02:06.000
+créer des scripts et donc automatiser des tâches
+diverses et variées, et notamment des tâches qui
+
+02:06.000 --> 02:10.720
+vont être répétitives. Aujourd'hui le bash est
+une compétence essentielle pour ceux qui souhaitent
+
+02:10.720 --> 02:15.960
+faire de l'administration de machine Linux. Il
+n'y a pas forcément besoin d'être expert en bash
+
+02:15.960 --> 02:24.759
+mais ça me semble vraiment indispensable aujourd'hui pour tout administrateur système d'avoir
+un minimum de connaissances sur le bash, au même titre qu'il faudra avoir un minimum de
+
+02:24.759 --> 02:30.440
+connaissances en PowerShell pour la partie
+Windows, Windows Server. Pour utiliser le bash
+
+02:30.440 --> 02:34.639
+nous allons utiliser ce que l'on appelle un
+terminal, donc notre shell. Dans notre shell
+
+02:34.639 --> 02:39.119
+on va à l'intérieur exécuter différentes
+commandes, et dans les scripts on pourra utiliser
+
+02:39.119 --> 02:45.600
+ces mêmes commandes ainsi que différentes
+instructions. Voici la structure de base d'une
+
+02:45.600 --> 02:51.199
+commande en bash. On va tout d'abord avoir le nom
+de la commande ici au tout début, et derrière
+
+02:51.199 --> 02:56.800
+potentiellement une ou plusieurs options et un
+ou plusieurs arguments. On pourrait exécuter la
+
+02:56.800 --> 03:01.639
+commande ls seul, mais on peut aussi venir lui
+ajouter une ou plusieurs options. Dans ce cas là
+
+03:01.639 --> 03:07.800
+ici on a l'option "-a". On pourrait avoir "-a", et
+d'autres lettres encore derrière en fonction des
+
+03:07.800 --> 03:14.000
+options qu'on veut utiliser. L'argument c'est
+en quelque sorte la valeur de ce que l'on veut
+
+03:14.000 --> 03:19.960
+cibler. Ici on va cibler le répertoire "-home",
+"-flow". On pourrait avoir aussi plusieurs
+
+03:19.960 --> 03:26.600
+arguments, tout dépend de ce que va attendre la
+commande en termes de valeur. Pour le nom des
+
+03:26.600 --> 03:31.399
+options, il faut savoir qu'on a deux façons de
+les écrire. On a d'une part les noms longs et
+
+03:31.399 --> 03:36.800
+d'autre part les noms courts. Ici j'ai utilisé
+un nom court. Le nom long va être comme ici
+
+03:37.279 --> 03:46.240
+"-le nom complet de l'option". Le nom court sera
+seulement un tiré et derrière une lettre. Cette
+
+03:46.240 --> 03:52.679
+lettre n'est pas choisie par hasard, elle est
+documentée dans l'aide de la commande en question
+
+03:52.679 --> 03:58.399
+On va toujours avoir un équivalent entre un nom
+long et un nom court. Surtout comme on est sur
+
+03:58.399 --> 04:03.800
+Linux, il faut faire très attention à la casse.
+Ici le fait de mettre un tiré R en majuscule ne
+
+04:03.800 --> 04:08.559
+sera pas la même chose que mettre un tiré R en
+minuscule. Il faut vraiment faire attention à la
+
+04:08.559 --> 04:12.720
+casse sous Linux. Voilà la syntaxe de base d'une
+commande en bâche. Maintenant ce que je vous
+
+04:12.720 --> 04:18.000
+propose, c'est qu'on bascule sur une machine
+Linux pour commencer à exécuter nos premières
+
+04:18.000 --> 04:26.760
+commandes bâche. Par la suite, nous allons créer
+notre premier script. Pour cette démonstration
+
+04:26.760 --> 04:32.239
+je vais utiliser une machine sous Ubuntu 24.04
+avec un environnement de bureau installé. Ce que
+
+04:32.239 --> 04:38.320
+je vais faire, c'est lancer le terminal. J'ai
+directement accès à l'interprèteur de commandes
+
+04:38.320 --> 04:45.679
+bâche. Je vais commencer par faire exécuter une
+première commande, c'est la commande PWD. A quoi
+
+04:45.679 --> 04:51.119
+sert cette commande ? Elle sert à m'indiquer le
+répertoire dans lequel je me situe au niveau de
+
+04:51.119 --> 04:58.279
+mon shell. Ici j'ai le tilde qui est précisé.
+Le tilde veut dire quoi ? Ça veut dire que mon
+
+04:58.279 --> 05:05.640
+shell est positionné dans mon répertoire
+utilisateur. Ce répertoire utilisateur, c'est le
+
+05:05.640 --> 05:12.880
+dossier home flow, puisque je suis connecté avec
+l'utilisateur flow. Si je me déplace dans le
+
+05:12.880 --> 05:17.320
+système de fichiers, je vais utiliser une autre
+commande, la commande CD, qui va me permettre de
+
+05:17.320 --> 05:23.399
+naviguer sur le système de fichiers. Je pourrais
+aller par exemple dans ETC, et si je relance la
+
+05:23.399 --> 05:30.959
+commande PWD, j'ai bien ici cette fois-ci comme
+répertoire courant. Ceci est intéressant de voir
+
+05:30.959 --> 05:36.519
+dans quel répertoire on se situe, puisque quand
+on va exécuter une commande bâche, parfois on va
+
+05:36.519 --> 05:40.959
+préciser un chemin complet, mais si on ne précise
+pas de chemin, par exemple quand on va créer un
+
+05:40.959 --> 05:47.959
+fichier, il sera créé ce fichier dans le répertoire
+courant dans lequel on se situe. L'information
+
+05:47.959 --> 05:52.320
+qui est ici, entre les deux points et le dollar,
+nous indique bien le répertoire dans lequel on se
+
+05:52.320 --> 05:56.600
+situe actuellement. On peut le vérifier avec
+la commande PWD, mais pour le coup c'est une
+
+05:56.600 --> 06:01.880
+information quand même importante. Nous allons
+maintenant évoquer la commande LS, qui permet de
+
+06:01.880 --> 06:08.359
+lister le contenu d'un répertoire. Je vais me
+repositionner dans mon répertoire home, et je vais
+
+06:08.359 --> 06:14.880
+simplement faire la commande LS, sans préciser
+le moindre argument derrière. Là il me liste le
+
+06:14.880 --> 06:18.760
+contenu du dossier. Maintenant, comme je l'ai
+expliqué en introduction, on peut utiliser
+
+06:18.920 --> 06:24.239
+différentes commandes, différents arguments. Je
+vais pouvoir faire par exemple un LS-L. Là on
+
+06:24.239 --> 06:29.200
+voit bien qu'il m'a listé le contenu de mon
+répertoire courant, puisque je n'ai pas précis�
+
+06:29.200 --> 06:35.519
+d'argument derrière. Du coup on pourrait faire
+un LS-L et préciser un chemin, par exemple
+
+06:35.519 --> 06:42.760
+slashetc, et là il me liste bien ce qui est dans
+slashetc sur ma machine. On voit bien l'intérêt
+
+06:42.760 --> 06:48.279
+de préciser ou non une valeur pour l'argument qui
+vient derrière la commande. Maintenant on pourrait
+
+06:48.359 --> 06:53.160
+se demander comment on fait pour explorer des
+options supplémentaires, pour voir quelles sont
+
+06:53.160 --> 07:02.239
+les possibilités offertes par la commande LS. Dans
+ce cas là, on va faire un LS-LP. En général
+
+07:02.239 --> 07:07.799
+ça fonctionne avec toutes les commandes. On fait
+un LS-LP et ça nous affiche l'aide de la commande
+
+07:07.799 --> 07:13.279
+Donc là on peut savoir à quoi sert cette commande,
+à quoi servent les différentes options. On a �
+
+07:13.279 --> 07:18.839
+chaque fois le nom court et le nom long de la
+commande, comme je l'évoquais tout à l'heure
+
+07:18.839 --> 07:26.399
+On peut utiliser ce que l'on souhaite. Là je vais
+avoir des explications pour l'ensemble des options
+
+07:26.399 --> 07:32.600
+disponibles pour cette commande. Cela me permet
+d'en savoir plus. Il faut savoir aussi qu'on peut
+
+07:32.600 --> 07:36.799
+consulter à partir de la ligne de commande ce que
+l'on appelle les pages de manuel. En fait on va
+
+07:36.799 --> 07:41.040
+tout simplement faire un man et derrière on va
+mettre le nom de la commande, par exemple man
+
+07:41.040 --> 07:49.959
+LS. On va ouvrir la documentation, les pages de
+manuel de la commande LS. On a des informations
+
+07:49.959 --> 07:55.040
+de manière un peu plus structurées encore sur
+l'utilisation de cette commande. On va retrouver
+
+07:55.040 --> 08:00.320
+les différentes options, leurs significations,
+etc. Donc là on a vraiment l'aide complète. Cette
+
+08:00.320 --> 08:06.239
+aide complète, ce que l'on appelle les man pages,
+on peut les retrouver aussi sur internet. Il y a
+
+08:06.239 --> 08:10.640
+plusieurs sites qui proposent des versions en
+ligne de ces aides. Donc là on a quand même
+
+08:10.720 --> 08:15.399
+plus d'informations que quand on fait le "- "-
+help. Cela peut être intéressant d'aller faire un
+
+08:15.399 --> 08:19.600
+tour ici. Ce que je vous propose c'est qu'on
+explore un petit peu plus d'autres commandes
+
+08:19.600 --> 08:26.480
+par exemple pour explorer la commande mkdir.
+Ici je vais faire un ls et je vais faire mkdir
+
+08:26.480 --> 08:30.119
+Alors mkdir c'est quoi ? Cela veut dire make
+directory, c'est une commande qui va nous
+
+08:30.119 --> 08:34.359
+permettre de créer un répertoire ou plusieurs
+répertoires. Je pourrais tout simplement faire
+
+08:34.359 --> 08:40.239
+un mkdir demo ici et je vais avoir créé en
+principe un dossier qui va s'appeler demo �
+
+08:40.320 --> 08:44.919
+la racine de mon profil utilisateur, puisque je
+suis bien positionné ici à la racine de mon
+
+08:44.919 --> 08:50.380
+profil. On le crée dans le répertoire courant.
+Si je fais un ls tout simplement, mon dossier
+
+08:50.380 --> 08:57.640
+demo qui n'était pas là ici est présent désormais.
+Pourrions aussi préciser le chemin complet si on
+
+08:57.640 --> 09:02.880
+veut créer le dossier demo dans un répertoire
+spécifique qui n'est pas le répertoire courant
+
+09:02.880 --> 09:07.599
+Et on peut créer dans ce dossier demo plusieurs
+sous-dossiers. Dans ce cas là on va faire un
+
+09:07.599 --> 09:12.159
+slash, on va mettre des accolades et entre
+les accolades on va venir mettre les noms des
+
+09:12.159 --> 09:16.919
+dossiers qu'on veut créer. Par exemple ici dossier
+1 et dossier 2. On met les noms entre guillemets
+
+09:16.919 --> 09:22.840
+on les sépare par une virgule, on fait un trait.
+Maintenant si je fais un ls-l de mon home flow
+
+09:22.840 --> 09:29.960
+demo, j'ai bien dossier 1 et dossier 2 qui ont
+été créés. On voit qu'on peut optimiser puisque
+
+09:29.960 --> 09:34.000
+sinon j'aurais dû faire plusieurs commandes
+mkdir. Une autre commande qui peut être assez
+
+09:34.000 --> 09:42.119
+intéressante c'est la commande touch. La commande
+touch va nous servir à créer un fichier vide
+
+09:42.119 --> 09:47.880
+On utilise aussi en général cette fichier pour
+venir jouer sur l'horodatage des horaires d'accès
+
+09:47.880 --> 09:54.760
+des fichiers. Si je veux créer le fichier
+itconnect.txt dans le dossier 1 que j'ai cré�
+
+09:54.760 --> 09:59.960
+précédemment, il suffit de faire touch comme ceci
+et le dossier a été créé. D'ailleurs si je fais
+
+09:59.960 --> 10:06.119
+un ls dans le dossier 1, je vois bien que mon fichier
+a été créé. C'est un fichier vide mais il a
+
+10:06.119 --> 10:11.440
+été créé, maintenant je pourrais l'éditer et
+ajouter du contenu. C'est une étape malgré tout
+
+10:11.440 --> 10:16.320
+facultative puisqu'on pourrait ouvrir ce fichier
+avec un éditeur de texte même s'il n'existe pas
+
+10:16.320 --> 10:21.280
+l'enregistrer ce qui permettrait de le créer à
+l'emplacement souhaité. Enfin, on va évoquer
+
+10:21.280 --> 10:25.559
+pour terminer avant de passer à la rédaction de
+notre premier script, une autre commande très
+
+10:25.559 --> 10:31.679
+intéressante mais aussi relativement dangereuse,
+c'est la commande rm qui va nous permettre de
+
+10:31.679 --> 10:37.919
+supprimer des dossiers et leur contenu ou supprimer
+un fichier ou des fichiers. C'est une commande de
+
+10:37.919 --> 10:42.200
+suppression de données. Pourquoi je dis qu'elle
+est potentiellement dangereuse ? C'est à dire
+
+10:42.200 --> 10:47.919
+qu'une mauvaise manipulation de cette commande, on
+pourrait cibler sans faire exprès des répertoires
+
+10:47.919 --> 10:52.679
+système et procéder à la suppression. On peut
+vraiment faire planter une machine Linux si on
+
+10:52.679 --> 10:58.640
+utilise mal la commande rm. Il faut vraiment faire
+attention à ce que l'on va cibler quand on va faire
+
+10:58.640 --> 11:05.679
+un rm. Typiquement, je pourrais chercher à vider
+le contenu de mon répertoire dossier 1. Dans ce
+
+11:05.679 --> 11:10.440
+cas-là, je mets le nom du chemin complet et je
+vais venir mettre une étoile. Le fait de mettre un
+
+11:10.440 --> 11:15.760
+"-r", ça permet d'avoir la récursivité. Je
+vais vraiment supprimer tout ce qu'il y a dans ce
+
+11:15.760 --> 11:22.239
+répertoire, sous cette arborescence et l'étoile
+permet de cibler le contenu du répertoire et non
+
+11:22.400 --> 11:28.440
+le répertoire en lui-même. Cela me permet de
+supprimer le contenu de mon dossier 1. En l'occurrence
+
+11:28.440 --> 11:34.679
+ici, ça a bien supprimé le fichier itconnect.txt.
+Maintenant, si je veux supprimer le répertoire
+
+11:34.679 --> 11:39.799
+démo en lui-même, je vais faire simplement un
+rm-r et je vais venir préciser le dossier comme
+
+11:39.799 --> 11:46.640
+ceci. Si je fais un ls home flow, on voit que mon
+dossier démo a disparu, n'est plus là, il a ét�
+
+11:46.640 --> 11:50.719
+supprimé et tous ses sous-dossiers ont été
+supprimés également. Nous venons de voir des
+
+11:50.719 --> 11:55.719
+commandes de base pour la navigation sur le système,
+pour la manipulation de données, créer un fichier
+
+11:55.719 --> 12:01.840
+créer un dossier, supprimer un fichier ou
+un dossier, etc. C'est vraiment la base pour
+
+12:01.840 --> 12:06.840
+prendre en main le Shell Bash sur une machine
+Linux. Il faut savoir que des commandes en
+
+12:06.840 --> 12:11.640
+existent des dizaines, des centaines, donc on ne
+peut pas tout présenter dans une vidéo. Ce qu'il
+
+12:11.640 --> 12:15.840
+faut, c'est au fur et à mesure des besoins,
+explorer des commandes, explorer des notions
+
+12:15.840 --> 12:19.520
+Là, c'est vraiment une introduction. Maintenant,
+ce que l'on va faire, c'est voir comment créer
+
+12:19.520 --> 12:29.440
+notre premier script Bash sur une machine Linux.
+Déjà, ce qu'il faut savoir, c'est qu'un script Bash
+
+12:29.440 --> 12:35.919
+va avoir l'extension .sh. Quand vous voyez un
+fichier .sh, cela veut dire que cela correspond
+
+12:35.919 --> 12:41.000
+à un script Bash. Ce que l'on va faire, c'est tout
+simplement créer ce fichier. On va créer ce fichier
+
+12:41.000 --> 12:49.400
+vide. On a vu qu'on pouvait le créer avec la commande touch, donc c'est ce que l'on va faire,
+cela va nous permettre de manipuler un petit peu. Par exemple, ce fichier, je vais l'appeler
+
+12:49.400 --> 12:57.840
+script-demo.sh et je vais le créer à la racine de
+mon répertoire personnel. J'ai bien créé ce fichier
+
+12:57.840 --> 13:03.159
+on le voit, il est ici. Il est totalement vide, il
+fait 0 octets. Maintenant, on va se demander comment
+
+13:03.159 --> 13:08.440
+on peut faire pour éditer ce fichier, pour écrire
+notre script. On a plusieurs possibilités. On va
+
+13:08.440 --> 13:13.799
+pouvoir utiliser un éditeur de texte classique,
+tel que le très simple Nano ou le plus complet
+
+13:14.359 --> 13:18.679
+Vim sur la machine Linux. On va pouvoir éditer
+notre script, indiquer les lignes de commandes
+
+13:18.679 --> 13:23.400
+etc. que l'on souhaite. On peut aussi aller plus
+loin et utiliser une application comme Visual
+
+13:23.400 --> 13:28.679
+Studio Code, que vous pouvez installer facilement à
+partir du centre d'application sur Ubuntu ou avec
+
+13:28.679 --> 13:33.679
+une simple commande apt-get install, puisqu'il y a
+vraiment un paquet qui est prêt à l'emploi pour
+
+13:33.679 --> 13:41.080
+cela. Cela vous permet ensuite d'avoir sur la
+machine Linux le Visual Studio Code. Dans le
+
+13:41.080 --> 13:46.559
+Visual Studio Code, vous pouvez écrire vos
+scripts, les exécuter, etc. Vous avez vraiment un
+
+13:46.559 --> 13:52.719
+éditeur de code très complet. C'est un éditeur de
+code gratuit et open source proposé par Microsoft
+
+13:52.719 --> 13:56.919
+Là, je ne vais pas vous imposer l'utilisation
+de Visual Studio Code. Ce que l'on va faire
+
+13:56.919 --> 14:02.479
+c'est utiliser le Nano, qui est vraiment un éditeur
+de texte très simple. Vous allez pouvoir créer
+
+14:02.479 --> 14:07.320
+votre premier script Bash avec Nano sans aucun
+souci. Ce que l'on va faire, c'est ouvrir ce
+
+14:07.320 --> 14:14.200
+fichier. On va faire un Nano et on va appeler
+script-demo.sh. On se retrouve avec notre script
+
+14:14.200 --> 14:19.320
+il est vide. Qu'allons-nous ajouter dans ce script
+? Il faut savoir que la première ligne de votre
+
+14:19.320 --> 14:25.640
+script doit être ce que l'on appelle le Shebang.
+Le Shebang, c'est une ligne qui va permettre �
+
+14:25.640 --> 14:32.119
+votre machine de savoir quel interprèteur de script
+doit être utilisé pour exécuter le contenu du
+
+14:32.119 --> 14:39.320
+fichier. En l'occurrence, ici, ça va être
+Bash. On va préciser "-!" et le chemin vers Bash
+
+14:39.320 --> 14:47.039
+Cela va permettre à Linux de savoir ce script-là,
+il faut l'exécuter avec Bash. C'est vraiment très
+
+14:47.039 --> 14:51.719
+important d'ajouter cette première ligne. Là,
+c'est du Bash, donc on met ça et en fonction de
+
+14:51.719 --> 14:55.799
+ce qu'on utilise, on va venir adapter. C'est
+forcément la première ligne de votre script
+
+14:55.799 --> 15:01.039
+Ensuite, vous allez venir ajouter vos commandes.
+Cela va dépendre de vos besoins. On va tout
+
+15:01.039 --> 15:05.880
+simplement faire un écho, cela va permettre
+d'afficher un message dans la console. On va
+
+15:05.880 --> 15:13.520
+mettre par exemple, Hello World ! Demo IT Connect
+! On va faire ça, on met bien un guillemet à la
+
+15:13.520 --> 15:18.400
+fin. On pourrait même, pour respecter les bonnes
+pratiques, ajouter un commentaire. On ajoute un
+
+15:18.400 --> 15:23.039
+commentaire en mettant un dièse et le texte
+derrière pour décrire la ligne de commande qui
+
+15:23.039 --> 15:29.440
+suit. On va mettre, voilà, écrire un texte dans
+la console. Une fois qu'on a fait ça, on va
+
+15:29.440 --> 15:34.960
+enregistrer le fichier. C'est CTRL O avec Nano.
+Ensuite, on fait entrer, voilà, et on va pouvoir
+
+15:34.960 --> 15:40.080
+fermer. Comment on va pouvoir maintenant exécuter
+ce script ? Ce que l'on va faire pour exécuter le
+
+15:40.080 --> 15:45.440
+script, c'est un .slash et le nom du script
+derrière. Je vais faire script-demo.slash
+
+15:45.440 --> 15:49.919
+je fais entrer et là, il me dit « Permission
+non accordée ». Pourquoi ? Effectivement
+
+15:49.919 --> 15:57.200
+si je fais un ls-l, quand on fait ls-l, la commande
+ls nous retourne la liste du contenu du répertoire
+
+15:57.200 --> 16:01.520
+et on a aussi une visibilité sur les droits. On
+peut voir au niveau des droits qu'il y a des droits
+
+16:01.520 --> 16:07.559
+en lecture-écriture pour l'utilisateur propriétaire,
+le groupe propriétaire, et des droits en lecture
+
+16:07.559 --> 16:13.919
+pour les autres. Ce qui va nous manquer ici, c'est
+le droit d'exécution, le droit d'exécuter le
+
+16:13.919 --> 16:18.039
+script. C'est pour ça qu'il va falloir rajouter
+des permissions sur ce fichier avant de pouvoir
+
+16:18.039 --> 16:26.159
+l'exécuter. Ce qu'on va faire, c'est un chmod plus
+x sur le fichier script-demo.sh. Là, si je refais
+
+16:26.159 --> 16:30.880
+un ls-l, cette fois-ci, j'ai bien le droit
+d'exécuter. On voit d'ailleurs qu'il y a eu un
+
+16:30.880 --> 16:35.799
+changement au niveau des couleurs ici. Je vais
+pouvoir tenter d'exécuter une nouvelle fois mon
+
+16:35.799 --> 16:41.200
+script. Je vais faire script-demo.sh. Pensez aussi
+à utiliser la tabulation pour bénéficier de
+
+16:41.200 --> 16:47.679
+l'autocomplétion. On va exécuter et mon script
+fonctionne puisqu'on me retourne bien « Hello World
+
+16:47.679 --> 16:52.960
+Demo IT Connect ». On vient de créer un premier
+script très basique, mais on a créé notre premier
+
+16:52.960 --> 16:59.679
+script-demo.sh. Pour finir, je vais vous montrer
+un autre script qui s'appelle ping.sh. Je vais
+
+16:59.679 --> 17:09.400
+vous montrer ce script qui va aller un peu plus loin, qui va me permettre d'aborder d'autres
+notions. Je vais vous expliquer la notion de variable, des choses comme ça. Ce script qui
+
+17:09.400 --> 17:16.319
+est à l'écran permet tout simplement de définir
+l'adresse IP ou le nom d'un serveur. Ensuite
+
+17:16.319 --> 17:21.680
+on va faire un ping sur ce serveur et on va dire
+est-ce que oui ou non ce serveur a répondu au
+
+17:21.680 --> 17:26.479
+ping ? C'est quelque chose de très simple, mais
+qui permet d'introduire certaines notions. Tout
+
+17:26.479 --> 17:31.719
+d'abord la notion de variable, qui va nous
+permettre de stocker une valeur, une information
+
+17:31.719 --> 17:38.040
+en mémoire. Ici, c'est une variable qui s'appelle
+serveur. Je stocke dedans l'information qui est
+
+17:38.040 --> 17:48.599
+l'adresse IP 192.168.1.254. Si j'appelle ma
+variable serveur, cela revient à appeler la
+
+17:48.599 --> 17:53.000
+valeur qui est à l'intérieur, puisque cette
+variable sera remplacée par sa valeur. Ce qui
+
+17:53.000 --> 17:58.880
+veut dire qu'ensuite quand je vais faire un
+ping, un ping-C2. Pourquoi un ping-C2 ? Sur Linux
+
+17:58.880 --> 18:05.000
+quand on fait un ping, c'est un ping indéfini.
+Il ne va jamais s'arrêter. Le fait de faire un
+
+18:05.000 --> 18:14.479
+ping-C2, on va dire qu'on va faire deux pings.
+La cible du ping, c'est qui ? C'est $server
+
+18:14.800 --> 18:18.599
+c'est à dire ma variable serveur. On voit bien
+ici que quand on déclare une variable, on ne met
+
+18:18.599 --> 18:23.359
+pas le dollar, on met le nom de la variable,
+qui égale la valeur. Ce qui est important
+
+18:23.359 --> 18:28.760
+c'est de ne pas mettre d'espace ni avant ni
+après, sinon cela renverra une erreur. J'ai
+
+18:28.760 --> 18:33.839
+bien affecté cette valeur à ma variable, et
+ensuite pour lire le contenu de la variable
+
+18:33.839 --> 18:38.239
+je fais un $le nom de la variable, comme on peut
+le voir ici. Ensuite, qu'est-ce que c'est que
+
+18:38.319 --> 18:46.479
+cette flèche pour rediriger vers $devnull ?
+C'est pour masquer la sortie de la commande. Mon
+
+18:46.479 --> 18:51.599
+objectif, ce n'est pas d'afficher le résultat du
+ping directement dans la console, c'est d'afficher
+
+18:51.599 --> 18:58.359
+soit ce texte, soit ce texte en fonction du
+résultat du ping. La sortie de la commande ping
+
+18:58.359 --> 19:05.400
+je veux en quelque sorte la masquer. Je la redirige
+vers $devnull, elle sera cachée puisqu'elle est
+
+19:05.400 --> 19:12.199
+envoyée vers un périphérique qui est nul.
+Après, ce que l'on va faire, c'est utiliser une
+
+19:12.199 --> 19:17.079
+structure conditionnelle if pour déterminer si
+le serveur est en ligne ou pas, c'est-à-dire
+
+19:17.079 --> 19:23.319
+est-ce qu'il a répondu au ping ou non. Ce que l'on
+va faire, c'est utiliser $.interrogation. Cela
+
+19:23.319 --> 19:28.079
+nous permet de savoir si la dernière commande
+qu'on a exécutée, en l'occurrence ici le ping
+
+19:28.680 --> 19:33.079
+est-ce que cette commande s'est bien exécutée
+ou non. C'est une variable spéciale qui est
+
+19:33.079 --> 19:39.839
+alimentée automatiquement par $.bash. Si on a un
+code de retour qui est de 0, cela veut dire que
+
+19:39.839 --> 19:45.160
+la commande s'est bien exécutée. Si on a un autre
+code, c'est qu'il y a eu un problème. Du coup
+
+19:45.160 --> 19:49.280
+on va regarder avec le $.if, si on essaie de
+traduire ce que j'ai voulu faire de manière
+
+19:49.280 --> 19:55.579
+littéraire. Si le code de retour de la dernière
+commande n'est pas égal à 0, alors on écrit
+
+19:55.579 --> 20:01.040
+erreur, le serveur n'a pas répondu au ping.
+Sinon, cela veut dire que le code de retour est
+
+20:01.040 --> 20:10.400
+égal à 0, implicitement. Le serveur est en ligne
+et cette instruction permet de finir la structure
+
+20:10.400 --> 20:15.640
+conditionnelle. Je pourrais vous proposer une
+vidéo complète sur les structures conditionnelles
+
+20:15.640 --> 20:21.359
+pour vous expliquer tout cela dans le détail.
+Là, on fait vraiment un test de si le code de
+
+20:21.359 --> 20:27.160
+retour de cette commande n'est pas égal à 0. Si
+cette condition est vraie, et uniquement dans ce
+
+20:27.239 --> 20:32.680
+cas-là, on va exécuter ce qu'il y a à l'intérieur
+de ce premier bloc, entre le $then et le $else
+
+20:32.680 --> 20:38.560
+Et sinon, on va exécuter ce qui est ici. Voilà
+pour ce premier script bash un peu plus évolu�
+
+20:38.560 --> 20:48.920
+que le premier que je vous ai présenté. Maintenant, ce que l'on peut faire, c'est tout
+simplement l'exécuter. J'ai déjà fait un chmod plus x sur le fichier ping.sh. Là
+
+20:48.920 --> 20:53.959
+il est en train de faire des pings et il me
+retourne bien. Le serveur me remet l'adresse IP
+
+20:53.959 --> 20:59.239
+parce qu'on a précisé ici le contenu. On a
+fait appel à la variable, donc la variable est
+
+20:59.239 --> 21:05.800
+remplacée par sa valeur. Le serveur est en ligne.
+J'ai bien eu le retour attendu dans la console
+
+21:05.800 --> 21:11.000
+Je n'ai pas eu le détail de la sortie du ping,
+mais simplement mon texte personnalisé que j'ai
+
+21:11.000 --> 21:20.199
+défini dans le script. Pour finir, je vous propose
+de vous parler du pipeline en bâche. C'est quoi
+
+21:20.199 --> 21:27.560
+le pipeline ? C'est le caractère que vous avez
+sur la touche 6 d'un clavier AZERTY. C'est ce que
+
+21:27.560 --> 21:31.920
+l'on peut appeler la barre verticale. C'est le
+caractère que je vous ai mis à l'écran. Il va
+
+21:31.920 --> 21:37.719
+jouer un rôle clé, puisqu'il va nous permettre
+de connecter plusieurs commandes ensemble. Le
+
+21:37.719 --> 21:42.760
+résultat d'une première commande sera envoyé à
+une deuxième commande, et le résultat de cette
+
+21:42.760 --> 21:46.839
+deuxième commande pourrait être envoyé à une
+troisième commande, etc. Ce qui va être très
+
+21:46.839 --> 21:51.239
+intéressant, par exemple, pour exécuter une
+commande en fonction du résultat de la première
+
+21:51.239 --> 21:57.160
+commande, ou aussi pour appliquer des filtres,
+faire des recherches, etc. Si on prend l'exemple
+
+21:57.160 --> 22:05.359
+de mon script ping.sh, j'aimerais savoir dans ce
+script combien il y a de lignes. Pour afficher le
+
+22:05.359 --> 22:10.439
+contenu d'un fichier, on peut utiliser la commande
+cat. On fait cat, le nom du fichier derrière
+
+22:10.439 --> 22:14.400
+Cela m'affiche tout simplement le contenu du
+fichier. Ce que je vais faire à partir de là
+
+22:14.560 --> 22:19.199
+c'est avec le pipeline. Le pipeline vient
+toujours se positionner après une première
+
+22:19.199 --> 22:24.000
+commande. Vous ne pouvez pas commencer une ligne
+avec un pipeline. Derrière, je vais envoyer le
+
+22:24.000 --> 22:29.479
+résultat de cette commande, c'est-à-dire
+le contenu de mon fichier, à la commande wc
+
+22:29.479 --> 22:36.520
+qui signifie word count. C'est une commande
+qui permet de compter le nombre de mots
+
+22:36.520 --> 22:43.280
+le nombre de lignes dans un fichier. On va
+utiliser l'option "-l", pour retourner uniquement
+
+22:43.280 --> 22:49.719
+le nombre de lignes présentes dans le fichier. Je
+fais entrer et on me dit que ce fichier contient
+
+22:49.719 --> 22:56.239
+15 lignes. On voit bien tout de suite l'intérêt
+du pipeline, l'interconnexion qu'il y a eu entre
+
+22:56.239 --> 23:01.400
+ma première commande et ma deuxième commande.
+C'est vraiment quelque chose de très intéressant
+
+23:01.400 --> 23:07.920
+Nous pouvons utiliser cette notion de pipeline
+pour faire des recherches dans un fichier avec
+
+23:07.920 --> 23:13.079
+la commande grep, qui est vraiment indispensable
+sous Linux et très puissante. Si je fais un
+
+23:13.079 --> 23:18.239
+grep ping, par exemple, j'affiche le contenu
+de mon fichier, je fais un grep ping et il me
+
+23:18.239 --> 23:23.280
+retourne toutes les lignes de mon fichier
+qui contiennent le mot ping. Je vois bien ici
+
+23:23.280 --> 23:28.280
+j'ai un premier commentaire, un deuxième, bien
+entendu j'ai ma commande ping et j'ai la commande
+
+23:28.280 --> 23:34.280
+echo qui est ici, puisque cette commande echo
+contient également le mot clé ping que j'ai
+
+23:34.280 --> 23:37.839
+recherché. C'est vraiment un exemple très simple
+de recherche, mais ça vous montre un petit peu
+
+23:37.839 --> 23:42.719
+également ce que l'on peut faire avec le pipeline
+et aussi un rapide aperçu de la commande grep
+
+23:42.719 --> 23:52.439
+Voilà cette vidéo d'introduction au scripting
+Bash, à la rédaction de script Bash est �
+
+23:52.439 --> 23:56.599
+présent terminée. J'espère que ça vous
+a plu, sachez que vous pouvez utiliser le
+
+23:56.599 --> 24:00.119
+Bash sur une machine Linux telle que
+Ubuntu, comme je l'ai présenté ici
+
+24:00.119 --> 24:04.599
+sur une Debian ou autre, mais également sur
+Windows, puisque vous pouvez installer Windows
+
+24:04.599 --> 24:11.079
+Subsystem for Linux ou WSL, ce qui vous permet
+d'utiliser Linux depuis Windows. Là vous allez
+
+24:11.079 --> 24:15.959
+avoir la possibilité d'exécuter des commandes
+Bash, mais aussi de créer des scripts, donc ça
+
+24:15.959 --> 24:20.199
+vous permet en quelque sorte d'utiliser le Bash
+depuis Windows si vous voulez vous entraîner
+
+24:20.199 --> 24:25.439
+sans avoir une autre machine ou sans utiliser une
+machine virtuelle si votre poste de travail n'est
+
+24:25.439 --> 24:30.319
+pas sur Linux. J'espère que ça vous a plu,
+n'hésitez pas surtout à me dire si vous voulez
+
+24:30.319 --> 24:35.079
+plus de contenu sur le scripting Bash, si c'est
+un sujet qui vous intéresse. En attendant
+
+24:35.079 --> 24:39.800
+bien pensez à liker, à commenter et à partager au
+max cette vidéo ! Je vous dis à très vite, ciao 
+��`v      gJngJnGrF�g;sI   �    O^partitionKey=%28https%2Cit-connect.fr%29,a,~FETCH,:https://video-meta.humix.com/caption/DLG2XXVA-FEt/00a9243ab8c6bb8c8f2f560e7ddb3c32_fr-FR.vtt necko:classified 1 strongly-framed 1 security-info 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 request-method GET request-Origin https://www.it-connect.fr request-Accept-Encoding gzip, deflate, br, zstd response-head HTTP/2 200 
+date: Sat, 19 Oct 2024 05:58:06 GMT
+content-type: text/vtt; charset=utf-8
+content-length: 31682
+access-control-allow-origin: *
+content-disposition: inline
+etag: "00a9243ab8c6bb8c8f2f560e7ddb3c32"
+last-modified: Thu, 27 Jun 2024 10:23:08 GMT
+vary: Origin, Accept-Encoding
+cache-control: max-age=2678400
+cf-cache-status: HIT
+age: 46501
+accept-ranges: bytes
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=NqhoKYc6CsgqHoFD4E%2BL5X1sNnhY99XQ4i3CgRqMdvBJJY7E6%2FvuRg1%2F3WA%2FbtxiPAdub2p6KuAANL8jQXnw9bOHLWty%2FJN9IQj1IjjIjyp9UHh2HWtkAnk6MB8WCpSYrw9q08zRjQ%3D%3D"}],"group":"cf-nel","max_age":604800}
+nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+server: cloudflare
+cf-ray: 8d4e88cfcd3db79f-ABJ
+alt-svc: h3=":443"; ma=86400
+server-timing: cfL4;desc="?proto=TCP&rtt=14020&sent=92&recv=69&lost=0&retrans=0&sent_bytes=103862&recv_bytes=1939&delivery_rate=7250564&cwnd=257&unsent_bytes=0&cid=4d7d6c9dffcba43d&ts=122&x=0"
+X-Firefox-Spdy: h2
+ original-response-headers date: Sat, 19 Oct 2024 05:58:06 GMT
+content-type: text/vtt; charset=utf-8
+content-length: 31682
+access-control-allow-origin: *
+content-disposition: inline
+etag: "00a9243ab8c6bb8c8f2f560e7ddb3c32"
+last-modified: Thu, 27 Jun 2024 10:23:08 GMT
+vary: Origin, Accept-Encoding
+cache-control: max-age=2678400
+cf-cache-status: HIT
+age: 46501
+accept-ranges: bytes
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=NqhoKYc6CsgqHoFD4E%2BL5X1sNnhY99XQ4i3CgRqMdvBJJY7E6%2FvuRg1%2F3WA%2FbtxiPAdub2p6KuAANL8jQXnw9bOHLWty%2FJN9IQj1IjjIjyp9UHh2HWtkAnk6MB8WCpSYrw9q08zRjQ%3D%3D"}],"group":"cf-nel","max_age":604800}
+nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+server: cloudflare
+cf-ray: 8d4e88cfcd3db79f-ABJ
+alt-svc: h3=":443"; ma=86400
+server-timing: cfL4;desc="?proto=TCP&rtt=14020&sent=92&recv=69&lost=0&retrans=0&sent_bytes=103862&recv_bytes=1939&delivery_rate=7250564&cwnd=257&unsent_bytes=0&cid=4d7d6c9dffcba43d&ts=122&x=0"
+X-Firefox-Spdy: h2
+ ctid 1 net-response-time-onstart 155 net-response-time-onstop 159   {�
